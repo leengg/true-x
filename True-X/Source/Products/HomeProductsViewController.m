@@ -1,20 +1,20 @@
 //
-//  ListArticlesViewController.m
+//  HomeProductsViewController.m
 //  True-X
 //
-//  Created by Dao Nguyen on 5/11/13.
+//  Created by Dao Nguyen on 5/12/13.
 //  Copyright (c) 2013 Dao Nguyen. All rights reserved.
 //
 
-#import "ListArticlesViewController.h"
-#import "ArticleCell.h"
-#import "ArticleDetailViewController.h"
+#import "HomeProductsViewController.h"
+#import "ProductDetailViewController.h"
+#import "ProductCell.h"
 
-@interface ListArticlesViewController ()
+@interface HomeProductsViewController ()
 
 @end
 
-@implementation ListArticlesViewController
+@implementation HomeProductsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,12 +53,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"ArticleCellID";
-    ArticleCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"ProductCellID";
+    ProductCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.titleTextView.text = @"Những vết cắn nhẹ nhàng, âu yếm của chàng vào dái tai, cổ, đùi trong, ngực… nếu áp dụng tốt sẽ dễ dàng giúp nàng ngây ngất.";
-    cell.thumbnailImageView.image = [UIImage imageNamed:@"photo.png"];
+    cell.thumbnailImageView.image = [UIImage imageNamed:@"ultrathin.png"];
+    cell.titleLabel.text = @"Ultrathin";
+    cell.descriptionLabel.text =  @"Cảm giác thật";
     
     return cell;
 }
@@ -108,10 +109,10 @@
 {
     // Navigation logic may go here. Create and push another view controller.
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard-iPhone" bundle:nil];
-    ArticleDetailViewController *detailViewController = [storyboard instantiateViewControllerWithIdentifier:@"ArticleDetailViewControllerID"];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
+    ProductDetailViewController *detailViewController = [storyboard instantiateViewControllerWithIdentifier:@"ProductDetailViewControllerID"];
+    // ...
+    // Pass the selected object to the new view controller.
+    [self.navigationController pushViewController:detailViewController animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

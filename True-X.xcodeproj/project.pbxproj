@@ -20,6 +20,10 @@
 		DE07CE87173D26FB0022440A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE07CE83173D26FB0022440A /* Default@2x.png */; };
 		DE07CE89173D29D90022440A /* Storyboard-iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE07CE88173D29D90022440A /* Storyboard-iPhone.storyboard */; };
 		DE07CE8B173D2A160022440A /* Storyboard-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE07CE8A173D2A160022440A /* Storyboard-iPad.storyboard */; };
+		DE0D4EB2173FC761007F2E97 /* HomeProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0D4EB1173FC761007F2E97 /* HomeProductsViewController.m */; };
+		DE0D4EB8173FC7F0007F2E97 /* ProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0D4EB7173FC7F0007F2E97 /* ProductCell.m */; };
+		DE0D4EBB173FCA00007F2E97 /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0D4EBA173FCA00007F2E97 /* ProductDetailViewController.m */; };
+		DE0D4EBD173FEF2D007F2E97 /* ultrathin.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0D4EBC173FEF2D007F2E97 /* ultrathin.png */; };
 		DE1D414B173E55AE00B51237 /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1D414A173E55AE00B51237 /* photo.png */; };
 		DE1D4159173E752A00B51237 /* SVSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1D4156173E752A00B51237 /* SVSegmentedControl.m */; };
 		DE1D415A173E752A00B51237 /* SVSegmentedThumb.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1D4158173E752A00B51237 /* SVSegmentedThumb.m */; };
@@ -77,6 +81,13 @@
 		DE07CE83173D26FB0022440A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		DE07CE88173D29D90022440A /* Storyboard-iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Storyboard-iPhone.storyboard"; sourceTree = "<group>"; };
 		DE07CE8A173D2A160022440A /* Storyboard-iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Storyboard-iPad.storyboard"; sourceTree = "<group>"; };
+		DE0D4EB0173FC761007F2E97 /* HomeProductsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeProductsViewController.h; sourceTree = "<group>"; };
+		DE0D4EB1173FC761007F2E97 /* HomeProductsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeProductsViewController.m; sourceTree = "<group>"; };
+		DE0D4EB6173FC7F0007F2E97 /* ProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCell.h; sourceTree = "<group>"; };
+		DE0D4EB7173FC7F0007F2E97 /* ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCell.m; sourceTree = "<group>"; };
+		DE0D4EB9173FCA00007F2E97 /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewController.h; sourceTree = "<group>"; };
+		DE0D4EBA173FCA00007F2E97 /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
+		DE0D4EBC173FEF2D007F2E97 /* ultrathin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ultrathin.png; sourceTree = "<group>"; };
 		DE1D414A173E55AE00B51237 /* photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo.png; sourceTree = "<group>"; };
 		DE1D4155173E752A00B51237 /* SVSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVSegmentedControl.h; sourceTree = "<group>"; };
 		DE1D4156173E752A00B51237 /* SVSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVSegmentedControl.m; sourceTree = "<group>"; };
@@ -239,13 +250,28 @@
 			isa = PBXGroup;
 			children = (
 				DEDCF795173D71740066355D /* Articles */,
+				DE0D4EAB173FC6CF007F2E97 /* Products */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		DE0D4EAB173FC6CF007F2E97 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE0D4EB0173FC761007F2E97 /* HomeProductsViewController.h */,
+				DE0D4EB1173FC761007F2E97 /* HomeProductsViewController.m */,
+				DE0D4EB6173FC7F0007F2E97 /* ProductCell.h */,
+				DE0D4EB7173FC7F0007F2E97 /* ProductCell.m */,
+				DE0D4EB9173FCA00007F2E97 /* ProductDetailViewController.h */,
+				DE0D4EBA173FCA00007F2E97 /* ProductDetailViewController.m */,
+			);
+			path = Products;
 			sourceTree = "<group>";
 		};
 		DE1D4149173E55AE00B51237 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				DE0D4EBC173FEF2D007F2E97 /* ultrathin.png */,
 				DE1D414A173E55AE00B51237 /* photo.png */,
 			);
 			path = Image;
@@ -461,6 +487,7 @@
 				DE07CE89173D29D90022440A /* Storyboard-iPhone.storyboard in Resources */,
 				DE07CE8B173D2A160022440A /* Storyboard-iPad.storyboard in Resources */,
 				DE1D414B173E55AE00B51237 /* photo.png in Resources */,
+				DE0D4EBD173FEF2D007F2E97 /* ultrathin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +537,9 @@
 				DE1D4159173E752A00B51237 /* SVSegmentedControl.m in Sources */,
 				DE1D415A173E752A00B51237 /* SVSegmentedThumb.m in Sources */,
 				DE1DFF35173FA62D008CEF0E /* ArticleDetailViewController.m in Sources */,
+				DE0D4EB2173FC761007F2E97 /* HomeProductsViewController.m in Sources */,
+				DE0D4EB8173FC7F0007F2E97 /* ProductCell.m in Sources */,
+				DE0D4EBB173FCA00007F2E97 /* ProductDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
