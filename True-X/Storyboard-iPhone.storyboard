@@ -1,25 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="xUO-Pl-DPL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="HV8-9a-CYT">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - Bài viết-->
         <scene sceneID="MWb-Wa-HwL">
             <objects>
                 <navigationController definesPresentationContext="YES" id="xUO-Pl-DPL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Bài viết" id="QDS-uF-W59"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="FvJ-Fz-FG9">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="HV8-9a-CYT" kind="relationship" relationship="rootViewController" id="Sxf-3W-YwX"/>
+                        <segue destination="GoT-i7-RGy" kind="relationship" relationship="rootViewController" id="jup-6f-cE8"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jeF-LO-xCi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1158" y="456"/>
+            <point key="canvasLocation" x="1410" y="-1530"/>
+        </scene>
+        <!--Navigation Controller - Bộ sưu tập-->
+        <scene sceneID="Uym-hv-FSU">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="CB0-zu-U2m" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Bộ sưu tập" id="x0O-C3-ekm"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3h3-v1-Yft">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lKs-i7-5s3" kind="relationship" relationship="rootViewController" id="oDg-Fh-jmi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nkR-3n-wTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1986" y="908"/>
         </scene>
         <!--View Controller - Item 2-->
         <scene sceneID="Ql3-Cu-TJv">
@@ -31,10 +48,27 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="aa6-Lb-Bcb"/>
+                    <navigationItem key="navigationItem" id="dRA-hb-ypR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yeO-3j-0rJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2479" y="908"/>
+        </scene>
+        <!--Navigation Controller - Liên hệ-->
+        <scene sceneID="FSN-zs-ruq">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="tbn-zm-OKd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Liên hệ" id="5aR-wv-YM9"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5AZ-3B-jkR">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gbb-87-HxU" kind="relationship" relationship="rootViewController" id="Den-ft-QaB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Frw-Ce-ojs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1682" y="3052"/>
         </scene>
         <!--View Controller - Item-->
         <scene sceneID="v59-BT-S2n">
@@ -46,6 +80,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="gtM-bS-pea"/>
+                    <navigationItem key="navigationItem" id="GgY-hZ-3NL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sXH-Ng-pdA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -87,6 +122,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="a0O-D7-A4u"/>
+                    <navigationItem key="navigationItem" id="ZCH-6U-obi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dc4-1m-FRF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -104,9 +140,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="GoT-i7-RGy" kind="relationship" relationship="viewControllers" id="Xvp-I9-jZG"/>
-                        <segue destination="lKs-i7-5s3" kind="relationship" relationship="viewControllers" id="XrN-9f-ziv"/>
-                        <segue destination="gbb-87-HxU" kind="relationship" relationship="viewControllers" id="qMa-Y1-wgy"/>
+                        <segue destination="xUO-Pl-DPL" kind="relationship" relationship="viewControllers" id="t0J-Na-VFF"/>
+                        <segue destination="CB0-zu-U2m" kind="relationship" relationship="viewControllers" id="GuD-hc-NRE"/>
+                        <segue destination="tbn-zm-OKd" kind="relationship" relationship="viewControllers" id="OOV-eU-08F"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MyC-Dl-wj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -216,6 +252,37 @@
             </objects>
             <point key="canvasLocation" x="2408" y="-1196"/>
         </scene>
+        <!--Article Detail View Controller-->
+        <scene sceneID="dtP-LH-dn9">
+            <objects>
+                <viewController storyboardIdentifier="ArticleDetailViewControllerID" id="bf0-2i-0wp" customClass="ArticleDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NWI-LO-Qzy">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vUc-Ve-abi">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="bf0-2i-0wp" id="HuU-X1-KJN"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vUc-Ve-abi" firstAttribute="bottom" secondItem="NWI-LO-Qzy" secondAttribute="bottom" type="default" id="4zg-S4-WcQ"/>
+                            <constraint firstItem="vUc-Ve-abi" firstAttribute="leading" secondItem="NWI-LO-Qzy" secondAttribute="leading" type="default" id="EkT-JD-Sr2"/>
+                            <constraint firstItem="vUc-Ve-abi" firstAttribute="top" secondItem="NWI-LO-Qzy" secondAttribute="top" type="default" id="ihA-mi-Pis"/>
+                            <constraint firstItem="vUc-Ve-abi" firstAttribute="trailing" secondItem="NWI-LO-Qzy" secondAttribute="trailing" type="default" id="yfA-fp-WaJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="articleWebView" destination="vUc-Ve-abi" id="1rC-Dz-OMh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ie-Kt-oAX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2889" y="-1354"/>
+        </scene>
     </scenes>
     <classes>
         <class className="ArticleCell" superclassName="UITableViewCell">
@@ -223,6 +290,12 @@
             <relationships>
                 <relationship kind="outlet" name="thumbnailImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="titleTextView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="ArticleDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ArticleDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="articleWebView" candidateClass="UIWebView"/>
             </relationships>
         </class>
         <class className="CustomSegmentViewController" superclassName="UIViewController">

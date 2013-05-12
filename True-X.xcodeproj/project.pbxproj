@@ -23,6 +23,7 @@
 		DE1D414B173E55AE00B51237 /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1D414A173E55AE00B51237 /* photo.png */; };
 		DE1D4159173E752A00B51237 /* SVSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1D4156173E752A00B51237 /* SVSegmentedControl.m */; };
 		DE1D415A173E752A00B51237 /* SVSegmentedThumb.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1D4158173E752A00B51237 /* SVSegmentedThumb.m */; };
+		DE1DFF35173FA62D008CEF0E /* ArticleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1DFF34173FA62D008CEF0E /* ArticleDetailViewController.m */; };
 		DEDCF77B173D6FD60066355D /* MagicalImportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF743173D6FD60066355D /* MagicalImportFunctions.m */; };
 		DEDCF77C173D6FD60066355D /* NSAttributeDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF745173D6FD60066355D /* NSAttributeDescription+MagicalDataImport.m */; };
 		DEDCF77D173D6FD60066355D /* NSEntityDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF747173D6FD60066355D /* NSEntityDescription+MagicalDataImport.m */; };
@@ -81,6 +82,8 @@
 		DE1D4156173E752A00B51237 /* SVSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVSegmentedControl.m; sourceTree = "<group>"; };
 		DE1D4157173E752A00B51237 /* SVSegmentedThumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVSegmentedThumb.h; sourceTree = "<group>"; };
 		DE1D4158173E752A00B51237 /* SVSegmentedThumb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVSegmentedThumb.m; sourceTree = "<group>"; };
+		DE1DFF33173FA62D008CEF0E /* ArticleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleDetailViewController.h; sourceTree = "<group>"; };
+		DE1DFF34173FA62D008CEF0E /* ArticleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleDetailViewController.m; sourceTree = "<group>"; };
 		DEDCF742173D6FD60066355D /* MagicalImportFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalImportFunctions.h; sourceTree = "<group>"; };
 		DEDCF743173D6FD60066355D /* MagicalImportFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalImportFunctions.m; sourceTree = "<group>"; };
 		DEDCF744173D6FD60066355D /* NSAttributeDescription+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributeDescription+MagicalDataImport.h"; sourceTree = "<group>"; };
@@ -381,6 +384,8 @@
 				DEDCF7B8173E44FF0066355D /* ListArticlesViewController.m */,
 				DEDCF7BA173E49070066355D /* ArticleCell.h */,
 				DEDCF7BB173E49080066355D /* ArticleCell.m */,
+				DE1DFF33173FA62D008CEF0E /* ArticleDetailViewController.h */,
+				DE1DFF34173FA62D008CEF0E /* ArticleDetailViewController.m */,
 			);
 			path = Articles;
 			sourceTree = "<group>";
@@ -504,6 +509,7 @@
 				DEDCF7BC173E49090066355D /* ArticleCell.m in Sources */,
 				DE1D4159173E752A00B51237 /* SVSegmentedControl.m in Sources */,
 				DE1D415A173E752A00B51237 /* SVSegmentedThumb.m in Sources */,
+				DE1DFF35173FA62D008CEF0E /* ArticleDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
