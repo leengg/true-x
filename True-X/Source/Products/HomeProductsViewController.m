@@ -60,6 +60,8 @@
     cell.thumbnailImageView.image = [UIImage imageNamed:@"ultrathin.png"];
     cell.titleLabel.text = @"Ultrathin";
     cell.descriptionLabel.text =  @"Cảm giác thật";
+    cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ico_accessory_view.png"]];
+
     
     return cell;
 }
