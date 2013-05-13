@@ -34,25 +34,27 @@
     self.descriptionLabel.text = @"Cảm giác thật";
     self.titleLabel.text = @"Nổi bật";
     self.contentTextView.text = @"Những người từng sử dụng True-X Ultra Thin cho biết, có đôi lúc, họ phải dừng lại kiểm tra xem mình có thật sự đang mang bao cao su không, bởi cảm giác đó quá chân thật. Và việc ngưng đột ngột ấy, giúp bạn lấy lại được bình tĩnh, kéo dài “hiệp đấu” và nàng thì phát điên vì bạn. Những người từng sử dụng True-X Ultra Thin cho biết, có đôi lúc, họ phải dừng lại kiểm tra xem mình có thật sự đang mang bao cao su không, bởi cảm giác đó quá chân thật. Và việc ngưng đột ngột ấy, giúp bạn lấy lại được bình tĩnh, kéo dài “hiệp đấu” và nàng thì phát điên vì bạn. Những người từng sử dụng True-X Ultra Thin cho biết, có đôi lúc, họ phải dừng lại kiểm tra xem mình có thật sự đang mang bao cao su không, bởi cảm giác đó quá chân thật. Và việc ngưng đột ngột ấy, giúp bạn lấy lại được bình tĩnh, kéo dài “hiệp đấu” và nàng thì phát điên vì bạn. Những người từng sử dụng True-X Ultra Thin cho biết, có đôi lúc, họ phải dừng lại kiểm tra xem mình có thật sự đang mang bao cao su không, bởi cảm giác đó quá chân thật. Và việc ngưng đột ngột ấy, giúp bạn lấy lại được bình tĩnh, kéo dài “hiệp đấu” và nàng thì phát điên vì bạn. Những người từng sử dụng True-X Ultra Thin cho biết, có đôi lúc, họ phải dừng lại kiểm tra xem mình có thật sự đang mang bao cao su không, bởi cảm giác đó quá chân thật. Và việc ngưng đột ngột ấy, giúp bạn lấy lại được bình tĩnh, kéo dài “hiệp đấu” và nàng thì phát điên vì bạn.";
+}
 
+- (void)viewWillAppear:(BOOL)animated
+{
 }
 
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    [self.mainScrollView setContentSize:CGSizeMake(self.mainScrollView.frame.size.width, 748)];
-    
-//    CGRect rect      = self.contentTextView.frame;
-//    rect.size.height = self.contentTextView.contentSize.height;
-//    self.contentTextView.frame   = rect;
-//    
-//    [self.mainScrollView setContentSize:CGSizeMake(self.mainScrollView.frame.size.width, self.contentTextView.frame.origin.y + rect.size.height)];
+//    [self.mainScrollView setContentSize:CGSizeMake(self.mainScrollView.frame.size.width, 748)];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose ;of any resources that can be recreated.
+//    CGRect frame = self.contentTextView.frame;
+//    frame.size.height = self.contentTextView.contentSize.height;
+//    self.contentTextView.frame = frame;
+//    
+//    [self.mainScrollView setContentSize:CGSizeMake(self.mainScrollView.frame.size.width, frame.origin.y + frame.size.height)];
 }
 
 @end

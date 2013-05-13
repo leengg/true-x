@@ -11,7 +11,6 @@
 @interface ProductDetailViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
-@property (weak, nonatomic) IBOutlet UIView *contentView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *pageBGImageView;
 @property (weak, nonatomic) IBOutlet UILabel *pageLabel;
@@ -23,7 +22,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
-@property (weak, nonatomic) IBOutlet UIView *contentBGView;
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;
 
 @end
