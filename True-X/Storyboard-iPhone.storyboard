@@ -348,6 +348,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_listProducts.png" translatesAutoresizingMaskIntoConstraints="NO" id="izf-hS-AIZ"/>
                             <containerView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="gdJ-yD-fuf">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" type="user" id="o3w-C5-hMd"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="x1z-f2-DQV" kind="embed" identifier="CustomSegmentViewControllerID" id="va7-dh-WjI"/>
                                 </connections>
@@ -361,15 +364,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="LXU-Kt-jg2" firstAttribute="bottom" secondItem="1t6-lP-Kj5" secondAttribute="bottom" type="default" id="Cbq-wq-AhW"/>
                             <constraint firstItem="gdJ-yD-fuf" firstAttribute="trailing" secondItem="1t6-lP-Kj5" secondAttribute="trailing" type="default" id="Cft-IH-WeR"/>
-                            <constraint firstItem="LXU-Kt-jg2" firstAttribute="top" secondItem="1t6-lP-Kj5" secondAttribute="top" constant="45" id="Cm8-ml-RTy"/>
                             <constraint firstItem="izf-hS-AIZ" firstAttribute="top" secondItem="1t6-lP-Kj5" secondAttribute="top" type="default" id="FJc-KG-Yhg"/>
-                            <constraint firstItem="gdJ-yD-fuf" firstAttribute="top" secondItem="1t6-lP-Kj5" secondAttribute="top" type="default" id="LTn-hz-3fY"/>
+                            <constraint firstItem="gdJ-yD-fuf" firstAttribute="top" secondItem="1t6-lP-Kj5" secondAttribute="top" type="user" id="LTn-hz-3fY"/>
                             <constraint firstItem="izf-hS-AIZ" firstAttribute="leading" secondItem="1t6-lP-Kj5" secondAttribute="leading" type="default" id="a38-L9-CAl"/>
                             <constraint firstItem="LXU-Kt-jg2" firstAttribute="trailing" secondItem="1t6-lP-Kj5" secondAttribute="trailing" type="default" id="b0R-zz-zRi"/>
-                            <constraint firstAttribute="bottom" secondItem="gdJ-yD-fuf" secondAttribute="bottom" constant="410" id="b52-Za-8bY"/>
+                            <constraint firstItem="LXU-Kt-jg2" firstAttribute="top" secondItem="1t6-lP-Kj5" secondAttribute="top" constant="38" id="cDr-dY-UEc"/>
                             <constraint firstItem="izf-hS-AIZ" firstAttribute="trailing" secondItem="1t6-lP-Kj5" secondAttribute="trailing" type="default" id="e8G-eI-Spn"/>
+                            <constraint firstItem="LXU-Kt-jg2" firstAttribute="bottom" secondItem="1t6-lP-Kj5" secondAttribute="bottom" type="default" id="iXv-zY-OUJ"/>
                             <constraint firstItem="gdJ-yD-fuf" firstAttribute="leading" secondItem="1t6-lP-Kj5" secondAttribute="leading" type="default" id="kRP-d5-nmK"/>
                             <constraint firstItem="izf-hS-AIZ" firstAttribute="bottom" secondItem="1t6-lP-Kj5" secondAttribute="bottom" type="default" id="r9H-Oy-gxl"/>
                             <constraint firstItem="LXU-Kt-jg2" firstAttribute="leading" secondItem="1t6-lP-Kj5" secondAttribute="leading" type="default" id="wpe-Zi-yY4"/>
@@ -408,24 +410,15 @@
             <objects>
                 <viewController id="x1z-f2-DQV" customClass="CustomSegmentViewController" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="oYy-vl-xsK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7Ef-Tm-UFD">
-                                <segments>
-                                    <segment title="Phong độ"/>
-                                    <segment title="Đẳng cấp"/>
-                                    <segment title="Chuyện bên lề"/>
-                                    <segment title="Tư vấn"/>
-                                </segments>
-                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                            </segmentedControl>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="menu_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="vn5-LR-96l"/>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7Ef-Tm-UFD" firstAttribute="trailing" secondItem="oYy-vl-xsK" secondAttribute="trailing" type="default" id="0j8-N9-1GW"/>
-                            <constraint firstItem="7Ef-Tm-UFD" firstAttribute="leading" secondItem="oYy-vl-xsK" secondAttribute="leading" type="default" id="G56-bp-HRb"/>
-                            <constraint firstItem="7Ef-Tm-UFD" firstAttribute="top" secondItem="oYy-vl-xsK" secondAttribute="top" constant="-1" id="hCf-HZ-1g4"/>
+                            <constraint firstItem="vn5-LR-96l" firstAttribute="top" secondItem="oYy-vl-xsK" secondAttribute="top" type="default" id="HZ0-R7-1B3"/>
+                            <constraint firstItem="vn5-LR-96l" firstAttribute="leading" secondItem="oYy-vl-xsK" secondAttribute="leading" type="default" id="pGH-Z6-XAa"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -439,7 +432,7 @@
             <objects>
                 <viewController id="rS4-ef-sdJ" customClass="ListArticlesViewController" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="D9J-Mc-MAQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="410"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="417"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lQb-QZ-ORb">
@@ -553,6 +546,7 @@
         <image name="ico_bosuutap.png" width="30" height="23"/>
         <image name="ico_phone.png" width="30" height="21"/>
         <image name="ico_tinhyeugioitinh.png" width="24" height="30"/>
+        <image name="menu_1.png" width="320" height="37"/>
         <image name="ultrathin.png" width="240" height="260"/>
     </resources>
     <classes>
