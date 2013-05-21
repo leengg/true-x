@@ -61,6 +61,7 @@
     cell.titleLabel.text = @"Ultrathin";
     cell.descriptionLabel.text =  @"Cảm giác thật";
     cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ico_accessory_view.png"]];
+    cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_cell_selected.png"]];
 
     
     return cell;

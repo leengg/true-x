@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProductDetailPageViewController.h"
 
-@interface ProductDetailViewController : UIViewController
+@interface ProductDetailViewController : UIViewController <ProductDetailPageDelegate>
 
 - (IBAction)swipeLeft:(id)sender;
 - (IBAction)swipeRight:(id)sender;

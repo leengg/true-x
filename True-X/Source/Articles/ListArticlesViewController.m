@@ -8,7 +8,6 @@
 
 #import "ListArticlesViewController.h"
 #import "ArticleCell.h"
-#import "ArticleDetailViewController.h"
 
 @interface ListArticlesViewController ()
 
@@ -29,6 +28,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    if( !IS_IPHONE_5 )
+    {
+        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 38 - 20, self.view.frame.size.width, 460 - 38);
+    }
+    else
+    {
+        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 38 - 20, self.view.frame.size.width, 548 - 38);
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,7 +66,9 @@
     // Configure the cell...
     cell.titleTextView.text = @"Những vết cắn nhẹ nhàng, âu yếm của chàng vào dái tai, cổ, đùi trong, ngực… nếu áp dụng tốt sẽ dễ dàng giúp nàng ngây ngất.";
     cell.thumbnailImageView.image = [UIImage imageNamed:@"photo.png"];
-    
+    cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ico_accessory_view.png"]];
+    cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_cell_selected.png"]];
+
     return cell;
 }
 
@@ -107,11 +116,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard-iPhone" bundle:nil];
-    ArticleDetailViewController *detailViewController = [storyboard instantiateViewControllerWithIdentifier:@"ArticleDetailViewControllerID"];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
+    if ([self.delegate respondsToSelector:@selector(didSelectListArticles:atIndexPath:)]) {
+        [self.delegate didSelectListArticles:self atIndexPath:indexPath];
+    }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

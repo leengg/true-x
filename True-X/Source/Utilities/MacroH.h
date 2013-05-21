@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Dao Nguyen. All rights reserved.
 //
 
+#import "Constant.h"
+
 #ifndef True_X_MacroH_h
 #define True_X_MacroH_h
 

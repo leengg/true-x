@@ -9,8 +9,13 @@
 #import "HomeArticlesViewController.h"
 #import "Articles.h"
 #import "ArticlesCategories.h"
+#import "ArticleDetailViewController.h"
 
-@interface HomeArticlesViewController ()
+@interface HomeArticlesViewController () {
+    
+    CustomSegmentViewController *customSegmentVC;
+    ListArticlesViewController *listArticlesVC;
+}
 
 @end
 
@@ -29,6 +34,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    customSegmentVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CustomSegmentViewControllerID"];
+    customSegmentVC.delegate = self;
+    [self.view addSubview:customSegmentVC.view];
+    
+    listArticlesVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ListArticlesViewControllerID"];
+    listArticlesVC.delegate = self;
+    [self.view addSubview:listArticlesVC.view];
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,11 +49,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{    
-    if ([segue.identifier isEqualToString:@"CustomSegmentViewControllerID"]) {
-        
-    }
+#pragma mark - CustomSegmentDelegate
+
+- (void)customSegment:(CustomSegmentViewController *)customSegmentVC didSelectIndex:(int)index {
+    
+}
+
+#pragma mark - ListArticlesDelegate
+
+- (void)didSelectListArticles:(ListArticlesViewController *)listArticlesVC atIndexPath:(NSIndexPath *)index {
+
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard-iPhone" bundle:nil];
+    ArticleDetailViewController *detailViewController = [storyboard instantiateViewControllerWithIdentifier:@"ArticleDetailViewControllerID"];
+    // ...
+    // Pass the selected object to the new view controller.
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 @end

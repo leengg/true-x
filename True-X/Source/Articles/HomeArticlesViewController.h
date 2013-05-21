@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomSegmentViewController.h"
+#import "ListArticlesViewController.h"
 
-@interface HomeArticlesViewController : UIViewController
+@interface HomeArticlesViewController : UIViewController <CustomSegmentDelegate, ListArticlesSelectedDelegate>
 
 @end

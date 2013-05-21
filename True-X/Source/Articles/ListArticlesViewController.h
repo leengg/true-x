@@ -8,8 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@class ListArticlesViewController;
+
+@protocol ListArticlesSelectedDelegate <NSObject>
+
+@required
+- (void)didSelectListArticles:(ListArticlesViewController *)listArticlesVC atIndexPath:(NSIndexPath *)index;
+
+@end
+
 @interface ListArticlesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *listArticlesTableView;
+@property (nonatomic, weak) id<ListArticlesSelectedDelegate> delegate;
 
 @end

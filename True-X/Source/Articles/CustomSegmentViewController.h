@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@class CustomSegmentViewController;
+
+@protocol CustomSegmentDelegate <NSObject>
+
+@required
+- (void)customSegment:(CustomSegmentViewController *)customSegmentVC didSelectIndex:(int)index;
+
+@end
+
+
 @interface CustomSegmentViewController : UIViewController
+
+@property (nonatomic, weak) id <CustomSegmentDelegate> delegate;
 
 @end

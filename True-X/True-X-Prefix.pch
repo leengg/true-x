@@ -16,5 +16,6 @@
     #import <CoreData/CoreData.h>
     #import "CoreData+MagicalRecord.h"
     #include "MacroH.h"
+    #include "Constant.h"
 
 #endif

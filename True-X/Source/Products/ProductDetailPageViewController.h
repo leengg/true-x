@@ -2,26 +2,31 @@
 //  ProductDetailPageViewController.h
 //  True-X
 //
-//  Created by Dao Nguyen on 5/12/13.
+//  Created by InfoNam on 5/15/13.
 //  Copyright (c) 2013 Dao Nguyen. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
+@class ProductDetailPageViewController;
+
+@protocol ProductDetailPageDelegate <NSObject>
+
+@required
+- (void)didChangePage:(ProductDetailPageViewController *)productDetailPageVC withDirection:(PagingDirection)direction;
+
+@end
+
 @interface ProductDetailPageViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
+@property (strong, nonatomic) IBOutlet UIScrollView *mainScrollView;
+@property (strong, nonatomic) IBOutlet UILabel *pageLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *productImageView;
+@property (strong, nonatomic) IBOutlet UILabel *productNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *productFeelingLabel;
+@property (strong, nonatomic) IBOutlet UITextView *productDescriptionTextView;
 
-@property (weak, nonatomic) IBOutlet UIImageView *pageBGImageView;
-@property (weak, nonatomic) IBOutlet UILabel *pageLabel;
-
-@property (weak, nonatomic) IBOutlet UIImageView *productImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *nameBGImageView;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-
-@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-
-@property (weak, nonatomic) IBOutlet UITextView *contentTextView;
+@property (nonatomic, weak) id <ProductDetailPageDelegate> delegate;
+@property int currentPage;
 
 @end
