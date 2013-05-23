@@ -32,11 +32,11 @@
 	// Do any additional setup after loading the view.
     if( !IS_IPHONE_5 )
     {
-        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
+        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, 480);
     }
     else
     {
-        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
+        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, 568);
     }
     self.pageLabel.text = [NSString stringWithFormat:@"%d of 4", self.currentPage];
     self.productImageView.image = [UIImage imageNamed:@"ultrathin.png"];
@@ -46,19 +46,9 @@
     
     CGRect frame = self.productDescriptionTextView.frame;
     frame.size.height = self.productDescriptionTextView.contentSize.height + 20;
-    NSLog(@"TextView's Frame: %f, %f %f %f", frame.origin.x, frame.origin.y, frame.size.width, frame.size.height);
     self.productDescriptionTextView.frame = frame;
     
-    CGSize size = self.mainScrollView.contentSize;
-    frame = self.mainScrollView.frame;
-    NSLog(@"ScrollView's contentSize: %f, %f", size.width, size.height);
-    NSLog(@"ScrollView's frame: %f, %f %f %f", frame.origin.x, frame.origin.y, frame.size.width, frame.size.height);
-
     [self.mainScrollView setContentSize:CGSizeMake(self.mainScrollView.frame.size.width, self.productDescriptionTextView.frame.origin.y + self.productDescriptionTextView.frame.size.height)];
-    size = self.mainScrollView.contentSize;
-    frame = self.mainScrollView.frame;
-    NSLog(@"ScrollView's contentSize: %f, %f", size.width, size.height);
-    NSLog(@"ScrollView's frame: %f, %f %f %f", frame.origin.x, frame.origin.y, frame.size.width, frame.size.height);
 
     if (self.currentPage == FirstPage) {
         self.leftBtn.enabled = NO;

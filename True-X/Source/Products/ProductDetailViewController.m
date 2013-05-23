@@ -34,7 +34,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.currentPage = FirstPage;
-    self.currentProductDetailPageVC = [[ProductDetailPageViewController alloc] initWithNibName:@"ProductDetailPage" bundle:nil];
+    self.currentProductDetailPageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductDetailPageViewControllerID"];
+
     self.currentProductDetailPageVC.delegate = self;
     self.currentProductDetailPageVC.currentPage = self.currentPage;
     [self.view addSubview:self.currentProductDetailPageVC.view];
@@ -91,7 +92,7 @@
     
     self.currentPage++;
     self.previewProductDetailPageVC = self.currentProductDetailPageVC;
-    self.currentProductDetailPageVC = [[ProductDetailPageViewController alloc] initWithNibName:@"ProductDetailPage" bundle:nil];
+    self.currentProductDetailPageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductDetailPageViewControllerID"];
     self.currentProductDetailPageVC.delegate = self;
     self.currentProductDetailPageVC.currentPage = self.currentPage;
     
@@ -108,7 +109,7 @@
     
     self.currentPage--;
     self.nextProductDetailPageVC = self.currentProductDetailPageVC;
-    self.currentProductDetailPageVC = [[ProductDetailPageViewController alloc] initWithNibName:@"ProductDetailPage" bundle:nil];
+    self.currentProductDetailPageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductDetailPageViewControllerID"];
     self.currentProductDetailPageVC.delegate = self;
     self.currentProductDetailPageVC.currentPage = self.currentPage;
     

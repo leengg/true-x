@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		692F9B2B17420D5A00E41FDF /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692F9B2A17420D5A00E41FDF /* ProductDetailViewController.m */; };
-		692F9B2D17423DB100E41FDF /* ProductDetailPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 692F9B2C17423DB100E41FDF /* ProductDetailPage.xib */; };
 		692F9B3017432D5500E41FDF /* ProductDetailPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692F9B2F17432D5500E41FDF /* ProductDetailPageViewController.m */; };
 		694F8E0517409E8E00C061C5 /* bg_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 694F8DF217409E8E00C061C5 /* bg_back.png */; };
 		694F8E0617409E8E00C061C5 /* bg_ellipse.png in Resources */ = {isa = PBXBuildFile; fileRef = 694F8DF317409E8E00C061C5 /* bg_ellipse.png */; };
@@ -105,7 +104,6 @@
 /* Begin PBXFileReference section */
 		692F9B2917420D5A00E41FDF /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewController.h; sourceTree = "<group>"; };
 		692F9B2A17420D5A00E41FDF /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
-		692F9B2C17423DB100E41FDF /* ProductDetailPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetailPage.xib; sourceTree = "<group>"; };
 		692F9B2E17432D5500E41FDF /* ProductDetailPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailPageViewController.h; sourceTree = "<group>"; };
 		692F9B2F17432D5500E41FDF /* ProductDetailPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailPageViewController.m; sourceTree = "<group>"; };
 		692F9B34174385A100E41FDF /* MacroH.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroH.h; sourceTree = "<group>"; };
@@ -357,7 +355,6 @@
 				DE0D4EB7173FC7F0007F2E97 /* ProductCell.m */,
 				692F9B2917420D5A00E41FDF /* ProductDetailViewController.h */,
 				692F9B2A17420D5A00E41FDF /* ProductDetailViewController.m */,
-				692F9B2C17423DB100E41FDF /* ProductDetailPage.xib */,
 				692F9B2E17432D5500E41FDF /* ProductDetailPageViewController.h */,
 				692F9B2F17432D5500E41FDF /* ProductDetailPageViewController.m */,
 			);
@@ -644,7 +641,6 @@
 				694F8E261740C81B00C061C5 /* ico_accessory_view@2x.png in Resources */,
 				694F8E2C1740DB5500C061C5 /* bg_product_detail@2x.png in Resources */,
 				694F8E2E1740DCE800C061C5 /* ico_bosuutap@2x.png in Resources */,
-				692F9B2D17423DB100E41FDF /* ProductDetailPage.xib in Resources */,
 				DE726927174B604D00376E0E /* bg_menu.png in Resources */,
 				DE726928174B604D00376E0E /* bg_menu@2x.png in Resources */,
 				DE726929174B604D00376E0E /* bt_chuyenbenle_selected.png in Resources */,
@@ -788,11 +784,15 @@
 		DE07CE79173D25F40022440A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SmartEbook.com Co.,Ltd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SmartEbook.com Co.,Ltd";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "True-X/True-X-Prefix.pch";
 				INFOPLIST_FILE = "True-X/True-X-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "C5741783-D860-4BBC-A29C-18F2E4D48EB7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C5741783-D860-4BBC-A29C-18F2E4D48EB7";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -801,11 +801,15 @@
 		DE07CE7A173D25F40022440A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SmartEbook.com Co.,Ltd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SmartEbook.com Co.,Ltd";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "True-X/True-X-Prefix.pch";
 				INFOPLIST_FILE = "True-X/True-X-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "C5741783-D860-4BBC-A29C-18F2E4D48EB7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C5741783-D860-4BBC-A29C-18F2E4D48EB7";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
