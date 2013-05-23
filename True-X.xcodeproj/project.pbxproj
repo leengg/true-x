@@ -44,6 +44,7 @@
 		DE04014B174E6C1A00660B3E /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DE04013F174E6C1A00660B3E /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE04014C174E6C1A00660B3E /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DE040141174E6C1A00660B3E /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE04014D174E6C1A00660B3E /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = DE040143174E6C1A00660B3E /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DE0401A5174E708200660B3E /* TrueXAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0401A4174E708200660B3E /* TrueXAPIClient.m */; };
 		DE07CE5A173D25F30022440A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE07CE59173D25F30022440A /* UIKit.framework */; };
 		DE07CE5C173D25F30022440A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE07CE5B173D25F30022440A /* Foundation.framework */; };
 		DE07CE5E173D25F30022440A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE07CE5D173D25F30022440A /* CoreGraphics.framework */; };
@@ -162,6 +163,8 @@
 		DE040141174E6C1A00660B3E /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		DE040142174E6C1A00660B3E /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		DE040143174E6C1A00660B3E /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		DE0401A3174E708200660B3E /* TrueXAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrueXAPIClient.h; sourceTree = "<group>"; };
+		DE0401A4174E708200660B3E /* TrueXAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrueXAPIClient.m; sourceTree = "<group>"; };
 		DE07CE55173D25F30022440A /* True-X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "True-X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE07CE59173D25F30022440A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DE07CE5B173D25F30022440A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -325,6 +328,8 @@
 		DE04014E174E6D4600660B3E /* APIClient */ = {
 			isa = PBXGroup;
 			children = (
+				DE0401A3174E708200660B3E /* TrueXAPIClient.h */,
+				DE0401A4174E708200660B3E /* TrueXAPIClient.m */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -764,6 +769,7 @@
 				DE04014B174E6C1A00660B3E /* AFURLConnectionOperation.m in Sources */,
 				DE04014C174E6C1A00660B3E /* AFXMLRequestOperation.m in Sources */,
 				DE04014D174E6C1A00660B3E /* UIImageView+AFNetworking.m in Sources */,
+				DE0401A5174E708200660B3E /* TrueXAPIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
