@@ -214,7 +214,6 @@
 								<string key="NSFrame">{{60, 355}, {200, 25}}</string>
 								<reference key="NSSuperview" ref="507651675"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -600,20 +599,6 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">ProductDetailPageViewController</string>
 					<string key="superclassName">UIViewController</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="clickNext:">id</string>
-						<string key="clickPreview:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="clickNext:">
-							<string key="name">clickNext:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="clickPreview:">
-							<string key="name">clickPreview:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="leftBtn">UIButton</string>
 						<string key="mainScrollView">UIScrollView</string>
