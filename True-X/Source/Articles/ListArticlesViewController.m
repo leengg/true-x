@@ -30,11 +30,11 @@
 	// Do any additional setup after loading the view.
     if( !IS_IPHONE_5 )
     {
-        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 38 - 20, self.view.frame.size.width, 460 - 38);
+        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 38, self.view.frame.size.width, self.view.frame.size.height - 38);
     }
     else
     {
-        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 38 - 20, self.view.frame.size.width, 548 - 38);
+        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 38, self.view.frame.size.width, self.view.frame.size.height - 38);
     }
 }
 
@@ -61,7 +61,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ArticleCellID";
-    ArticleCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    ArticleCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
     cell.titleTextView.text = @"Những vết cắn nhẹ nhàng, âu yếm của chàng vào dái tai, cổ, đùi trong, ngực… nếu áp dụng tốt sẽ dễ dàng giúp nàng ngây ngất.";

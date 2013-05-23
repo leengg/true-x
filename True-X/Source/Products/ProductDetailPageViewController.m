@@ -32,11 +32,11 @@
 	// Do any additional setup after loading the view.
     if( !IS_IPHONE_5 )
     {
-        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, 460);
+        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
     }
     else
     {
-        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, 548);
+        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
     }
     self.pageLabel.text = [NSString stringWithFormat:@"%d of 4", self.currentPage];
     self.productImageView.image = [UIImage imageNamed:@"ultrathin.png"];

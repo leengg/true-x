@@ -35,7 +35,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y - 20, self.view.frame.size.width, self.view.frame.size.height);
+    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
     [btn_PhongDo setImage:[UIImage imageNamed:@"bt_phongdo_selected.png"] forState:UIControlStateNormal];
     currentButton = btn_PhongDo;
     [self.delegate customSegment:self didSelectIndex:0];
