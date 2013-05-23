@@ -51,8 +51,6 @@
 		DE0D4EB8173FC7F0007F2E97 /* ProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0D4EB7173FC7F0007F2E97 /* ProductCell.m */; };
 		DE0D4EBD173FEF2D007F2E97 /* ultrathin.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0D4EBC173FEF2D007F2E97 /* ultrathin.png */; };
 		DE1D414B173E55AE00B51237 /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1D414A173E55AE00B51237 /* photo.png */; };
-		DE1D4159173E752A00B51237 /* SVSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1D4156173E752A00B51237 /* SVSegmentedControl.m */; };
-		DE1D415A173E752A00B51237 /* SVSegmentedThumb.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1D4158173E752A00B51237 /* SVSegmentedThumb.m */; };
 		DE1DFF35173FA62D008CEF0E /* ArticleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1DFF34173FA62D008CEF0E /* ArticleDetailViewController.m */; };
 		DE726927174B604D00376E0E /* bg_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = DE72691D174B604D00376E0E /* bg_menu.png */; };
 		DE726928174B604D00376E0E /* bg_menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE72691E174B604D00376E0E /* bg_menu@2x.png */; };
@@ -156,10 +154,6 @@
 		DE0D4EB7173FC7F0007F2E97 /* ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCell.m; sourceTree = "<group>"; };
 		DE0D4EBC173FEF2D007F2E97 /* ultrathin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ultrathin.png; sourceTree = "<group>"; };
 		DE1D414A173E55AE00B51237 /* photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo.png; sourceTree = "<group>"; };
-		DE1D4155173E752A00B51237 /* SVSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVSegmentedControl.h; sourceTree = "<group>"; };
-		DE1D4156173E752A00B51237 /* SVSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVSegmentedControl.m; sourceTree = "<group>"; };
-		DE1D4157173E752A00B51237 /* SVSegmentedThumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVSegmentedThumb.h; sourceTree = "<group>"; };
-		DE1D4158173E752A00B51237 /* SVSegmentedThumb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVSegmentedThumb.m; sourceTree = "<group>"; };
 		DE1DFF33173FA62D008CEF0E /* ArticleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleDetailViewController.h; sourceTree = "<group>"; };
 		DE1DFF34173FA62D008CEF0E /* ArticleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleDetailViewController.m; sourceTree = "<group>"; };
 		DE72691D174B604D00376E0E /* bg_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_menu.png; sourceTree = "<group>"; };
@@ -406,21 +400,9 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
-		DE1D4154173E752A00B51237 /* SVSegmentedControl */ = {
-			isa = PBXGroup;
-			children = (
-				DE1D4155173E752A00B51237 /* SVSegmentedControl.h */,
-				DE1D4156173E752A00B51237 /* SVSegmentedControl.m */,
-				DE1D4157173E752A00B51237 /* SVSegmentedThumb.h */,
-				DE1D4158173E752A00B51237 /* SVSegmentedThumb.m */,
-			);
-			path = SVSegmentedControl;
-			sourceTree = "<group>";
-		};
 		DEDCF73E173D6FD60066355D /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
-				DE1D4154173E752A00B51237 /* SVSegmentedControl */,
 				DEDCF73F173D6FD60066355D /* MagicalRecord */,
 			);
 			path = ThirdParty;
@@ -699,8 +681,6 @@
 				DEDCF7AC173E18D70066355D /* CustomSegmentViewController.m in Sources */,
 				DEDCF7B9173E45000066355D /* ListArticlesViewController.m in Sources */,
 				DEDCF7BC173E49090066355D /* ArticleCell.m in Sources */,
-				DE1D4159173E752A00B51237 /* SVSegmentedControl.m in Sources */,
-				DE1D415A173E752A00B51237 /* SVSegmentedThumb.m in Sources */,
 				DE1DFF35173FA62D008CEF0E /* ArticleDetailViewController.m in Sources */,
 				DE0D4EB2173FC761007F2E97 /* HomeProductsViewController.m in Sources */,
 				DE0D4EB8173FC7F0007F2E97 /* ProductCell.m in Sources */,
