@@ -45,6 +45,7 @@
 		DE04014C174E6C1A00660B3E /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DE040141174E6C1A00660B3E /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE04014D174E6C1A00660B3E /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = DE040143174E6C1A00660B3E /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE0401A5174E708200660B3E /* TrueXAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0401A4174E708200660B3E /* TrueXAPIClient.m */; };
+		DE0401A8174E75B200660B3E /* ArticlesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0401A7174E75B200660B3E /* ArticlesModel.m */; };
 		DE07CE5A173D25F30022440A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE07CE59173D25F30022440A /* UIKit.framework */; };
 		DE07CE5C173D25F30022440A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE07CE5B173D25F30022440A /* Foundation.framework */; };
 		DE07CE5E173D25F30022440A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE07CE5D173D25F30022440A /* CoreGraphics.framework */; };
@@ -104,7 +105,6 @@
 		DEDCF79A173D71740066355D /* Articles.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF797173D71740066355D /* Articles.m */; };
 		DEDCF79B173D71740066355D /* ArticlesCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF799173D71740066355D /* ArticlesCategories.m */; };
 		DEDCF79F173D72140066355D /* HomeArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF79E173D72140066355D /* HomeArticlesViewController.m */; };
-		DEDCF7A8173DF5780066355D /* ArticlesModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF7A7173DF5780066355D /* ArticlesModelController.m */; };
 		DEDCF7AC173E18D70066355D /* CustomSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF7AB173E18D70066355D /* CustomSegmentViewController.m */; };
 		DEDCF7B9173E45000066355D /* ListArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF7B8173E44FF0066355D /* ListArticlesViewController.m */; };
 		DEDCF7BC173E49090066355D /* ArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF7BB173E49080066355D /* ArticleCell.m */; };
@@ -165,6 +165,8 @@
 		DE040143174E6C1A00660B3E /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		DE0401A3174E708200660B3E /* TrueXAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrueXAPIClient.h; sourceTree = "<group>"; };
 		DE0401A4174E708200660B3E /* TrueXAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrueXAPIClient.m; sourceTree = "<group>"; };
+		DE0401A6174E75B200660B3E /* ArticlesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlesModel.h; sourceTree = "<group>"; };
+		DE0401A7174E75B200660B3E /* ArticlesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlesModel.m; sourceTree = "<group>"; };
 		DE07CE55173D25F30022440A /* True-X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "True-X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE07CE59173D25F30022440A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DE07CE5B173D25F30022440A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -262,8 +264,6 @@
 		DEDCF799173D71740066355D /* ArticlesCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlesCategories.m; sourceTree = "<group>"; };
 		DEDCF79D173D72140066355D /* HomeArticlesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeArticlesViewController.h; sourceTree = "<group>"; };
 		DEDCF79E173D72140066355D /* HomeArticlesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeArticlesViewController.m; sourceTree = "<group>"; };
-		DEDCF7A6173DF5780066355D /* ArticlesModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlesModelController.h; sourceTree = "<group>"; };
-		DEDCF7A7173DF5780066355D /* ArticlesModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlesModelController.m; sourceTree = "<group>"; };
 		DEDCF7AA173E18D70066355D /* CustomSegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegmentViewController.h; sourceTree = "<group>"; };
 		DEDCF7AB173E18D70066355D /* CustomSegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSegmentViewController.m; sourceTree = "<group>"; };
 		DEDCF7B7173E44FE0066355D /* ListArticlesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListArticlesViewController.h; sourceTree = "<group>"; };
@@ -607,8 +607,8 @@
 				DEDCF797173D71740066355D /* Articles.m */,
 				DEDCF798173D71740066355D /* ArticlesCategories.h */,
 				DEDCF799173D71740066355D /* ArticlesCategories.m */,
-				DEDCF7A6173DF5780066355D /* ArticlesModelController.h */,
-				DEDCF7A7173DF5780066355D /* ArticlesModelController.m */,
+				DE0401A6174E75B200660B3E /* ArticlesModel.h */,
+				DE0401A7174E75B200660B3E /* ArticlesModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -750,7 +750,6 @@
 				DEDCF79A173D71740066355D /* Articles.m in Sources */,
 				DEDCF79B173D71740066355D /* ArticlesCategories.m in Sources */,
 				DEDCF79F173D72140066355D /* HomeArticlesViewController.m in Sources */,
-				DEDCF7A8173DF5780066355D /* ArticlesModelController.m in Sources */,
 				DEDCF7AC173E18D70066355D /* CustomSegmentViewController.m in Sources */,
 				DEDCF7B9173E45000066355D /* ListArticlesViewController.m in Sources */,
 				DEDCF7BC173E49090066355D /* ArticleCell.m in Sources */,
@@ -770,6 +769,7 @@
 				DE04014C174E6C1A00660B3E /* AFXMLRequestOperation.m in Sources */,
 				DE04014D174E6C1A00660B3E /* UIImageView+AFNetworking.m in Sources */,
 				DE0401A5174E708200660B3E /* TrueXAPIClient.m in Sources */,
+				DE0401A8174E75B200660B3E /* ArticlesModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
