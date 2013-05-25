@@ -7,6 +7,7 @@
 //
 
 #import "Constant.h"
+#import "TrueXLoading.h"
 
 #ifndef True_X_MacroH_h
 #define True_X_MacroH_h

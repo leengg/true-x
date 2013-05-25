@@ -38,6 +38,7 @@
     {
         self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, 568);
     }
+    NSLog(@"Ogrinal: %f, %f, %f, %f", self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
     self.pageLabel.text = [NSString stringWithFormat:@"%d of 4", self.currentPage];
     self.productImageView.image = [UIImage imageNamed:@"ultrathin.png"];
     self.productNameLabel.text = @"Ultrathin";

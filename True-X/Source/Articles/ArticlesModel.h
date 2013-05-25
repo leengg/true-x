@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TrueXAPIClient.h"
+#import "Articles.h"
+#import "ArticlesCategories.h"
 
 @interface ArticlesModel : NSObject
 
-@property (nonatomic, strong) NSString *currentCatoryID;
+@property (nonatomic) int currentCatoryID;
 @property (nonatomic) int currentPage;
 @property (nonatomic, strong) NSMutableArray *currentArticlesList;
 

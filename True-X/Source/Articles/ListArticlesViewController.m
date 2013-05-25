@@ -8,8 +8,12 @@
 
 #import "ListArticlesViewController.h"
 #import "ArticleCell.h"
+#import "UIImageView+AFNetworking.h"
 
-@interface ListArticlesViewController ()
+@interface ListArticlesViewController () {
+
+    BOOL loadingMoreFlag;
+}
 
 @end
 
@@ -36,6 +40,15 @@
     {
         self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 38, self.view.frame.size.width, self.view.frame.size.height - 38);
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadListArticles:) name:NOTIFICATION_ARTICLE_DID_FINISH_LOAD object:nil];
+
+}
+
+- (void)reloadListArticles:(NSNotification *)notification {
+    
+    [self.listArticlesTableView reloadData];
+    loadingMoreFlag = [notification.object boolValue];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,21 +68,36 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 10;
+    return [[[ArticlesModel shareArticlesModel] currentArticlesList] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ArticleCellID";
     ArticleCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
+
     // Configure the cell...
-    cell.titleTextView.text = @"Những vết cắn nhẹ nhàng, âu yếm của chàng vào dái tai, cổ, đùi trong, ngực… nếu áp dụng tốt sẽ dễ dàng giúp nàng ngây ngất.";
-    cell.thumbnailImageView.image = [UIImage imageNamed:@"photo.png"];
+    Articles *article = (Articles *)[[[ArticlesModel shareArticlesModel] currentArticlesList] objectAtIndex:indexPath.row];
+
+    cell.titleTextView.text = article.att2_title;
+    [cell.thumbnailImageView setImageWithURL:[NSURL URLWithString:article.att3_thumbnailURL] placeholderImage:[UIImage imageNamed:@"photo.png"]];
+    
     cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ico_accessory_view.png"]];
     cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_cell_selected.png"]];
 
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.row > kPageSize - 2 && indexPath.row == [ArticlesModel shareArticlesModel].currentArticlesList.count  - 1) {
+        
+        if (!loadingMoreFlag) {
+            loadingMoreFlag = YES;
+            int currentPage = [ArticlesModel shareArticlesModel].currentArticlesList.count / kPageSize;
+            [self.delegate didScrollToBottom:self atIndexPage:currentPage];
+        }
+    }
 }
 
 /*

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ArticlesModel.h"
 
 @class ListArticlesViewController;
 
@@ -14,6 +15,7 @@
 
 @required
 - (void)didSelectListArticles:(ListArticlesViewController *)listArticlesVC atIndexPath:(NSIndexPath *)index;
+- (void)didScrollToBottom:(ListArticlesViewController *)listArticlesVC atIndexPage:(int)index;
 
 @end
 

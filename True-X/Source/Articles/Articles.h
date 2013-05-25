@@ -23,4 +23,6 @@
 @property (nonatomic, retain) NSDate * att9_updatedDate;
 @property (nonatomic, retain) NSManagedObject *category;
 
+- (Articles *)setAttributes:(NSDictionary *)attributes;
+
 @end

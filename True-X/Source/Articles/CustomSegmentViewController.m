@@ -47,6 +47,26 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)selectIndex:(int)index {
+    
+    switch (index) {
+        case 0:
+            [self setActiveTab:btn_PhongDo];
+            break;
+        case 1:
+            [self setActiveTab:btn_DangCap];
+            break;
+        case 2:
+            [self setActiveTab:btn_ChuyenBenLe];
+            break;
+        case 3:
+            [self setActiveTab:btn_TuVan];
+            break;
+        default:
+            break;
+    }
+}
+
 - (IBAction)clickChangeTab:(id)sender {
     
     if (currentButton != sender) {

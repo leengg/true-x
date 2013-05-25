@@ -9,6 +9,13 @@
 #ifndef True_X_Constant_h
 #define True_X_Constant_h
 
+#define kCategoryID                 @"categoryID"
+#define kFromDate                   @"fromDate"
+#define kNumberOfArticles           @"numberOfArticles"
+#define kPageSize       30
+
+#define NOTIFICATION_ARTICLE_DID_FINISH_LOAD    @"1"
+
 typedef enum {
     FirstPage = 1,
     SecondPage =2,
@@ -21,6 +28,11 @@ typedef enum {
     PreviewPage =2
 }PagingDirection;
 
+typedef enum {
+    PhongDoID = 6,
+    DangCapID = 8,
+    ChuyenBenLeID = 9
+}CategoryID;
 
 
 #endif

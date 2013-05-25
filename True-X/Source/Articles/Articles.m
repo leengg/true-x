@@ -22,4 +22,21 @@
 @dynamic att9_updatedDate;
 @dynamic category;
 
+- (Articles *)setAttributes:(NSDictionary *)attributes {
+    
+    if (self) {
+        
+        self.att1_id = [attributes valueForKeyPath:@"id"];
+        self.att2_title = [attributes valueForKeyPath:@"title"];
+        self.att3_thumbnailURL = [attributes valueForKeyPath:@"thumbnailURL"];
+        self.att4_descriptionText = [attributes valueForKeyPath:@"description"];
+        self.att5_contentHTML = [attributes valueForKeyPath:@"contentHTML"];
+        self.att6_author = [attributes valueForKeyPath:@"author"];
+        self.att7_categoryID = [attributes valueForKeyPath:@"categoryID"];
+        //self.att8_createdDate = [attributes valueForKeyPath:@"createdDate"];
+        //self.att9_updatedDate = [attributes valueForKeyPath:@"ngay_cap_nhat"];
+    }
+    return self;
+}
+
 @end

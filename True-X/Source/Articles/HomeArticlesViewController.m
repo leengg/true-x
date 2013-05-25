@@ -41,6 +41,11 @@
     listArticlesVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ListArticlesViewControllerID"];
     listArticlesVC.delegate = self;
     [self.view addSubview:listArticlesVC.view];
+    
+    [customSegmentVC selectIndex:0];
+    [[ArticlesModel shareArticlesModel] setCurrentCatoryID:PhongDoID];
+    [[ArticlesModel shareArticlesModel] setCurrentPage:1];
+    [[ArticlesModel shareArticlesModel] getArticlesList];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,7 +57,28 @@
 #pragma mark - CustomSegmentDelegate
 
 - (void)customSegment:(CustomSegmentViewController *)customSegmentVC didSelectIndex:(int)index {
-    
+
+    switch (index) {
+        case 0:
+            [[ArticlesModel shareArticlesModel] setCurrentCatoryID:PhongDoID];
+            [[ArticlesModel shareArticlesModel] setCurrentPage:1];
+            [[ArticlesModel shareArticlesModel] getArticlesList];
+            break;
+        case 1:
+            [[ArticlesModel shareArticlesModel] setCurrentCatoryID:DangCapID];
+            [[ArticlesModel shareArticlesModel] setCurrentPage:1];
+            [[ArticlesModel shareArticlesModel] getArticlesList];
+            break;
+        case 2:
+            [[ArticlesModel shareArticlesModel] setCurrentCatoryID:ChuyenBenLeID];
+            [[ArticlesModel shareArticlesModel] setCurrentPage:1];
+            [[ArticlesModel shareArticlesModel] getArticlesList];
+            break;
+        case 3:
+            break;            
+        default:
+            break;
+    }
 }
 
 #pragma mark - ListArticlesDelegate
@@ -64,6 +90,13 @@
     // ...
     // Pass the selected object to the new view controller.
     [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
+- (void)didScrollToBottom:(ListArticlesViewController *)listArticlesVC atIndexPage:(int)index {
+
+    NSLog(@"Call %d", index);
+    [[ArticlesModel shareArticlesModel] setCurrentPage:index+1];
+    [[ArticlesModel shareArticlesModel] getArticlesList];
 }
 
 @end

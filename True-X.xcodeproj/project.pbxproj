@@ -108,6 +108,8 @@
 		DEDCF7AC173E18D70066355D /* CustomSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF7AB173E18D70066355D /* CustomSegmentViewController.m */; };
 		DEDCF7B9173E45000066355D /* ListArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF7B8173E44FF0066355D /* ListArticlesViewController.m */; };
 		DEDCF7BC173E49090066355D /* ArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF7BB173E49080066355D /* ArticleCell.m */; };
+		DEDF299C1750CC50001605BB /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDF299B1750CC50001605BB /* MBProgressHUD.m */; };
+		DEDF29A01750CE63001605BB /* TrueXLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDF299F1750CE63001605BB /* TrueXLoading.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -270,6 +272,10 @@
 		DEDCF7B8173E44FF0066355D /* ListArticlesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListArticlesViewController.m; sourceTree = "<group>"; };
 		DEDCF7BA173E49070066355D /* ArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCell.h; sourceTree = "<group>"; };
 		DEDCF7BB173E49080066355D /* ArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCell.m; sourceTree = "<group>"; };
+		DEDF299A1750CC50001605BB /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		DEDF299B1750CC50001605BB /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		DEDF299E1750CE62001605BB /* TrueXLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrueXLoading.h; sourceTree = "<group>"; };
+		DEDF299F1750CE63001605BB /* TrueXLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrueXLoading.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +299,8 @@
 			children = (
 				692F9B34174385A100E41FDF /* MacroH.h */,
 				DE040087174BC37F00660B3E /* Constant.h */,
+				DEDF299E1750CE62001605BB /* TrueXLoading.h */,
+				DEDF299F1750CE63001605BB /* TrueXLoading.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -475,6 +483,7 @@
 		DEDCF73E173D6FD60066355D /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				DEDF29991750CC50001605BB /* MBProgressHUD */,
 				DE04012E174E6C1A00660B3E /* AFNetworking */,
 				DEDCF73F173D6FD60066355D /* MagicalRecord */,
 			);
@@ -611,6 +620,15 @@
 				DE0401A7174E75B200660B3E /* ArticlesModel.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		DEDF29991750CC50001605BB /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				DEDF299A1750CC50001605BB /* MBProgressHUD.h */,
+				DEDF299B1750CC50001605BB /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -770,6 +788,8 @@
 				DE04014D174E6C1A00660B3E /* UIImageView+AFNetworking.m in Sources */,
 				DE0401A5174E708200660B3E /* TrueXAPIClient.m in Sources */,
 				DE0401A8174E75B200660B3E /* ArticlesModel.m in Sources */,
+				DEDF299C1750CC50001605BB /* MBProgressHUD.m in Sources */,
+				DEDF29A01750CE63001605BB /* TrueXLoading.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

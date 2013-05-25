@@ -38,6 +38,7 @@
 
     self.currentProductDetailPageVC.delegate = self;
     self.currentProductDetailPageVC.currentPage = self.currentPage;
+    NSLog(@"Ogrinal: %f, %f", self.view.frame.origin.x, self.view.frame.origin.y);
     [self.view addSubview:self.currentProductDetailPageVC.view];
 }
 
