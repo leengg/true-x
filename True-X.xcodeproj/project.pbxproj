@@ -103,7 +103,6 @@
 		DEDCF793173D6FD60066355D /* MagicalRecord+ShorthandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF776173D6FD60066355D /* MagicalRecord+ShorthandSupport.m */; };
 		DEDCF794173D6FD60066355D /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF778173D6FD60066355D /* MagicalRecord.m */; };
 		DEDCF79A173D71740066355D /* Articles.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF797173D71740066355D /* Articles.m */; };
-		DEDCF79B173D71740066355D /* ArticlesCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF799173D71740066355D /* ArticlesCategories.m */; };
 		DEDCF79F173D72140066355D /* HomeArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF79E173D72140066355D /* HomeArticlesViewController.m */; };
 		DEDCF7AC173E18D70066355D /* CustomSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF7AB173E18D70066355D /* CustomSegmentViewController.m */; };
 		DEDCF7B9173E45000066355D /* ListArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF7B8173E44FF0066355D /* ListArticlesViewController.m */; };
@@ -262,8 +261,6 @@
 		DEDCF77A173D6FD60066355D /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreData+MagicalRecord.h"; sourceTree = "<group>"; };
 		DEDCF796173D71740066355D /* Articles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Articles.h; sourceTree = "<group>"; };
 		DEDCF797173D71740066355D /* Articles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Articles.m; sourceTree = "<group>"; };
-		DEDCF798173D71740066355D /* ArticlesCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlesCategories.h; sourceTree = "<group>"; };
-		DEDCF799173D71740066355D /* ArticlesCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlesCategories.m; sourceTree = "<group>"; };
 		DEDCF79D173D72140066355D /* HomeArticlesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeArticlesViewController.h; sourceTree = "<group>"; };
 		DEDCF79E173D72140066355D /* HomeArticlesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeArticlesViewController.m; sourceTree = "<group>"; };
 		DEDCF7AA173E18D70066355D /* CustomSegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegmentViewController.h; sourceTree = "<group>"; };
@@ -614,8 +611,6 @@
 			children = (
 				DEDCF796173D71740066355D /* Articles.h */,
 				DEDCF797173D71740066355D /* Articles.m */,
-				DEDCF798173D71740066355D /* ArticlesCategories.h */,
-				DEDCF799173D71740066355D /* ArticlesCategories.m */,
 				DE0401A6174E75B200660B3E /* ArticlesModel.h */,
 				DE0401A7174E75B200660B3E /* ArticlesModel.m */,
 			);
@@ -766,7 +761,6 @@
 				DEDCF793173D6FD60066355D /* MagicalRecord+ShorthandSupport.m in Sources */,
 				DEDCF794173D6FD60066355D /* MagicalRecord.m in Sources */,
 				DEDCF79A173D71740066355D /* Articles.m in Sources */,
-				DEDCF79B173D71740066355D /* ArticlesCategories.m in Sources */,
 				DEDCF79F173D72140066355D /* HomeArticlesViewController.m in Sources */,
 				DEDCF7AC173E18D70066355D /* CustomSegmentViewController.m in Sources */,
 				DEDCF7B9173E45000066355D /* ListArticlesViewController.m in Sources */,

@@ -20,7 +20,6 @@
 @dynamic att7_categoryID;
 @dynamic att8_createdDate;
 @dynamic att9_updatedDate;
-@dynamic category;
 
 - (Articles *)setAttributes:(NSDictionary *)attributes {
     

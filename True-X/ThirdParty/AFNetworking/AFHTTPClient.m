@@ -553,6 +553,7 @@ static void AFReachabilityCallback(SCNetworkReachabilityRef __unused target, SCN
         failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
 {
 	NSURLRequest *request = [self requestWithMethod:@"GET" path:path parameters:parameters];
+    NSLog(@"AFNetworking Request: %@", [request description]);
     AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:success failure:failure];
     [self enqueueHTTPRequestOperation:operation];
 }

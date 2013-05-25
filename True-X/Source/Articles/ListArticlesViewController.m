@@ -12,7 +12,7 @@
 
 @interface ListArticlesViewController () {
 
-    BOOL loadingMoreFlag;
+    BOOL canLoadMore;
 }
 
 @end
@@ -48,7 +48,7 @@
 - (void)reloadListArticles:(NSNotification *)notification {
     
     [self.listArticlesTableView reloadData];
-    loadingMoreFlag = [notification.object boolValue];
+    canLoadMore = [notification.object boolValue];
 }
 
 - (void)didReceiveMemoryWarning
@@ -90,10 +90,11 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row > kPageSize - 2 && indexPath.row == [ArticlesModel shareArticlesModel].currentArticlesList.count  - 1) {
+    if (indexPath.row == [ArticlesModel shareArticlesModel].currentArticlesList.count  - 1
+        && indexPath.row == kPageSize * [ArticlesModel shareArticlesModel].currentPage - 1) {
         
-        if (!loadingMoreFlag) {
-            loadingMoreFlag = YES;
+        if (canLoadMore) {
+            canLoadMore = NO;
             int currentPage = [ArticlesModel shareArticlesModel].currentArticlesList.count / kPageSize;
             [self.delegate didScrollToBottom:self atIndexPage:currentPage];
         }

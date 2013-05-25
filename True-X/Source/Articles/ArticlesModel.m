@@ -24,10 +24,9 @@ static ArticlesModel *_shareArticlesModel = nil;
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"att7_categoryID == %d", self.currentCatoryID];
     self.currentArticlesList = [[NSMutableArray alloc] initWithArray:[Articles findAllWithPredicate:predicate]];
-    int tmpPage = self.currentArticlesList.count / kPageSize;
-    if (tmpPage > self.currentPage)    self.currentPage = tmpPage;
+    self.currentPage = (self.currentArticlesList.count / kPageSize) > self.currentPage ? self.currentPage : self.currentArticlesList.count / kPageSize;
         
-    [self sendNotificationDidFinishLoadArticles:YES];
+    [self sendNotificationDidFinishLoadArticles:NO];
 
     NSString *categoryIDString = [NSString stringWithFormat:@"%d", self.currentCatoryID];
     NSString *numberOfArticles = [NSString stringWithFormat:@"%d", self.currentPage * kPageSize];
@@ -59,10 +58,11 @@ static ArticlesModel *_shareArticlesModel = nil;
                                           {      
                                               if (success) {
                                                   self.currentArticlesList = [[NSMutableArray alloc] initWithArray:[Articles findAllWithPredicate:predicate]];
-                                                  [self sendNotificationDidFinishLoadArticles:NO];
+                                                  [self sendNotificationDidFinishLoadArticles:YES];
                                               }
                                               else {
                                                   NSLog(@"MagicalRecord Error: %@", error);
+                                                  [self sendNotificationDidFinishLoadArticles:NO];
                                               }
                                           }];
                                       } failure:^(AFHTTPRequestOperation *operation, NSError *error)

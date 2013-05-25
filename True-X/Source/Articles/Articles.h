@@ -21,7 +21,6 @@
 @property (nonatomic, retain) NSString * att7_categoryID;
 @property (nonatomic, retain) NSDate * att8_createdDate;
 @property (nonatomic, retain) NSDate * att9_updatedDate;
-@property (nonatomic, retain) NSManagedObject *category;
 
 - (Articles *)setAttributes:(NSDictionary *)attributes;
 

@@ -10,19 +10,8 @@
         <attribute name="att7_categoryID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="att8_createdDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="att9_updatedDate" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ArticlesCategories" inverseName="articles" inverseEntity="ArticlesCategories" syncable="YES"/>
-    </entity>
-    <entity name="ArticlesCategories" representedClassName="ArticlesCategories" syncable="YES">
-        <attribute name="att1_id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="att2_name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="att3_descriptionText" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="att4_iconURL" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="att5_createdDate" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="att6_updatedDate" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="articles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Articles" inverseName="category" inverseEntity="Articles" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Articles" positionX="160" positionY="192" width="128" height="208"/>
-        <element name="ArticlesCategories" positionX="-56" positionY="191" width="128" height="160"/>
+        <element name="Articles" positionX="160" positionY="192" width="128" height="192"/>
     </elements>
 </model>

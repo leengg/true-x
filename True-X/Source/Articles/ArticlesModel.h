@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "TrueXAPIClient.h"
 #import "Articles.h"
-#import "ArticlesCategories.h"
 
 @interface ArticlesModel : NSObject
 
