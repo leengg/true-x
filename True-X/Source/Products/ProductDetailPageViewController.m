@@ -32,13 +32,23 @@
 	// Do any additional setup after loading the view.
     if( !IS_IPHONE_5 )
     {
-        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, 480);
+        if (self.isHackScrollView) {
+            self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, 480-20-44-49);
+        }
+        else {
+            self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, 480-20);
+        }
     }
     else
     {
-        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, 568);
+        if (self.isHackScrollView) {
+            self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, 568-20-44-49);
+        }
+        else {
+            self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, 568-20);
+        }
     }
-    NSLog(@"Ogrinal: %f, %f, %f, %f", self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
+
     self.pageLabel.text = [NSString stringWithFormat:@"%d of 4", self.currentPage];
     self.productImageView.image = [UIImage imageNamed:@"ultrathin.png"];
     self.productNameLabel.text = @"Ultrathin";
@@ -50,6 +60,9 @@
     self.productDescriptionTextView.frame = frame;
     
     [self.mainScrollView setContentSize:CGSizeMake(self.mainScrollView.frame.size.width, self.productDescriptionTextView.frame.origin.y + self.productDescriptionTextView.frame.size.height)];
+    
+    NSLog(@"Frame: %f, %f, %f, %f", self.mainScrollView.frame.origin.x, self.mainScrollView.frame.origin.y, self.mainScrollView.frame.size.width, self.mainScrollView.frame.size.height);
+    NSLog(@"Content size: %f, %f", self.mainScrollView.contentSize.width, self.mainScrollView.contentSize.height);
 
     if (self.currentPage == FirstPage) {
         self.leftBtn.enabled = NO;

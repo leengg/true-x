@@ -96,6 +96,7 @@
     self.currentProductDetailPageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductDetailPageViewControllerID"];
     self.currentProductDetailPageVC.delegate = self;
     self.currentProductDetailPageVC.currentPage = self.currentPage;
+    self.currentProductDetailPageVC.isHackScrollView = YES;
     
     CATransition *transition = [CATransition animation];
     transition.duration = 0.3;
@@ -113,7 +114,7 @@
     self.currentProductDetailPageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductDetailPageViewControllerID"];
     self.currentProductDetailPageVC.delegate = self;
     self.currentProductDetailPageVC.currentPage = self.currentPage;
-    
+    self.currentProductDetailPageVC.isHackScrollView = YES;    
 
     CATransition *transition = [CATransition animation];
     transition.duration = 0.3;

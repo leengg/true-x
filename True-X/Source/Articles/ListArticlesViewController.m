@@ -34,11 +34,11 @@
 	// Do any additional setup after loading the view.
     if( !IS_IPHONE_5 )
     {
-        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 38, self.view.frame.size.width, self.view.frame.size.height - 38);
+        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 38, self.view.frame.size.width, 480-20 - 38);
     }
     else
     {
-        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 38, self.view.frame.size.width, self.view.frame.size.height - 38);
+        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 38, self.view.frame.size.width, 568-20 - 38);
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadListArticles:) name:NOTIFICATION_ARTICLE_DID_FINISH_LOAD object:nil];

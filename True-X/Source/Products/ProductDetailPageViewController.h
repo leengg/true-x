@@ -26,7 +26,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *productFeelingLabel;
 @property (strong, nonatomic) IBOutlet UITextView *productDescriptionTextView;
 
+
 @property (nonatomic, weak) id <ProductDetailPageDelegate> delegate;
 @property int currentPage;
+@property BOOL isHackScrollView;
 
 @end
