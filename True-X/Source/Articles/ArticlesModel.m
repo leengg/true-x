@@ -36,7 +36,7 @@ static ArticlesModel *_shareArticlesModel = nil;
     //@show loading
     [[TrueXLoading shareLoading] show:YES];
     
-    [[TrueXAPIClient sharedAPIClient] getPath:@"articles/getArticlesForCategory.php" parameters:paras
+    [[TrueXAPIClient sharedAPIClient] getPath:kArticleAPIName parameters:paras
                                       success:^(AFHTTPRequestOperation *operation, id JSON)
                                       {
                                           //@hide loading

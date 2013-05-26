@@ -86,6 +86,7 @@
 
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard-iPhone" bundle:nil];
     ArticleDetailViewController *detailViewController = [storyboard instantiateViewControllerWithIdentifier:@"ArticleDetailViewControllerID"];
+    detailViewController.article = [[ArticlesModel shareArticlesModel].currentArticlesList objectAtIndex:index.row];
     // ...
     // Pass the selected object to the new view controller.
     [self.navigationController pushViewController:detailViewController animated:YES];

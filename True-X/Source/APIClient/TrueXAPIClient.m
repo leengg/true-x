@@ -16,7 +16,7 @@ static TrueXAPIClient *_shareAPIClient = nil;
 + (TrueXAPIClient *)sharedAPIClient {
 
     if (!_shareAPIClient) {
-        _shareAPIClient = [[TrueXAPIClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://true-x.net/service/"]];
+        _shareAPIClient = [[TrueXAPIClient alloc] initWithBaseURL:[NSURL URLWithString:kTrueXBaseURL]];
     }
     return _shareAPIClient;
 }

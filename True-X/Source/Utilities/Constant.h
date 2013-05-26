@@ -9,6 +9,10 @@
 #ifndef True_X_Constant_h
 #define True_X_Constant_h
 
+#define kTrueXBaseURL               @"http://true-x.net/service/"
+#define kArticleAPIName             @"articles/getArticlesForCategory.php"
+#define kProductAPIName             @"products/getProducts.php"
+
 #define kCategoryID                 @"categoryID"
 #define kFromDate                   @"fromDate"
 #define kNumberOfArticles           @"numberOfArticles"
@@ -31,7 +35,8 @@ typedef enum {
 typedef enum {
     PhongDoID = 6,
     DangCapID = 8,
-    ChuyenBenLeID = 9
+    ChuyenBenLeID = 9,
+    TuVanID= 0
 }CategoryID;
 
 

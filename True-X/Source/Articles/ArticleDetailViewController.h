@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Articles.h"
 
-@interface ArticleDetailViewController : UIViewController
+@interface ArticleDetailViewController : UIViewController <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *articleWebView;
+@property (nonatomic, weak) Articles *article;
 
 @end

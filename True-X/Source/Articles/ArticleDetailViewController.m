@@ -27,12 +27,71 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    // Setup title of navigation
+    int categoryID = [self.article.att7_categoryID intValue];
+    switch (categoryID) {
+        case PhongDoID:
+            self.navigationItem.title = @"Phong độ";
+            break;
+        case DangCapID:
+            self.navigationItem.title = @"Đẳng cấp";
+            break;
+        case ChuyenBenLeID:
+            self.navigationItem.title = @"Chuyện bên lề";
+            break;
+        case TuVanID:
+            self.navigationItem.title = @"Tư vấn";
+            break;
+        default:
+            break;
+    }
+    
+    // Load article content
+    [self performSelector:@selector(loadArticleContent)];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)loadArticleContent {
+    
+    NSString *htmlString = [NSString stringWithFormat:@"<html><body style='color:#FFF; font-family:\"Tahoma\";'> <h2> %@ </h2> </br> %@</body></html>", self.article.att2_title, self.article.att5_contentHTML];
+    [self.articleWebView loadHTMLString:htmlString baseURL:nil];
+
+}
+
+- (IBAction)clickBack:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - UIWebviewDelegate
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    
+    return YES;
+}
+
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    
+    NSLog(@"page is loading");
+    [[TrueXLoading shareLoading] show:YES];
+}
+
+-(void)webViewDidFinishLoad:(UIWebView *)webView {
+    
+    NSLog(@"finished loading");
+    [[TrueXLoading shareLoading] hide:YES];
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    
+    NSLog(@"error loading");
+    [[TrueXLoading shareLoading] hide:YES];
 }
 
 @end
