@@ -16,9 +16,11 @@
 #define kCategoryID                 @"categoryID"
 #define kFromDate                   @"fromDate"
 #define kNumberOfArticles           @"numberOfArticles"
+#define kNumberOfProducts           @"numberOfProducts"
 #define kPageSize       30
 
-#define NOTIFICATION_ARTICLE_DID_FINISH_LOAD    @"1"
+#define NOTIFICATION_ARTICLE_DID_FINISH_LOAD    @"Notification1"
+#define NOTIFICATION_PRODUCT_DID_FINISH_LOAD    @"Notification2"
 
 typedef enum {
     FirstPage = 1,

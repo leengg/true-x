@@ -20,6 +20,11 @@ static ArticlesModel *_shareArticlesModel = nil;
     return _shareArticlesModel;
 }
 
+-(void)sendNotificationDidFinishLoadArticles:(BOOL)loadMoreFlag
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_ARTICLE_DID_FINISH_LOAD object:[[NSNumber alloc] initWithBool:loadMoreFlag]];
+}
+
 - (void)getArticlesList {
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"att7_categoryID == %d", self.currentCatoryID];
@@ -73,12 +78,6 @@ static ArticlesModel *_shareArticlesModel = nil;
                                       }];
     
 }
-
--(void)sendNotificationDidFinishLoadArticles:(BOOL)loadMoreFlag
-{
-        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_ARTICLE_DID_FINISH_LOAD object:[[NSNumber alloc] initWithBool:loadMoreFlag]];
-}
-
 
 
 @end

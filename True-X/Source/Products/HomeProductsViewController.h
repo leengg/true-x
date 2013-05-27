@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProductsModel.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface HomeProductsViewController : UIViewController
 

@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TrueXAPIClient.h"
+#import "Products.h"
 
 @interface ProductsModel : NSObject
+
+@property (nonatomic) int currentPage;
+@property (nonatomic, strong) NSMutableArray *currentProductsList;
+
++ (ProductsModel *)shareProductsModel;
+- (void)getProductsList;
 
 @end

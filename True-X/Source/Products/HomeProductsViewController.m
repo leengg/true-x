@@ -29,6 +29,16 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadListProducts:) name:NOTIFICATION_PRODUCT_DID_FINISH_LOAD object:nil];
+    
+    [[ProductsModel shareProductsModel] setCurrentPage:1];
+    [[ProductsModel shareProductsModel] getProductsList];
+}
+
+- (void)reloadListProducts:(NSNotification *)notification {
+    
+    [self.productsTableView reloadData];
+//    canLoadMore = [notification.object boolValue];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,7 +58,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 10;
+    return [ProductsModel shareProductsModel].currentProductsList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -56,10 +66,11 @@
     static NSString *CellIdentifier = @"ProductCellID";
     ProductCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
+    Products *product = [[ProductsModel shareProductsModel].currentProductsList objectAtIndex:indexPath.row];
     // Configure the cell...
-    cell.thumbnailImageView.image = [UIImage imageNamed:@"ultrathin.png"];
-    cell.titleLabel.text = @"Ultrathin";
-    cell.descriptionLabel.text =  @"Cảm giác thật";
+    [cell.thumbnailImageView setImageWithURL:[NSURL URLWithString:product.att5_thumbnailURL] placeholderImage:[UIImage imageNamed:@"ultrathin.png"]];
+    cell.titleLabel.text = product.att3_categoryName;   //@"Ultrathin";
+    cell.descriptionLabel.text = product.att4_description;  //@"Cảm giác thật";
     cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ico_accessory_view.png"]];
     cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_cell_selected.png"]];
 

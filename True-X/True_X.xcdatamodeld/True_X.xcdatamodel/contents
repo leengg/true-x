@@ -26,11 +26,12 @@
         <attribute name="att2_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="att3_description" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="att4_thumbnailURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="att5_productID" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="product" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Products" inverseName="slide" inverseEntity="Products" syncable="YES"/>
     </entity>
     <elements>
         <element name="Articles" positionX="160" positionY="192" width="128" height="192"/>
         <element name="Products" positionX="349" positionY="195" width="128" height="176"/>
-        <element name="ProductSlides" positionX="567" positionY="198" width="128" height="128"/>
+        <element name="ProductSlides" positionX="567" positionY="198" width="128" height="144"/>
     </elements>
 </model>
