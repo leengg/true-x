@@ -24,7 +24,7 @@ static ArticlesModel *_shareArticlesModel = nil;
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"att7_categoryID == %d", self.currentCatoryID];
     self.currentArticlesList = [[NSMutableArray alloc] initWithArray:[Articles findAllWithPredicate:predicate]];
-    self.currentPage = (self.currentArticlesList.count / kPageSize) > self.currentPage ? self.currentPage : self.currentArticlesList.count / kPageSize;
+    self.currentPage = (self.currentArticlesList.count / kPageSize) < self.currentPage ? self.currentPage : self.currentArticlesList.count / kPageSize;
         
     [self sendNotificationDidFinishLoadArticles:NO];
 
@@ -38,10 +38,7 @@ static ArticlesModel *_shareArticlesModel = nil;
     
     [[TrueXAPIClient sharedAPIClient] getPath:kArticleAPIName parameters:paras
                                       success:^(AFHTTPRequestOperation *operation, id JSON)
-                                      {
-                                          //@hide loading
-                                          [[TrueXLoading shareLoading] hide:YES];
-                                          
+                                      {                                          
                                           [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext)
                                           {
                                               for (NSDictionary *attributes in JSON) {
@@ -55,7 +52,10 @@ static ArticlesModel *_shareArticlesModel = nil;
                                                   [article setAttributes:attributes];
                                               }
                                           } completion:^(BOOL success, NSError *error)
-                                          {      
+                                          {
+                                              //@hide loading
+                                              [[TrueXLoading shareLoading] hide:YES];
+
                                               if (success) {
                                                   self.currentArticlesList = [[NSMutableArray alloc] initWithArray:[Articles findAllWithPredicate:predicate]];
                                                   [self sendNotificationDidFinishLoadArticles:YES];
