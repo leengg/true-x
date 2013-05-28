@@ -61,12 +61,11 @@ static ProductsModel *_shareProductsModel = nil;
               
               if (success) {
                   self.currentProductsList = [[NSMutableArray alloc] initWithArray:[Products findAll]];
-                  [self sendNotificationDidFinishLoadProducts:YES];
               }
               else {
                   NSLog(@"MagicalRecord Error: %@", error);
-                  [self sendNotificationDidFinishLoadProducts:NO];
               }
+              [self sendNotificationDidFinishLoadProducts:YES];
           }];
      } failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {

@@ -180,7 +180,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="ultrathin.png" id="ZKy-rT-CNe" userLabel="Product Image View">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="placehold.png" id="ZKy-rT-CNe" userLabel="Product Image View">
                                         <rect key="frame" x="30" y="61" width="260" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -198,7 +198,7 @@
                                         <size key="shadowOffset" width="0.0" height="1"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cảm giác thật" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SIL-Wd-8cl">
-                                        <rect key="frame" x="60" y="323" width="200" height="25"/>
+                                        <rect key="frame" x="38" y="323" width="245" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                         <color key="textColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -594,7 +594,7 @@
         <image name="ico_bosuutap.png" width="30" height="23"/>
         <image name="ico_phone.png" width="30" height="21"/>
         <image name="ico_tinhyeugioitinh.png" width="24" height="30"/>
-        <image name="ultrathin.png" width="240" height="260"/>
+        <image name="placehold.png" width="320" height="320"/>
     </resources>
     <classes>
         <class className="ArticleCell" superclassName="UITableViewCell">
@@ -614,7 +614,6 @@
         <class className="CustomSegmentViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomSegmentViewController.h"/>
             <relationships>
-                <relationship kind="action" name="clickChangeTab:"/>
                 <relationship kind="outlet" name="btn_ChuyenBenLe" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btn_DangCap" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btn_PhongDo" candidateClass="UIButton"/>
@@ -647,8 +646,6 @@
         <class className="ProductDetailPageViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductDetailPageViewController.h"/>
             <relationships>
-                <relationship kind="action" name="clickNext:"/>
-                <relationship kind="action" name="clickPreview:"/>
                 <relationship kind="outlet" name="leftBtn" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="mainScrollView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="pageLabel" candidateClass="UILabel"/>

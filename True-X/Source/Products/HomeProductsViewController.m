@@ -10,7 +10,10 @@
 #import "ProductDetailViewController.h"
 #import "ProductCell.h"
 
-@interface HomeProductsViewController ()
+@interface HomeProductsViewController () {
+
+    BOOL canLoadMore;
+}
 
 @end
 
@@ -29,6 +32,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadListProducts:) name:NOTIFICATION_PRODUCT_DID_FINISH_LOAD object:nil];
     
     [[ProductsModel shareProductsModel] setCurrentPage:1];
@@ -37,8 +41,10 @@
 
 - (void)reloadListProducts:(NSNotification *)notification {
     
+    self.productsTableView.hidden = ([ProductsModel shareProductsModel].currentProductsList.count == 0) ? YES : NO;
+
     [self.productsTableView reloadData];
-//    canLoadMore = [notification.object boolValue];
+    canLoadMore = [notification.object boolValue];
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,6 +82,20 @@
 
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.row == [ProductsModel shareProductsModel].currentProductsList.count  - 1
+        && indexPath.row == kPageSize * [ProductsModel shareProductsModel].currentPage - 1) {
+        
+        if (canLoadMore) {
+            canLoadMore = NO;
+            int currentPage = [ProductsModel shareProductsModel].currentProductsList.count / kPageSize;
+            [[ProductsModel shareProductsModel] setCurrentPage:currentPage+1];
+            [[ProductsModel shareProductsModel] getProductsList];
+        }
+    }
 }
 
 /*

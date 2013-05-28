@@ -49,10 +49,10 @@
         }
     }
 
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"att1_id == %@ AND att5_productID == %@", self.currentPage, self.product.att1_id];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"att1_id == %d AND att5_productID == %@", self.currentPage, self.product.att1_id];
     ProductSlides *productSlide = [ProductSlides findFirstWithPredicate:predicate];
     
-    self.pageLabel.text = productSlide.att1_id;     //[NSString stringWithFormat:@"%d of 4", self.currentPage];
+    self.pageLabel.text = [NSString stringWithFormat:@"%d of 4", productSlide.att1_id];     //[NSString stringWithFormat:@"%d of 4", self.currentPage];
     [self.productImageView setImageWithURL:[NSURL URLWithString:productSlide.att4_thumbnailURL] placeholderImage:[UIImage imageNamed:@"placehold.png"]];
     self.productNameLabel.text = self.product.att3_categoryName;   //@"Ultrathin";
     self.productFeelingLabel.text = self.product.att4_description;  //@"Cảm giác thật";

@@ -2,7 +2,7 @@
 //  ProductSlides.h
 //  True-X
 //
-//  Created by Dao Nguyen on 5/27/13.
+//  Created by Dao Nguyen on 5/28/13.
 //  Copyright (c) 2013 Dao Nguyen. All rights reserved.
 //
 
@@ -13,7 +13,7 @@
 
 @interface ProductSlides : NSManagedObject
 
-@property (nonatomic, retain) NSString * att1_id;
+@property (nonatomic) int16_t att1_id;
 @property (nonatomic, retain) NSString * att2_name;
 @property (nonatomic, retain) NSString * att3_description;
 @property (nonatomic, retain) NSString * att4_thumbnailURL;

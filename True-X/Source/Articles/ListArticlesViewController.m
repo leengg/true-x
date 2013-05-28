@@ -47,6 +47,8 @@
 
 - (void)reloadListArticles:(NSNotification *)notification {
     
+    self.listArticlesTableView.hidden = ([ArticlesModel shareArticlesModel].currentArticlesList.count == 0) ? YES : NO;
+
     [self.listArticlesTableView reloadData];
     canLoadMore = [notification.object boolValue];
 }

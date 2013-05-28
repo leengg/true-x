@@ -63,12 +63,11 @@ static ArticlesModel *_shareArticlesModel = nil;
 
                                               if (success) {
                                                   self.currentArticlesList = [[NSMutableArray alloc] initWithArray:[Articles findAllWithPredicate:predicate]];
-                                                  [self sendNotificationDidFinishLoadArticles:YES];
                                               }
                                               else {
                                                   NSLog(@"MagicalRecord Error: %@", error);
-                                                  [self sendNotificationDidFinishLoadArticles:NO];
                                               }
+                                              [self sendNotificationDidFinishLoadArticles:YES];
                                           }];
                                       } failure:^(AFHTTPRequestOperation *operation, NSError *error)
                                       {

@@ -22,7 +22,7 @@
         <relationship name="slide" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ProductSlides" inverseName="product" inverseEntity="ProductSlides" syncable="YES"/>
     </entity>
     <entity name="ProductSlides" representedClassName="ProductSlides" syncable="YES">
-        <attribute name="att1_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="att1_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="att2_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="att3_description" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="att4_thumbnailURL" optional="YES" attributeType="String" syncable="YES"/>
@@ -32,6 +32,6 @@
     <elements>
         <element name="Articles" positionX="160" positionY="192" width="128" height="192"/>
         <element name="Products" positionX="349" positionY="195" width="128" height="176"/>
-        <element name="ProductSlides" positionX="567" positionY="198" width="128" height="144"/>
+        <element name="ProductSlides" positionX="567" positionY="198" width="128" height="146"/>
     </elements>
 </model>

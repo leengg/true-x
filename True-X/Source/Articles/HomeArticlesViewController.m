@@ -74,7 +74,10 @@
             [[ArticlesModel shareArticlesModel] getArticlesList];
             break;
         case 3:
-            break;            
+            [[ArticlesModel shareArticlesModel] setCurrentCatoryID:TuVanID];
+            [[ArticlesModel shareArticlesModel] setCurrentPage:1];
+            [[ArticlesModel shareArticlesModel] getArticlesList];
+            break;
         default:
             break;
     }

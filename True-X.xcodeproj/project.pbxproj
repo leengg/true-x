@@ -73,7 +73,6 @@
 		DE325D621752409D00BA99BD /* Products.m in Sources */ = {isa = PBXBuildFile; fileRef = DE325D611752409D00BA99BD /* Products.m */; };
 		DE325D651752410400BA99BD /* Articles.m in Sources */ = {isa = PBXBuildFile; fileRef = DE325D641752410400BA99BD /* Articles.m */; };
 		DE325D681752415E00BA99BD /* ProductsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE325D671752415E00BA99BD /* ProductsModel.m */; };
-		DE695A671753AFA700CE924C /* ProductSlides.m in Sources */ = {isa = PBXBuildFile; fileRef = DE695A661753AFA700CE924C /* ProductSlides.m */; };
 		DE726927174B604D00376E0E /* bg_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = DE72691D174B604D00376E0E /* bg_menu.png */; };
 		DE726928174B604D00376E0E /* bg_menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE72691E174B604D00376E0E /* bg_menu@2x.png */; };
 		DE726929174B604D00376E0E /* bt_chuyenbenle_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = DE72691F174B604D00376E0E /* bt_chuyenbenle_selected.png */; };
@@ -118,6 +117,7 @@
 		DEDCF7BC173E49090066355D /* ArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF7BB173E49080066355D /* ArticleCell.m */; };
 		DEDF299C1750CC50001605BB /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDF299B1750CC50001605BB /* MBProgressHUD.m */; };
 		DEDF29A01750CE63001605BB /* TrueXLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDF299F1750CE63001605BB /* TrueXLoading.m */; };
+		DEF212711754E53800A0357A /* ProductSlides.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF212701754E53800A0357A /* ProductSlides.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -214,8 +214,6 @@
 		DE325D641752410400BA99BD /* Articles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Articles.m; sourceTree = "<group>"; };
 		DE325D661752415E00BA99BD /* ProductsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsModel.h; sourceTree = "<group>"; };
 		DE325D671752415E00BA99BD /* ProductsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsModel.m; sourceTree = "<group>"; };
-		DE695A651753AFA700CE924C /* ProductSlides.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSlides.h; sourceTree = "<group>"; };
-		DE695A661753AFA700CE924C /* ProductSlides.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSlides.m; sourceTree = "<group>"; };
 		DE72691D174B604D00376E0E /* bg_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_menu.png; sourceTree = "<group>"; };
 		DE72691E174B604D00376E0E /* bg_menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_menu@2x.png"; sourceTree = "<group>"; };
 		DE72691F174B604D00376E0E /* bt_chuyenbenle_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt_chuyenbenle_selected.png; sourceTree = "<group>"; };
@@ -294,6 +292,8 @@
 		DEDF299B1750CC50001605BB /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		DEDF299E1750CE62001605BB /* TrueXLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrueXLoading.h; sourceTree = "<group>"; };
 		DEDF299F1750CE63001605BB /* TrueXLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrueXLoading.m; sourceTree = "<group>"; };
+		DEF2126F1754E53800A0357A /* ProductSlides.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSlides.h; sourceTree = "<group>"; };
+		DEF212701754E53800A0357A /* ProductSlides.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSlides.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -510,10 +510,10 @@
 			children = (
 				DE325D601752409D00BA99BD /* Products.h */,
 				DE325D611752409D00BA99BD /* Products.m */,
-				DE695A651753AFA700CE924C /* ProductSlides.h */,
-				DE695A661753AFA700CE924C /* ProductSlides.m */,
 				DE325D661752415E00BA99BD /* ProductsModel.h */,
 				DE325D671752415E00BA99BD /* ProductsModel.m */,
+				DEF2126F1754E53800A0357A /* ProductSlides.h */,
+				DEF212701754E53800A0357A /* ProductSlides.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -833,7 +833,7 @@
 				DE325D621752409D00BA99BD /* Products.m in Sources */,
 				DE325D651752410400BA99BD /* Articles.m in Sources */,
 				DE325D681752415E00BA99BD /* ProductsModel.m in Sources */,
-				DE695A671753AFA700CE924C /* ProductSlides.m in Sources */,
+				DEF212711754E53800A0357A /* ProductSlides.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
