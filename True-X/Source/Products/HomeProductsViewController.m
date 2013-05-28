@@ -68,7 +68,7 @@
     
     Products *product = [[ProductsModel shareProductsModel].currentProductsList objectAtIndex:indexPath.row];
     // Configure the cell...
-    [cell.thumbnailImageView setImageWithURL:[NSURL URLWithString:product.att5_thumbnailURL] placeholderImage:[UIImage imageNamed:@"ultrathin.png"]];
+    [cell.thumbnailImageView setImageWithURL:[NSURL URLWithString:product.att5_thumbnailURL] placeholderImage:[UIImage imageNamed:@"placehold.png"]];
     cell.titleLabel.text = product.att3_categoryName;   //@"Ultrathin";
     cell.descriptionLabel.text = product.att4_description;  //@"Cảm giác thật";
     cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ico_accessory_view.png"]];
@@ -124,6 +124,7 @@
     // Navigation logic may go here. Create and push another view controller.
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard-iPhone" bundle:nil];
     ProductDetailViewController *detailViewController = [storyboard instantiateViewControllerWithIdentifier:@"ProductDetailViewControllerID"];
+    detailViewController.product = [[ProductsModel shareProductsModel].currentProductsList objectAtIndex:indexPath.row];
     // ...
     // Pass the selected object to the new view controller.
     [self.navigationController pushViewController:detailViewController animated:YES];

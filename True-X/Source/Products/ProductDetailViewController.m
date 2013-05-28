@@ -35,6 +35,7 @@
 	// Do any additional setup after loading the view.
     self.currentPage = FirstPage;
     self.currentProductDetailPageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductDetailPageViewControllerID"];
+    self.currentProductDetailPageVC.product = self.product;
 
     self.currentProductDetailPageVC.delegate = self;
     self.currentProductDetailPageVC.currentPage = self.currentPage;
@@ -94,6 +95,7 @@
     self.currentPage++;
     self.previewProductDetailPageVC = self.currentProductDetailPageVC;
     self.currentProductDetailPageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductDetailPageViewControllerID"];
+    self.currentProductDetailPageVC.product = self.product;
     self.currentProductDetailPageVC.delegate = self;
     self.currentProductDetailPageVC.currentPage = self.currentPage;
     self.currentProductDetailPageVC.isHackScrollView = YES;
@@ -112,6 +114,7 @@
     self.currentPage--;
     self.nextProductDetailPageVC = self.currentProductDetailPageVC;
     self.currentProductDetailPageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductDetailPageViewControllerID"];
+    self.currentProductDetailPageVC.product = self.product;
     self.currentProductDetailPageVC.delegate = self;
     self.currentProductDetailPageVC.currentPage = self.currentPage;
     self.currentProductDetailPageVC.isHackScrollView = YES;    

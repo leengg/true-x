@@ -49,11 +49,16 @@
         }
     }
 
-    self.pageLabel.text = [NSString stringWithFormat:@"%d of 4", self.currentPage];
-    self.productImageView.image = [UIImage imageNamed:@"ultrathin.png"];
-    self.productNameLabel.text = @"Ultrathin";
-    self.productFeelingLabel.text = @"Cảm giác thật";
-    self.productDescriptionTextView.text = @"1. Những người từng sử dụng True-X Ultra Thin cho biết, có đôi lúc, họ phải dừng lại kiểm tra xem mình có thật sự đang mang bao cao su không, bởi cảm giác đó quá chân thật. Và việc ngưng đột ngột ấy, giúp bạn lấy lại được bình tĩnh, kéo dài “hiệp đấu” và nàng thì phát điên vì bạn.";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"att1_id == %@ AND att5_productID == %@", self.currentPage, self.product.att1_id];
+    ProductSlides *productSlide = [ProductSlides findFirstWithPredicate:predicate];
+    
+    self.pageLabel.text = productSlide.att1_id;     //[NSString stringWithFormat:@"%d of 4", self.currentPage];
+    [self.productImageView setImageWithURL:[NSURL URLWithString:productSlide.att4_thumbnailURL] placeholderImage:[UIImage imageNamed:@"placehold.png"]];
+    self.productNameLabel.text = self.product.att3_categoryName;   //@"Ultrathin";
+    self.productFeelingLabel.text = self.product.att4_description;  //@"Cảm giác thật";
+    
+    self.productTitleLabel.text = productSlide.att2_name;
+    self.productDescriptionTextView.text = productSlide.att3_description; // @"1. Những người từng sử dụng True-X Ultra Thin cho biết, có đôi lúc, họ phải dừng lại kiểm tra xem mình có thật sự đang mang bao cao su không, bởi cảm giác đó quá chân thật. Và việc ngưng đột ngột ấy, giúp bạn lấy lại được bình tĩnh, kéo dài “hiệp đấu” và nàng thì phát điên vì bạn.";
     
     CGRect frame = self.productDescriptionTextView.frame;
     frame.size.height = self.productDescriptionTextView.contentSize.height + 20;
@@ -61,9 +66,6 @@
     
     [self.mainScrollView setContentSize:CGSizeMake(self.mainScrollView.frame.size.width, self.productDescriptionTextView.frame.origin.y + self.productDescriptionTextView.frame.size.height)];
     
-    NSLog(@"Frame: %f, %f, %f, %f", self.mainScrollView.frame.origin.x, self.mainScrollView.frame.origin.y, self.mainScrollView.frame.size.width, self.mainScrollView.frame.size.height);
-    NSLog(@"Content size: %f, %f", self.mainScrollView.contentSize.width, self.mainScrollView.contentSize.height);
-
     if (self.currentPage == FirstPage) {
         self.leftBtn.enabled = NO;
     }
@@ -85,6 +87,7 @@
     [self setProductFeelingLabel:nil];
     [self setProductDescriptionTextView:nil];
     [self setMainScrollView:nil];
+    [self setProductTitleLabel:nil];
     [super viewDidUnload];
 }
 

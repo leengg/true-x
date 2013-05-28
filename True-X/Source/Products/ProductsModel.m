@@ -51,11 +51,8 @@ static ProductsModel *_shareProductsModel = nil;
                   Products *product = [Products findFirstWithPredicate:predicate];
                   if (!product) {
                       product = [Products createInContext:localContext];
-                      [product setAttributes:attributes inContext:localContext];
                   }
-                  else {
-                      [product setAttributes:attributes];
-                  }
+                  [product setAttributes:attributes inContext:localContext];
               }
           } completion:^(BOOL success, NSError *error)
           {

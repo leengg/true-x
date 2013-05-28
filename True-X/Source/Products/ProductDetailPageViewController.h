@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Products.h"
+#import "ProductSlides.h"
+#import "UIImageView+AFNetworking.h"
 
 @class ProductDetailPageViewController;
 
@@ -24,8 +27,10 @@
 @property (strong, nonatomic) IBOutlet UIImageView *productImageView;
 @property (strong, nonatomic) IBOutlet UILabel *productNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *productFeelingLabel;
+@property (strong, nonatomic) IBOutlet UILabel *productTitleLabel;
 @property (strong, nonatomic) IBOutlet UITextView *productDescriptionTextView;
 
+@property (nonatomic, strong) Products *product;
 
 @property (nonatomic, weak) id <ProductDetailPageDelegate> delegate;
 @property int currentPage;

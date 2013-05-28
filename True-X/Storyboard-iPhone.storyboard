@@ -269,6 +269,7 @@
                         <outlet property="productFeelingLabel" destination="SIL-Wd-8cl" id="SwX-3o-xBh"/>
                         <outlet property="productImageView" destination="ZKy-rT-CNe" id="LeB-fX-MnT"/>
                         <outlet property="productNameLabel" destination="U4M-BD-jro" id="Po4-kF-xDa"/>
+                        <outlet property="productTitleLabel" destination="8cn-Qq-PsD" id="9E3-IW-WO9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MwC-Tm-vn4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -606,12 +607,14 @@
         <class className="ArticleDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ArticleDetailViewController.h"/>
             <relationships>
+                <relationship kind="action" name="clickBack:"/>
                 <relationship kind="outlet" name="articleWebView" candidateClass="UIWebView"/>
             </relationships>
         </class>
         <class className="CustomSegmentViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomSegmentViewController.h"/>
             <relationships>
+                <relationship kind="action" name="clickChangeTab:"/>
                 <relationship kind="outlet" name="btn_ChuyenBenLe" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btn_DangCap" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btn_PhongDo" candidateClass="UIButton"/>
@@ -644,6 +647,8 @@
         <class className="ProductDetailPageViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductDetailPageViewController.h"/>
             <relationships>
+                <relationship kind="action" name="clickNext:"/>
+                <relationship kind="action" name="clickPreview:"/>
                 <relationship kind="outlet" name="leftBtn" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="mainScrollView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="pageLabel" candidateClass="UILabel"/>
@@ -651,6 +656,7 @@
                 <relationship kind="outlet" name="productFeelingLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="productImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="productNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="productTitleLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="rightBtn" candidateClass="UIButton"/>
             </relationships>
         </class>

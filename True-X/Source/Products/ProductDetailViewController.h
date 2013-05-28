@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "ProductDetailPageViewController.h"
+#import "Products.h"
 
 @interface ProductDetailViewController : UIViewController <ProductDetailPageDelegate>
+
+@property (nonatomic, strong) Products *product;
+
 
 - (IBAction)swipeLeft:(id)sender;
 - (IBAction)swipeRight:(id)sender;

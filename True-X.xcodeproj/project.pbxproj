@@ -33,6 +33,10 @@
 		694F8E261740C81B00C061C5 /* ico_accessory_view@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 694F8E241740C81B00C061C5 /* ico_accessory_view@2x.png */; };
 		694F8E2C1740DB5500C061C5 /* bg_product_detail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 694F8E2B1740DB5300C061C5 /* bg_product_detail@2x.png */; };
 		694F8E2E1740DCE800C061C5 /* ico_bosuutap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 694F8E2D1740DCE700C061C5 /* ico_bosuutap@2x.png */; };
+		696806AD1754B61A00C60118 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 696806AB1754B61A00C60118 /* Icon@2x.png */; };
+		696806AE1754B61A00C60118 /* Icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 696806AC1754B61A00C60118 /* Icon.jpg */; };
+		696806B21754B62800C60118 /* placehold.png in Resources */ = {isa = PBXBuildFile; fileRef = 696806B01754B62800C60118 /* placehold.png */; };
+		696806B31754B62800C60118 /* placehold@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 696806B11754B62800C60118 /* placehold@2x.png */; };
 		DE040090174BD31C00660B3E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE04008E174BD30400660B3E /* QuartzCore.framework */; };
 		DE040144174E6C1A00660B3E /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DE040130174E6C1A00660B3E /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE040145174E6C1A00660B3E /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DE040132174E6C1A00660B3E /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -146,6 +150,10 @@
 		694F8E241740C81B00C061C5 /* ico_accessory_view@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_accessory_view@2x.png"; sourceTree = "<group>"; };
 		694F8E2B1740DB5300C061C5 /* bg_product_detail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_product_detail@2x.png"; sourceTree = "<group>"; };
 		694F8E2D1740DCE700C061C5 /* ico_bosuutap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_bosuutap@2x.png"; sourceTree = "<group>"; };
+		696806AB1754B61A00C60118 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		696806AC1754B61A00C60118 /* Icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Icon.jpg; sourceTree = "<group>"; };
+		696806B01754B62800C60118 /* placehold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placehold.png; sourceTree = "<group>"; };
+		696806B11754B62800C60118 /* placehold@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placehold@2x.png"; sourceTree = "<group>"; };
 		DE040087174BC37F00660B3E /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		DE04008E174BD30400660B3E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DE04012F174E6C1A00660B3E /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
@@ -415,6 +423,8 @@
 				DE07CE81173D26FB0022440A /* Default-568h@2x.png */,
 				DE07CE82173D26FB0022440A /* Default.png */,
 				DE07CE83173D26FB0022440A /* Default@2x.png */,
+				696806AB1754B61A00C60118 /* Icon@2x.png */,
+				696806AC1754B61A00C60118 /* Icon.jpg */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -449,6 +459,8 @@
 		DE1D4149173E55AE00B51237 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				696806B01754B62800C60118 /* placehold.png */,
+				696806B11754B62800C60118 /* placehold@2x.png */,
 				DE325D531751F0F700BA99BD /* ico_secure.png */,
 				DE325D541751F0F700BA99BD /* ico_secure@2x.png */,
 				DE726931174B7C9100376E0E /* bg_cell_selected.png */,
@@ -752,6 +764,10 @@
 				DE726934174B7C9100376E0E /* bg_cell_selected@2x.png in Resources */,
 				DE325D551751F0F700BA99BD /* ico_secure.png in Resources */,
 				DE325D561751F0F700BA99BD /* ico_secure@2x.png in Resources */,
+				696806AD1754B61A00C60118 /* Icon@2x.png in Resources */,
+				696806AE1754B61A00C60118 /* Icon.jpg in Resources */,
+				696806B21754B62800C60118 /* placehold.png in Resources */,
+				696806B31754B62800C60118 /* placehold@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
