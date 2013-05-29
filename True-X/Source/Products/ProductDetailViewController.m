@@ -8,6 +8,7 @@
 
 #import "ProductDetailViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "EGOQuickPhoto.h"
 
 @interface ProductDetailViewController ()
 
@@ -94,6 +95,25 @@
         
     }
 }
+
+- (void)didTapPhotoViewer:(ProductDetailPageViewController *)productDetailPageVC {
+
+    NSSortDescriptor *sortRule = [[NSSortDescriptor alloc] initWithKey:@"att1_id" ascending:YES];
+    NSArray *slides = [self.product.slide sortedArrayUsingDescriptors:[[NSArray alloc] initWithObjects:sortRule, nil]];
+    NSMutableArray *images = [[NSMutableArray alloc] initWithCapacity:slides.count];
+    for (int i = 0; i < slides.count; i++) {
+        ProductSlides *pSlide = (ProductSlides *)[slides objectAtIndex:i];
+        EGOQuickPhoto *photo = [[EGOQuickPhoto alloc] initWithImageURL:[NSURL URLWithString:pSlide.att4_thumbnailURL] name:nil];
+        [images addObject:photo];
+    }
+    EGOQuickPhotoSource *source = [[EGOQuickPhotoSource alloc] initWithPhotos:images];
+    
+    EGOPhotoViewController *photoController = [[EGOPhotoViewController alloc] initWithPhotoSource:source];
+    [productDetailPageVC setCurrentPage:self.currentPage];
+    [self.navigationController pushViewController:photoController animated:YES];
+}
+
+#pragma mark - Paging Product
 
 - (void)gotoNextPage {
     

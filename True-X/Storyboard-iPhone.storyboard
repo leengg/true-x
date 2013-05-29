@@ -199,9 +199,13 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="placehold.png" id="ZKy-rT-CNe" userLabel="Product Image View">
+                                    <imageView contentMode="scaleAspectFit" image="placehold.png" id="ZKy-rT-CNe" userLabel="Product Image View">
                                         <rect key="frame" x="40" y="61" width="240" height="210"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="vYF-UL-uyx" appends="YES" id="V8e-gc-hgU"/>
+                                        </connections>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_product_name.png" id="TSW-Hz-WWv" userLabel="BG Name Image View">
                                         <rect key="frame" x="20" y="285" width="280" height="35"/>
@@ -292,6 +296,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MwC-Tm-vn4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="vYF-UL-uyx">
+                    <connections>
+                        <action selector="clickSlideShow:" destination="O2y-d6-V2s" id="k9E-3J-8IP"/>
+                        <outlet property="delegate" destination="O2y-d6-V2s" id="AA8-KR-Zho"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3415" y="908"/>
         </scene>
@@ -638,7 +648,6 @@
         <class className="ArticleDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ArticleDetailViewController.h"/>
             <relationships>
-                <relationship kind="action" name="clickBack:"/>
                 <relationship kind="outlet" name="articleWebView" candidateClass="UIWebView"/>
             </relationships>
         </class>
@@ -651,7 +660,6 @@
         <class className="CustomSegmentViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomSegmentViewController.h"/>
             <relationships>
-                <relationship kind="action" name="clickChangeTab:"/>
                 <relationship kind="outlet" name="btn_ChuyenBenLe" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btn_DangCap" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btn_PhongDo" candidateClass="UIButton"/>
@@ -686,6 +694,7 @@
             <relationships>
                 <relationship kind="action" name="clickNext:"/>
                 <relationship kind="action" name="clickPreview:"/>
+                <relationship kind="action" name="clickSlideShow:"/>
                 <relationship kind="outlet" name="leftBtn" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="mainScrollView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="pageLabel" candidateClass="UILabel"/>
@@ -700,7 +709,6 @@
         <class className="ProductDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductDetailViewController.h"/>
             <relationships>
-                <relationship kind="action" name="clickBack:"/>
                 <relationship kind="action" name="swipeLeft:"/>
                 <relationship kind="action" name="swipeRight:"/>
             </relationships>

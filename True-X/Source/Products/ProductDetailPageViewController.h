@@ -17,6 +17,7 @@
 
 @required
 - (void)didChangePage:(ProductDetailPageViewController *)productDetailPageVC withDirection:(PagingDirection)direction;
+- (void)didTapPhotoViewer:(ProductDetailPageViewController *)productDetailPageVC;
 
 @end
 

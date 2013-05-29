@@ -82,19 +82,19 @@
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     
     NSLog(@"page is loading");
-    [[TrueXLoading shareLoading] show:YES];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView {
     
     NSLog(@"finished loading");
-    [[TrueXLoading shareLoading] hide:YES];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     
     NSLog(@"error loading");
-    [[TrueXLoading shareLoading] hide:YES];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 @end

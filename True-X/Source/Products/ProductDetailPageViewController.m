@@ -101,6 +101,10 @@
     [self.delegate didChangePage:self withDirection:PreviewPage];
 }
 
+- (IBAction)clickSlideShow:(id)sender {
+    
+    [self.delegate didTapPhotoViewer:self];
+}
 
 
 

@@ -39,7 +39,12 @@ static ArticlesModel *_shareArticlesModel = nil;
     NSDictionary *paras = [[NSDictionary alloc] initWithObjects:[NSArray arrayWithObjects:categoryIDString, numberOfArticles, nil] forKeys:[NSArray arrayWithObjects:kCategoryID, kNumberOfArticles, nil]];
     
     //@show loading
-    [[TrueXLoading shareLoading] show:YES];
+    if (self.currentArticlesList.count) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    }
+    else {
+        [[TrueXLoading shareLoading] show:YES];
+    }
     
     [[TrueXAPIClient sharedAPIClient] getPath:kArticleAPIName parameters:paras
                                       success:^(AFHTTPRequestOperation *operation, id JSON)
@@ -60,6 +65,7 @@ static ArticlesModel *_shareArticlesModel = nil;
                                           {
                                               //@hide loading
                                               [[TrueXLoading shareLoading] hide:YES];
+                                              [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 
                                               if (success) {
                                                   self.currentArticlesList = [[NSMutableArray alloc] initWithArray:[Articles findAllWithPredicate:predicate]];
@@ -73,6 +79,7 @@ static ArticlesModel *_shareArticlesModel = nil;
                                       {
                                           //@hide loading
                                           [[TrueXLoading shareLoading] hide:YES];
+                                          [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                                           NSLog(@"AFNetworking Error: %@", error);
                                       }];
     

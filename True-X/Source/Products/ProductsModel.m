@@ -37,7 +37,12 @@ static ProductsModel *_shareProductsModel = nil;
     NSDictionary *paras = [[NSDictionary alloc] initWithObjects:[NSArray arrayWithObjects:numberOfProducts, nil] forKeys:[NSArray arrayWithObjects:kNumberOfArticles, nil]];
     
     //@show loading
-    [[TrueXLoading shareLoading] show:YES];
+    if (self.currentProductsList.count) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    }
+    else {
+        [[TrueXLoading shareLoading] show:YES];
+    }
     
     [[TrueXAPIClient sharedAPIClient] getPath:kProductAPIName parameters:paras
                                       success:^(AFHTTPRequestOperation *operation, id JSON)
@@ -58,7 +63,8 @@ static ProductsModel *_shareProductsModel = nil;
           {
               //@hide loading
               [[TrueXLoading shareLoading] hide:YES];
-              
+              [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+
               if (success) {
                   self.currentProductsList = [[NSMutableArray alloc] initWithArray:[Products findAll]];
               }
@@ -71,6 +77,7 @@ static ProductsModel *_shareProductsModel = nil;
      {
          //@hide loading
          [[TrueXLoading shareLoading] hide:YES];
+         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
          NSLog(@"AFNetworking Error: %@", error);
      }];
 

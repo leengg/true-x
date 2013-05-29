@@ -17,6 +17,17 @@
     
     //self.window.backgroundColor = [UIColor whiteColor];
     //[self.window makeKeyAndVisible];
+    //custom tabbar
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    UITabBar *tabBar = tabBarController.tabBar;
+    UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
+    UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
+    UITabBarItem *tabBarItem3 = [tabBar.items objectAtIndex:2];
+
+    [tabBarItem1 setFinishedSelectedImage:[UIImage imageNamed:@"tb_baiviet_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"tb_baiviet.png"]];
+    [tabBarItem2 setFinishedSelectedImage:[UIImage imageNamed:@"tb_bosuutap_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"tb_bosuutap.png"]];
+    [tabBarItem3 setFinishedSelectedImage:[UIImage imageNamed:@"tb_lienhe_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"tb_lienhe.png"]];
+    
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"True_X.sqlite"];
     return YES;
 }
