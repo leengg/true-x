@@ -48,7 +48,6 @@ static NSString *kSchemeEmailToTrueX = @"mailto:info@true-x.net";
     NSString *headStyle = [NSString stringWithFormat:@"<head><style type=\"text/css\">body {font-family:\"Helvetica\"; font-size:14px;color:#FFF;} img {max-width: 300px !important;} img.center { display: block; margin-left: auto; margin-right: auto; }</style></head>"];
     NSString *htmlString = [NSString stringWithFormat:@"<html>%@<body> <br/> %@ %@</body></html>", headStyle, imageHtmlString, contentHMLT];
     
-    NSLog(@"htmlString: %@", htmlString);
     [self.contactTextView loadHTMLString:htmlString baseURL:nil];
 }
 
@@ -68,8 +67,11 @@ static NSString *kSchemeEmailToTrueX = @"mailto:info@true-x.net";
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
 
     NSString *scheme = request.URL.scheme;
-    if ([scheme isEqualToString:@"mailto"] || [scheme isEqualToString:@"tel"])        return YES;
-    else if([scheme isEqualToString:@"http"]) {[[UIApplication sharedApplication] openURL:request.URL]; return NO;}
+    if ([scheme isEqualToString:@"mailto"] || [scheme isEqualToString:@"tel"] || [scheme isEqualToString:@"http"])
+    {
+        [[UIApplication sharedApplication] openURL:request.URL];
+        return NO;
+    }
     else    return YES;
 }
 
