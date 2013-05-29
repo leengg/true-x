@@ -57,30 +57,30 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" id="OXF-Df-ft2">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="85" sectionHeaderHeight="22" sectionFooterHeight="22" id="OXF-Df-ft2">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.21568627450980393" green="0.22745098039215686" blue="0.2627450980392157" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ProductCellID" id="xbH-Wp-2bA" customClass="ProductCell">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="75"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="85"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="VhU-zg-VaO">
-                                                    <rect key="frame" x="9" y="10" width="55" height="55"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="placehold.png" id="VhU-zg-VaO">
+                                                    <rect key="frame" x="8" y="7.5" width="70" height="70"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ultrathin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cyA-jE-mjn">
-                                                    <rect key="frame" x="80" y="13" width="230" height="25"/>
+                                                    <rect key="frame" x="86" y="15" width="230" height="25"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cảm giác thật" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uGL-5K-8CW">
-                                                    <rect key="frame" x="80" y="32" width="230" height="25"/>
+                                                    <rect key="frame" x="86" y="38" width="230" height="25"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -117,7 +117,7 @@
             </objects>
             <point key="canvasLocation" x="2479" y="908"/>
         </scene>
-        <!--Product Detail View Controller-->
+        <!--Product Detail View Controller - Bộ sưu tập-->
         <scene sceneID="ZRi-Lq-Lbe">
             <objects>
                 <viewController storyboardIdentifier="ProductDetailViewControllerID" id="WYM-MC-kK8" customClass="ProductDetailViewController" sceneMemberID="viewController">
@@ -131,7 +131,26 @@
                             <outletCollection property="gestureRecognizers" destination="zSI-SN-bW5" appends="YES" id="Ts1-s9-Qil"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="cst-Rn-k6M"/>
+                    <navigationItem key="navigationItem" title="Bộ sưu tập" id="cst-Rn-k6M">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="qzV-ZM-JAL">
+                            <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IiI-ps-oDB">
+                                <rect key="frame" x="5" y="5" width="50" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button" image="bt_back.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="bt_back.png"/>
+                                <state key="highlighted" image="bt_back.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickBack:" destination="WYM-MC-kK8" eventType="touchUpInside" id="4iM-Jb-LU6"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -181,7 +200,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="placehold.png" id="ZKy-rT-CNe" userLabel="Product Image View">
-                                        <rect key="frame" x="30" y="61" width="260" height="200"/>
+                                        <rect key="frame" x="40" y="61" width="240" height="210"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_product_name.png" id="TSW-Hz-WWv" userLabel="BG Name Image View">
@@ -221,7 +240,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1lu-xg-uAG">
-                                        <rect key="frame" x="4" y="50" width="47" height="212"/>
+                                        <rect key="frame" x="0.5" y="50" width="40" height="212"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="ico_arrow_left.png">
@@ -236,7 +255,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aOk-WU-B11">
-                                        <rect key="frame" x="273" y="50" width="47" height="212"/>
+                                        <rect key="frame" x="279.5" y="50" width="40" height="212"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="ico_arrow_right.png">
@@ -295,18 +314,26 @@
             </objects>
             <point key="canvasLocation" x="3128" y="3188"/>
         </scene>
-        <!--View Controller - Liên hệ-->
+        <!--Contact View Controller - Liên hệ-->
         <scene sceneID="v59-BT-S2n">
             <objects>
-                <viewController id="gbb-87-HxU" sceneMemberID="viewController">
+                <viewController id="gbb-87-HxU" customClass="ContactViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vyW-C1-GvL">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_product_detail.png" id="Dtz-vm-Fwt">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <webView opaque="NO" contentMode="scaleToFill" id="d1C-A0-yhX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gbb-87-HxU" id="63Z-0w-Lp8"/>
+                                </connections>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -315,6 +342,9 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="contactTextView" destination="d1C-A0-yhX" id="AWo-ad-6RS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sXH-Ng-pdA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -536,9 +566,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <webView opaque="NO" contentMode="scaleToFill" id="vUc-Ve-abi">
+                            <webView contentMode="scaleToFill" id="vUc-Ve-abi">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="bf0-2i-0wp" id="HuU-X1-KJN"/>
@@ -550,14 +580,15 @@
                     <navigationItem key="navigationItem" id="Ktk-ey-Syl">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="p2x-BF-Lvq">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="PYF-W7-BIX">
-                                <rect key="frame" x="5" y="7" width="50" height="30"/>
+                                <rect key="frame" x="5" y="5" width="50" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="bg_back.png">
+                                <state key="normal" image="bt_back.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="highlighted">
+                                <state key="selected" image="bt_back.png"/>
+                                <state key="highlighted" image="bt_back.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -579,12 +610,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bg_back.png" width="99" height="58"/>
         <image name="bg_ellipse.png" width="68" height="31"/>
         <image name="bg_listProducts.png" width="640" height="911"/>
         <image name="bg_menu.png" width="320" height="37"/>
         <image name="bg_product_detail.png" width="320" height="455"/>
         <image name="bg_product_name.png" width="504" height="42"/>
+        <image name="bt_back.png" width="50" height="33"/>
         <image name="bt_chuyenbenle_selected.png" width="94" height="37"/>
         <image name="bt_dangcap_selected.png" width="71" height="37"/>
         <image name="bt_phongdo_selected.png" width="95" height="37"/>
@@ -611,9 +642,16 @@
                 <relationship kind="outlet" name="articleWebView" candidateClass="UIWebView"/>
             </relationships>
         </class>
+        <class className="ContactViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="contactTextView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
         <class className="CustomSegmentViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomSegmentViewController.h"/>
             <relationships>
+                <relationship kind="action" name="clickChangeTab:"/>
                 <relationship kind="outlet" name="btn_ChuyenBenLe" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btn_DangCap" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btn_PhongDo" candidateClass="UIButton"/>
@@ -646,6 +684,8 @@
         <class className="ProductDetailPageViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductDetailPageViewController.h"/>
             <relationships>
+                <relationship kind="action" name="clickNext:"/>
+                <relationship kind="action" name="clickPreview:"/>
                 <relationship kind="outlet" name="leftBtn" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="mainScrollView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="pageLabel" candidateClass="UILabel"/>
@@ -660,6 +700,7 @@
         <class className="ProductDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductDetailViewController.h"/>
             <relationships>
+                <relationship kind="action" name="clickBack:"/>
                 <relationship kind="action" name="swipeLeft:"/>
                 <relationship kind="action" name="swipeRight:"/>
             </relationships>

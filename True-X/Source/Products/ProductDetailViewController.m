@@ -73,6 +73,11 @@
     }
 }
 
+- (IBAction)clickBack:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 #pragma mark - ProductDetailPageDelegate
 
 - (void)didChangePage:(ProductDetailPageViewController *)productDetailPageVC withDirection:(PagingDirection)direction {

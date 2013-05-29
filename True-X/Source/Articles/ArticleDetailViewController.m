@@ -59,9 +59,12 @@
 
 - (void)loadArticleContent {
     
-    NSString *htmlString = [NSString stringWithFormat:@"<html><body style='color:#FFF; font-family:\"Tahoma\";'> <h2> %@ </h2> </br> %@</body></html>", self.article.att2_title, self.article.att5_contentHTML];
-    [self.articleWebView loadHTMLString:htmlString baseURL:nil];
+    NSString *titleHtmlString = [NSString stringWithFormat:@"<h2> %@ </h2>", self.article.att2_title];
+    NSString *imageHtmlString = [NSString stringWithFormat:@"<img alt=\"%@\" src=\"%@\" style=\"width: 304px;\" />", self.article.att2_title, self.article.att3_thumbnailURL];
+    NSString *headStyle = [NSString stringWithFormat:@"<head><style type=\"text/css\">img {width: 304px !important;}</style></head>"];
+    NSString *htmlString = [NSString stringWithFormat:@"<html>%@<body style='font-family:\"Tahoma\";'> %@ %@ %@</body></html>", headStyle, titleHtmlString, imageHtmlString, self.article.att5_contentHTML];
 
+    [self.articleWebView loadHTMLString:htmlString baseURL:nil];
 }
 
 - (IBAction)clickBack:(id)sender {
