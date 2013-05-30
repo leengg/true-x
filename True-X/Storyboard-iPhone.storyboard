@@ -521,7 +521,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="JFq-bJ-4iU">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="placehold.png" id="JFq-bJ-4iU">
                                                     <rect key="frame" x="8" y="11" width="65" height="55"/>
                                                 </imageView>
                                                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" id="q4Q-fk-V98">
@@ -648,6 +648,7 @@
         <class className="ArticleDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ArticleDetailViewController.h"/>
             <relationships>
+                <relationship kind="action" name="clickBack:"/>
                 <relationship kind="outlet" name="articleWebView" candidateClass="UIWebView"/>
             </relationships>
         </class>
@@ -692,9 +693,6 @@
         <class className="ProductDetailPageViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductDetailPageViewController.h"/>
             <relationships>
-                <relationship kind="action" name="clickNext:"/>
-                <relationship kind="action" name="clickPreview:"/>
-                <relationship kind="action" name="clickSlideShow:"/>
                 <relationship kind="outlet" name="leftBtn" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="mainScrollView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="pageLabel" candidateClass="UILabel"/>

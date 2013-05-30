@@ -1160,15 +1160,15 @@
 		DE07CE79173D25F40022440A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: SmartEbook.com Co.,Ltd";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SmartEbook.com Co.,Ltd";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Phong Do (KNRGN8675N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Phong Do (KNRGN8675N)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "True-X/True-X-Prefix.pch";
 				INFOPLIST_FILE = "True-X/True-X-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "Love & Sex";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "8B151D2A-06EE-479E-94FB-B71E23F38306";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8B151D2A-06EE-479E-94FB-B71E23F38306";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSION_INFO_BUILDER = "Dao Nguyen";
 				WRAPPER_EXTENSION = app;
@@ -1178,15 +1178,15 @@
 		DE07CE7A173D25F40022440A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: SmartEbook.com Co.,Ltd";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SmartEbook.com Co.,Ltd";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Phong Do (KNRGN8675N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Phong Do (KNRGN8675N)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "True-X/True-X-Prefix.pch";
 				INFOPLIST_FILE = "True-X/True-X-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "Love & Sex";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "8B151D2A-06EE-479E-94FB-B71E23F38306";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8B151D2A-06EE-479E-94FB-B71E23F38306";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSION_INFO_BUILDER = "Dao Nguyen";
 				WRAPPER_EXTENSION = app;
