@@ -82,7 +82,7 @@
     Articles *article = (Articles *)[[[ArticlesModel shareArticlesModel] currentArticlesList] objectAtIndex:indexPath.row];
 
     cell.titleTextView.text = article.att2_title;
-    [cell.thumbnailImageView setImageWithURL:[NSURL URLWithString:article.att3_thumbnailURL] placeholderImage:[UIImage imageNamed:@"placehold.png"]];
+    [cell.thumbnailImageView setImageWithURL:[NSURL URLWithString:article.att3_thumbnailURL] placeholderImage:[UIImage imageNamed:@"placehold_s.png"]];
     
     cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ico_accessory_view.png"]];
     cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_cell_selected.png"]];

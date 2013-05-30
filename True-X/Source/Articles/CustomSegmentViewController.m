@@ -10,6 +10,7 @@
 
 @interface CustomSegmentViewController () {
 
+    __weak IBOutlet UIImageView *menuBGImageView;
     __weak IBOutlet UIButton *btn_PhongDo;
     __weak IBOutlet UIButton *btn_DangCap;
     __weak IBOutlet UIButton *btn_ChuyenBenLe;
@@ -36,7 +37,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
-    [btn_PhongDo setImage:[UIImage imageNamed:@"bt_phongdo_selected.png"] forState:UIControlStateNormal];
+    [menuBGImageView setImage:[UIImage imageNamed:@"menu_1.png"]];
     currentButton = btn_PhongDo;
     [self.delegate customSegment:self didSelectIndex:0];
 }
@@ -83,22 +84,22 @@
     [btn_TuVan setImage:nil forState:UIControlStateNormal];
 
     if (sender == btn_PhongDo) {
-        [btn_PhongDo setImage:[UIImage imageNamed:@"bt_phongdo_selected.png"] forState:UIControlStateNormal];
+        [menuBGImageView setImage:[UIImage imageNamed:@"menu_1.png"]];
         currentButton = btn_PhongDo;
         [self.delegate customSegment:self didSelectIndex:0];
     }
     else if (sender == btn_DangCap) {
-        [btn_DangCap setImage:[UIImage imageNamed:@"bt_dangcap_selected.png"] forState:UIControlStateNormal];
+        [menuBGImageView setImage:[UIImage imageNamed:@"menu_2.png"]];
         currentButton = btn_DangCap;
         [self.delegate customSegment:self didSelectIndex:1];
     }
     else if (sender == btn_ChuyenBenLe) {
-        [btn_ChuyenBenLe setImage:[UIImage imageNamed:@"bt_chuyenbenle_selected.png"] forState:UIControlStateNormal];
+        [menuBGImageView setImage:[UIImage imageNamed:@"menu_3.png"]];
         currentButton = btn_ChuyenBenLe;
         [self.delegate customSegment:self didSelectIndex:2];
     }
     else if (sender == btn_TuVan) {
-        [btn_TuVan setImage:[UIImage imageNamed:@"bt_tuvan_selected.png"] forState:UIControlStateNormal];
+        [menuBGImageView setImage:[UIImage imageNamed:@"menu_4.png"]];
         currentButton = btn_TuVan;
         [self.delegate customSegment:self didSelectIndex:3];
     }
@@ -112,6 +113,7 @@
     btn_DangCap = nil;
     btn_ChuyenBenLe = nil;
     btn_TuVan = nil;
+    menuBGImageView = nil;
     [super viewDidUnload];
 }
 @end

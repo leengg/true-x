@@ -17,7 +17,8 @@
     
     //self.window.backgroundColor = [UIColor whiteColor];
     //[self.window makeKeyAndVisible];
-    //custom tabbar
+    
+    //Custom tabbar
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     UITabBar *tabBar = tabBarController.tabBar;
     UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
@@ -28,6 +29,10 @@
     [tabBarItem2 setFinishedSelectedImage:[UIImage imageNamed:@"tb_bosuutap_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"tb_bosuutap.png"]];
     [tabBarItem3 setFinishedSelectedImage:[UIImage imageNamed:@"tb_lienhe_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"tb_lienhe.png"]];
     
+    //Custom navigation bar
+    //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bg_navigation_bar.png"] forBarMetrics:UIBarMetricsDefault];
+    
+    //Setup core data
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"True_X.sqlite"];
     return YES;
 }
