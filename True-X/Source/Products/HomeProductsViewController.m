@@ -85,7 +85,7 @@
     
     Products *product = [[ProductsModel shareProductsModel].currentProductsList objectAtIndex:indexPath.row];
     // Configure the cell...
-    [cell.thumbnailImageView setImageWithURL:[NSURL URLWithString:product.att5_thumbnailURL] placeholderImage:[UIImage imageNamed:@"placehold_s.png"]];
+    [cell.thumbnailImageView setThumbnailImageWithURL:[NSURL URLWithString:product.att5_thumbnailURL] placeholderImage:[UIImage imageNamed:@"placehold_s.png"]];
     cell.titleLabel.text = product.att3_categoryName;   //@"Ultrathin";
     cell.descriptionLabel.text = product.att4_description;  //@"Cảm giác thật";
     cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ico_accessory_view.png"]];

@@ -126,6 +126,9 @@
 		DE49394217564E0600840080 /* EGOImageLoadConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = DE49393E17564E0600840080 /* EGOImageLoadConnection.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE49394317564E0600840080 /* EGOImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = DE49394017564E0600840080 /* EGOImageLoader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE4939471756505500840080 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4939461756505500840080 /* MessageUI.framework */; };
+		DE7AC1E91758E1F300E57F67 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7AC1E41758E1F300E57F67 /* UIImage+Alpha.m */; };
+		DE7AC1EA1758E1F300E57F67 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7AC1E61758E1F300E57F67 /* UIImage+Resize.m */; };
+		DE7AC1EB1758E1F300E57F67 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7AC1E81758E1F300E57F67 /* UIImage+RoundedCorner.m */; };
 		DEDCF77B173D6FD60066355D /* MagicalImportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF743173D6FD60066355D /* MagicalImportFunctions.m */; };
 		DEDCF77C173D6FD60066355D /* NSAttributeDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF745173D6FD60066355D /* NSAttributeDescription+MagicalDataImport.m */; };
 		DEDCF77D173D6FD60066355D /* NSEntityDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF747173D6FD60066355D /* NSEntityDescription+MagicalDataImport.m */; };
@@ -321,6 +324,12 @@
 		DE49393F17564E0600840080 /* EGOImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageLoader.h; sourceTree = "<group>"; };
 		DE49394017564E0600840080 /* EGOImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageLoader.m; sourceTree = "<group>"; };
 		DE4939461756505500840080 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		DE7AC1E31758E1F300E57F67 /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
+		DE7AC1E41758E1F300E57F67 /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
+		DE7AC1E51758E1F300E57F67 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		DE7AC1E61758E1F300E57F67 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		DE7AC1E71758E1F300E57F67 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		DE7AC1E81758E1F300E57F67 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
 		DEDCF742173D6FD60066355D /* MagicalImportFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalImportFunctions.h; sourceTree = "<group>"; };
 		DEDCF743173D6FD60066355D /* MagicalImportFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalImportFunctions.m; sourceTree = "<group>"; };
 		DEDCF744173D6FD60066355D /* NSAttributeDescription+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributeDescription+MagicalDataImport.h"; sourceTree = "<group>"; };
@@ -787,13 +796,27 @@
 			path = EGOImageLoader;
 			sourceTree = "<group>";
 		};
+		DEA469771758D9D400870DA2 /* UIImage+Extention */ = {
+			isa = PBXGroup;
+			children = (
+				DE7AC1E31758E1F300E57F67 /* UIImage+Alpha.h */,
+				DE7AC1E41758E1F300E57F67 /* UIImage+Alpha.m */,
+				DE7AC1E51758E1F300E57F67 /* UIImage+Resize.h */,
+				DE7AC1E61758E1F300E57F67 /* UIImage+Resize.m */,
+				DE7AC1E71758E1F300E57F67 /* UIImage+RoundedCorner.h */,
+				DE7AC1E81758E1F300E57F67 /* UIImage+RoundedCorner.m */,
+			);
+			path = "UIImage+Extention";
+			sourceTree = "<group>";
+		};
 		DEDCF73E173D6FD60066355D /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
-				DE49390417564D8F00840080 /* EGOPhotoViewer */,
-				DEDF29991750CC50001605BB /* MBProgressHUD */,
 				DE04012E174E6C1A00660B3E /* AFNetworking */,
+				DEDF29991750CC50001605BB /* MBProgressHUD */,
 				DEDCF73F173D6FD60066355D /* MagicalRecord */,
+				DE49390417564D8F00840080 /* EGOPhotoViewer */,
+				DEA469771758D9D400870DA2 /* UIImage+Extention */,
 			);
 			path = ThirdParty;
 			sourceTree = "<group>";
@@ -1144,6 +1167,9 @@
 				DE49394217564E0600840080 /* EGOImageLoadConnection.m in Sources */,
 				DE49394317564E0600840080 /* EGOImageLoader.m in Sources */,
 				69833E1F17589A6300CFA778 /* TrueXFont.m in Sources */,
+				DE7AC1E91758E1F300E57F67 /* UIImage+Alpha.m in Sources */,
+				DE7AC1EA1758E1F300E57F67 /* UIImage+Resize.m in Sources */,
+				DE7AC1EB1758E1F300E57F67 /* UIImage+RoundedCorner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1222,15 +1248,15 @@
 		DE07CE79173D25F40022440A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: SmartEbook.com Co.,Ltd";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SmartEbook.com Co.,Ltd";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Phong Do (KNRGN8675N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Phong Do (KNRGN8675N)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "True-X/True-X-Prefix.pch";
 				INFOPLIST_FILE = "True-X/True-X-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "Love & Sex";
-				PROVISIONING_PROFILE = "C5741783-D860-4BBC-A29C-18F2E4D48EB7";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C5741783-D860-4BBC-A29C-18F2E4D48EB7";
+				PROVISIONING_PROFILE = "8B151D2A-06EE-479E-94FB-B71E23F38306";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8B151D2A-06EE-479E-94FB-B71E23F38306";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSION_INFO_BUILDER = "Dao Nguyen";
 				WRAPPER_EXTENSION = app;
@@ -1240,15 +1266,15 @@
 		DE07CE7A173D25F40022440A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: SmartEbook.com Co.,Ltd";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SmartEbook.com Co.,Ltd";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Phong Do (KNRGN8675N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Phong Do (KNRGN8675N)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "True-X/True-X-Prefix.pch";
 				INFOPLIST_FILE = "True-X/True-X-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "Love & Sex";
-				PROVISIONING_PROFILE = "C5741783-D860-4BBC-A29C-18F2E4D48EB7";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C5741783-D860-4BBC-A29C-18F2E4D48EB7";
+				PROVISIONING_PROFILE = "8B151D2A-06EE-479E-94FB-B71E23F38306";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8B151D2A-06EE-479E-94FB-B71E23F38306";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSION_INFO_BUILDER = "Dao Nguyen";
 				WRAPPER_EXTENSION = app;

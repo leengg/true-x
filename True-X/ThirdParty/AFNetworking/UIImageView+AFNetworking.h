@@ -53,6 +53,11 @@
 - (void)setImageWithURL:(NSURL *)url 
        placeholderImage:(UIImage *)placeholderImage;
 
+//@Dao add AFNetworking cache thumbnail
+- (void)setThumbnailImageWithURL:(NSURL *)url
+                placeholderImage:(UIImage *)placeholderImage;
+//@end Dao
+
 /**
  Creates and enqueues an image request operation, which asynchronously downloads the image with the specified url request object. If the image is cached locally, the image is set immediately. Otherwise, the specified placeholder image will be set immediately, and then the remote image will be set once the request is finished.
  

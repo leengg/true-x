@@ -25,6 +25,9 @@
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED
 #import "UIImageView+AFNetworking.h"
+//@Dao add AFNetworking cache thumbnail
+#import "UIImage+Resize.h"
+//@end Dao
 
 @interface AFImageCache : NSCache
 - (UIImage *)cachedImageForRequest:(NSURLRequest *)request;
@@ -35,19 +38,33 @@
 #pragma mark -
 
 static char kAFImageRequestOperationObjectKey;
+static NSString  *isThumnailTag = @"isThumnailTag";
 
 @interface UIImageView (_AFNetworking)
 @property (readwrite, nonatomic, retain, setter = af_setImageRequestOperation:) AFImageRequestOperation *af_imageRequestOperation;
+//@Dao add AFNetworking cache thumbnail
+@property (nonatomic, readwrite, retain) NSString *isThumbnail;
+//@end Dao
 @end
 
 @implementation UIImageView (_AFNetworking)
-@dynamic af_imageRequestOperation;
+@dynamic af_imageRequestOperation, isThumbnail;
 @end
 
 #pragma mark -
 
 @implementation UIImageView (AFNetworking)
 
+//@Dao add
+- (id)isThumbnail {
+    return objc_getAssociatedObject(self, isThumnailTag);
+}
+
+- (void)setIsThumbnail:(NSString *)newIsThumbnail {
+    objc_setAssociatedObject(self, isThumnailTag, newIsThumbnail, OBJC_ASSOCIATION_ASSIGN);
+}
+
+//@end Dao
 - (AFHTTPRequestOperation *)af_imageRequestOperation {
     return (AFHTTPRequestOperation *)objc_getAssociatedObject(self, &kAFImageRequestOperationObjectKey);
 }
@@ -83,12 +100,22 @@ static char kAFImageRequestOperationObjectKey;
     [self setImageWithURL:url placeholderImage:nil];
 }
 
+//@Dao add AFNetworking cache thumbnail
+- (void)setThumbnailImageWithURL:(NSURL *)url
+       placeholderImage:(UIImage *)placeholderImage {
+
+    self.isThumbnail = isThumnailTag;
+    [self setImageWithURL:url placeholderImage:placeholderImage];
+}
+//@end Dao
+
 - (void)setImageWithURL:(NSURL *)url 
        placeholderImage:(UIImage *)placeholderImage
 {
-    //@Dao fix cache image
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:30.0];
+    //@Dao add AFNetworking cache thumbnail
+    self.isThumbnail = nil;
     //@end Dao
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
     [request setHTTPShouldHandleCookies:NO];
     [request setHTTPShouldUsePipelining:YES];
     
@@ -103,6 +130,12 @@ static char kAFImageRequestOperationObjectKey;
     [self cancelImageRequestOperation];
     
     UIImage *cachedImage = [[[self class] af_sharedImageCache] cachedImageForRequest:urlRequest];
+    //@Dao add AFNetworking cache thumbnail
+    if (cachedImage && !CGSizeEqualToSize(cachedImage.size, self.frame.size)) {
+        cachedImage = nil;
+    }
+    //@end Dao
+    
     if (cachedImage) {
         self.image = cachedImage;
         self.af_imageRequestOperation = nil;
@@ -115,8 +148,14 @@ static char kAFImageRequestOperationObjectKey;
         
         AFImageRequestOperation *requestOperation = [[[AFImageRequestOperation alloc] initWithRequest:urlRequest] autorelease];
         [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+            //@Dao add AFNetworking cache thumbnail
+            UIImage *thumbImage = (UIImage *)responseObject;
+            if ([self.isThumbnail isEqualToString:isThumnailTag]) {
+               thumbImage = [thumbImage rectangleThumbnailImage:self.frame.size transparentBorder:1.0 cornerRadius:2.0 interpolationQuality:kCGInterpolationDefault];
+            }
+            //@end Dao
             if ([[urlRequest URL] isEqual:[[self.af_imageRequestOperation request] URL]]) {
-                self.image = responseObject;
+                self.image = thumbImage;
                 self.af_imageRequestOperation = nil;
             }
 
@@ -124,9 +163,8 @@ static char kAFImageRequestOperationObjectKey;
                 success(operation.request, operation.response, responseObject);
             }
 
-            [[[self class] af_sharedImageCache] cacheImage:responseObject forRequest:urlRequest];
+            [[[self class] af_sharedImageCache] cacheImage:thumbImage forRequest:urlRequest];
             
-
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             if ([[urlRequest URL] isEqual:[[self.af_imageRequestOperation request] URL]]) {
                 self.af_imageRequestOperation = nil;
