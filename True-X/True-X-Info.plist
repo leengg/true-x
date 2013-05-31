@@ -59,6 +59,15 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>MyriadPro-Bold.otf</string>
+		<string>MyriadPro-BoldCond.otf</string>
+		<string>MyriadPro-BoldIt.otf</string>
+		<string>MyriadPro-Cond.otf</string>
+		<string>MyriadPro-It.otf</string>
+		<string>MyriadPro-SemiboldIt.otf</string>
+	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

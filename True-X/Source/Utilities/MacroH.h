@@ -8,6 +8,7 @@
 
 #import "Constant.h"
 #import "TrueXLoading.h"
+#import "TrueXFont.h"
 
 #ifndef True_X_MacroH_h
 #define True_X_MacroH_h

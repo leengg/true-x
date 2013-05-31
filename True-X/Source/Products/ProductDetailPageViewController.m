@@ -52,12 +52,25 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"att1_id == %d AND att5_productID == %@", self.currentPage, self.product.att1_id];
     ProductSlides *productSlide = [ProductSlides findFirstWithPredicate:predicate];
     
+    //Set up page number
+    self.pageLabel.font = [TrueXFont pageNumberFont];
     self.pageLabel.text = [NSString stringWithFormat:@"%d of 4", productSlide.att1_id];     //[NSString stringWithFormat:@"%d of 4", self.currentPage];
     [self.productImageView setImageWithURL:[NSURL URLWithString:productSlide.att4_thumbnailURL] placeholderImage:[UIImage imageNamed:@"placehold.png"]];
+    
+    //Set up product name
+    self.productNameLabel.font = [TrueXFont productNameFont];
     self.productNameLabel.text = self.product.att3_categoryName;   //@"Ultrathin";
+    
+    //Set up feeling
+    self.productFeelingLabel.font = [TrueXFont feelingNameFont];
     self.productFeelingLabel.text = self.product.att4_description;  //@"Cảm giác thật";
     
+    //Set up title
+    self.productTitleLabel.font = [TrueXFont titleFont];
     self.productTitleLabel.text = productSlide.att2_name;
+    
+    //Set up description
+    self.productDescriptionTextView.font = [TrueXFont descriptionFont];
     self.productDescriptionTextView.text = productSlide.att3_description; // @"1. Những người từng sử dụng True-X Ultra Thin cho biết, có đôi lúc, họ phải dừng lại kiểm tra xem mình có thật sự đang mang bao cao su không, bởi cảm giác đó quá chân thật. Và việc ngưng đột ngột ấy, giúp bạn lấy lại được bình tĩnh, kéo dài “hiệp đấu” và nàng thì phát điên vì bạn.";
     
     CGRect frame = self.productDescriptionTextView.frame;
