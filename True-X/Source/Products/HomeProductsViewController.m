@@ -35,8 +35,14 @@
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadListProducts:) name:NOTIFICATION_PRODUCT_DID_FINISH_LOAD object:nil];
     
-    [[ProductsModel shareProductsModel] setCurrentPage:1];
-    [[ProductsModel shareProductsModel] getProductsList];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    if ([ProductsModel shareProductsModel].currentProductsList.count == 0) {
+        [[ProductsModel shareProductsModel] setCurrentPage:1];
+        [[ProductsModel shareProductsModel] getProductsList];
+    }
 }
 
 - (void)reloadListProducts:(NSNotification *)notification {

@@ -30,7 +30,7 @@
     [tabBarItem3 setFinishedSelectedImage:[UIImage imageNamed:@"tb_lienhe_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"tb_lienhe.png"]];
     
     //Custom navigation bar
-    //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bg_navigation_bar.png"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bg_navigation_bar.png"] forBarMetrics:UIBarMetricsDefault];
     
     //Setup core data
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"True_X.sqlite"];

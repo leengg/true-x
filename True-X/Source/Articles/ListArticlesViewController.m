@@ -42,7 +42,6 @@
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadListArticles:) name:NOTIFICATION_ARTICLE_DID_FINISH_LOAD object:nil];
-
 }
 
 - (void)reloadListArticles:(NSNotification *)notification {
