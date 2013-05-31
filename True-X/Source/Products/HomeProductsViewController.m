@@ -45,6 +45,11 @@
     }
 }
 
+- (IBAction)clickReload:(id)sender {
+    
+    [[ProductsModel shareProductsModel] getProductsList];
+}
+
 - (void)reloadListProducts:(NSNotification *)notification {
     
     self.productsTableView.hidden = ([ProductsModel shareProductsModel].currentProductsList.count == 0) ? YES : NO;

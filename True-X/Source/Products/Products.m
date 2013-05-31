@@ -60,13 +60,13 @@
         id childJSON = [attributes valueForKeyPath:@"productSlides"];
         for (NSDictionary *child in childJSON) {
   
-            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"att1_id == %@ AND att5_productID == %@", [child valueForKeyPath:@"id"], self.att1_id];
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"att1_id == %d AND att5_productID == %@", [[child valueForKeyPath:@"id"] intValue], self.att1_id];
             ProductSlides *productSlide = [ProductSlides findFirstWithPredicate:predicate];
             if (!productSlide) {
                 productSlide = [ProductSlides createInContext:currentContext];
+                productSlide.product = self;
             }
             [productSlide setAttributes:child];
-            productSlide.product = self;
             productSlide.att5_productID = self.att1_id;
             [self removeSlideObject:productSlide];
             [self addSlideObject:productSlide];

@@ -65,6 +65,14 @@
 		69833E1B1758912300CFA778 /* tb_lienhe_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69833DED1758912300CFA778 /* tb_lienhe_selected@2x.png */; };
 		69833E1C1758912300CFA778 /* true_x_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 69833DEE1758912300CFA778 /* true_x_logo.png */; };
 		69833E1F17589A6300CFA778 /* TrueXFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 69833E1E17589A6300CFA778 /* TrueXFont.m */; };
+		69833E391758BA6300CFA778 /* bt_refresh_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69833E351758BA6300CFA778 /* bt_refresh_selected@2x.png */; };
+		69833E3A1758BA6300CFA778 /* bt_refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69833E361758BA6300CFA778 /* bt_refresh@2x.png */; };
+		69833E3B1758BA6300CFA778 /* bt_share_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69833E371758BA6300CFA778 /* bt_share_selected@2x.png */; };
+		69833E3C1758BA6300CFA778 /* bt_share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69833E381758BA6300CFA778 /* bt_share@2x.png */; };
+		69833E421758BC5300CFA778 /* bt_refresh_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 69833E3E1758BC5200CFA778 /* bt_refresh_selected.png */; };
+		69833E431758BC5300CFA778 /* bt_refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 69833E3F1758BC5200CFA778 /* bt_refresh.png */; };
+		69833E441758BC5300CFA778 /* bt_share_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 69833E401758BC5200CFA778 /* bt_share_selected.png */; };
+		69833E451758BC5300CFA778 /* bt_share.png in Resources */ = {isa = PBXBuildFile; fileRef = 69833E411758BC5200CFA778 /* bt_share.png */; };
 		DE040090174BD31C00660B3E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE04008E174BD30400660B3E /* QuartzCore.framework */; };
 		DE040144174E6C1A00660B3E /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DE040130174E6C1A00660B3E /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE040145174E6C1A00660B3E /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DE040132174E6C1A00660B3E /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -217,6 +225,14 @@
 		69833DEE1758912300CFA778 /* true_x_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = true_x_logo.png; sourceTree = "<group>"; };
 		69833E1D17589A6300CFA778 /* TrueXFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrueXFont.h; sourceTree = "<group>"; };
 		69833E1E17589A6300CFA778 /* TrueXFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrueXFont.m; sourceTree = "<group>"; };
+		69833E351758BA6300CFA778 /* bt_refresh_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_refresh_selected@2x.png"; sourceTree = "<group>"; };
+		69833E361758BA6300CFA778 /* bt_refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_refresh@2x.png"; sourceTree = "<group>"; };
+		69833E371758BA6300CFA778 /* bt_share_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_share_selected@2x.png"; sourceTree = "<group>"; };
+		69833E381758BA6300CFA778 /* bt_share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_share@2x.png"; sourceTree = "<group>"; };
+		69833E3E1758BC5200CFA778 /* bt_refresh_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt_refresh_selected.png; sourceTree = "<group>"; };
+		69833E3F1758BC5200CFA778 /* bt_refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt_refresh.png; sourceTree = "<group>"; };
+		69833E401758BC5200CFA778 /* bt_share_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt_share_selected.png; sourceTree = "<group>"; };
+		69833E411758BC5200CFA778 /* bt_share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt_share.png; sourceTree = "<group>"; };
 		DE040087174BC37F00660B3E /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		DE04008E174BD30400660B3E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DE04012F174E6C1A00660B3E /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
@@ -430,6 +446,14 @@
 		69833DC01758912300CFA778 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				69833E3E1758BC5200CFA778 /* bt_refresh_selected.png */,
+				69833E3F1758BC5200CFA778 /* bt_refresh.png */,
+				69833E401758BC5200CFA778 /* bt_share_selected.png */,
+				69833E411758BC5200CFA778 /* bt_share.png */,
+				69833E351758BA6300CFA778 /* bt_refresh_selected@2x.png */,
+				69833E361758BA6300CFA778 /* bt_refresh@2x.png */,
+				69833E371758BA6300CFA778 /* bt_share_selected@2x.png */,
+				69833E381758BA6300CFA778 /* bt_share@2x.png */,
 				69833DC11758912300CFA778 /* bg_back.png */,
 				69833DC21758912300CFA778 /* bg_cell_selected.png */,
 				69833DC31758912300CFA778 /* bg_cell_selected@2x.png */,
@@ -1035,6 +1059,14 @@
 				69833E1A1758912300CFA778 /* tb_lienhe_selected.png in Resources */,
 				69833E1B1758912300CFA778 /* tb_lienhe_selected@2x.png in Resources */,
 				69833E1C1758912300CFA778 /* true_x_logo.png in Resources */,
+				69833E391758BA6300CFA778 /* bt_refresh_selected@2x.png in Resources */,
+				69833E3A1758BA6300CFA778 /* bt_refresh@2x.png in Resources */,
+				69833E3B1758BA6300CFA778 /* bt_share_selected@2x.png in Resources */,
+				69833E3C1758BA6300CFA778 /* bt_share@2x.png in Resources */,
+				69833E421758BC5300CFA778 /* bt_refresh_selected.png in Resources */,
+				69833E431758BC5300CFA778 /* bt_refresh.png in Resources */,
+				69833E441758BC5300CFA778 /* bt_share_selected.png in Resources */,
+				69833E451758BC5300CFA778 /* bt_share.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

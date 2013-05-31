@@ -105,7 +105,25 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="aa6-Lb-Bcb"/>
-                    <navigationItem key="navigationItem" title="Bộ sưu tập" id="dRA-hb-ypR"/>
+                    <navigationItem key="navigationItem" title="Bộ sưu tập" id="dRA-hb-ypR">
+                        <barButtonItem key="rightBarButtonItem" id="5EC-YV-oLz">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ubv-dO-ALb">
+                                <rect key="frame" x="282" y="5" width="33" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="bt_refresh.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickReload:" destination="lKs-i7-5s3" eventType="touchUpInside" id="eMN-R4-Mab"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -132,7 +150,7 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Bộ sưu tập" id="cst-Rn-k6M">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="qzV-ZM-JAL">
+                        <barButtonItem key="leftBarButtonItem" id="qzV-ZM-JAL">
                             <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IiI-ps-oDB">
                                 <rect key="frame" x="5" y="5" width="50" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -148,6 +166,20 @@
                                 <connections>
                                     <action selector="clickBack:" destination="WYM-MC-kK8" eventType="touchUpInside" id="4iM-Jb-LU6"/>
                                 </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" id="EhC-Ih-LaL">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aRJ-JO-Ixc">
+                                <rect key="frame" x="282" y="5" width="33" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="bt_share.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -376,7 +408,26 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="a0O-D7-A4u"/>
-                    <navigationItem key="navigationItem" title="Bài viết" id="ZCH-6U-obi"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Bài viết" id="ZCH-6U-obi">
+                        <barButtonItem key="rightBarButtonItem" id="jIj-7j-uf3">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="s5t-DG-WOe">
+                                <rect key="frame" x="282" y="5" width="33" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="bt_refresh.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickReload:" destination="GoT-i7-RGy" eventType="touchUpInside" id="WYT-lL-Azc"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -585,7 +636,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ktk-ey-Syl">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="p2x-BF-Lvq">
+                        <barButtonItem key="leftBarButtonItem" id="p2x-BF-Lvq">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="PYF-W7-BIX">
                                 <rect key="frame" x="5" y="5" width="50" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -601,6 +652,20 @@
                                 <connections>
                                     <action selector="clickBack:" destination="bf0-2i-0wp" eventType="touchUpInside" id="6eb-wz-RAT"/>
                                 </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" id="qjL-5y-Nwf">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HjJ-qK-BOr">
+                                <rect key="frame" x="282" y="5" width="33" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="bt_share.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -622,6 +687,8 @@
         <image name="bg_product_detail.png" width="320" height="455"/>
         <image name="bg_product_name.png" width="504" height="42"/>
         <image name="bt_back.png" width="50" height="33"/>
+        <image name="bt_refresh.png" width="32" height="33"/>
+        <image name="bt_share.png" width="32" height="33"/>
         <image name="ico_arrow_left.png" width="19" height="28"/>
         <image name="ico_arrow_right.png" width="19" height="28"/>
         <image name="ico_bosuutap.png" width="30" height="23"/>
@@ -630,6 +697,91 @@
         <image name="menu_1.png" width="320" height="37"/>
         <image name="placehold.png" width="220" height="220"/>
     </resources>
+    <classes>
+        <class className="ArticleCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ArticleCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="thumbnailImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titleTextView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="ArticleDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ArticleDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="clickBack:"/>
+                <relationship kind="outlet" name="articleWebView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ContactViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="contactTextView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="CustomSegmentViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomSegmentViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="clickChangeTab:"/>
+                <relationship kind="outlet" name="btn_ChuyenBenLe" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btn_DangCap" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btn_PhongDo" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btn_TuVan" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="menuBGImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="HomeArticlesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeArticlesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="clickReload:"/>
+            </relationships>
+        </class>
+        <class className="HomeProductsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeProductsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="clickReload:"/>
+                <relationship kind="outlet" name="productsTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ListArticlesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListArticlesViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="listArticlesTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ProductCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="thumbnailImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ProductDetailPageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductDetailPageViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="clickNext:"/>
+                <relationship kind="action" name="clickPreview:"/>
+                <relationship kind="action" name="clickSlideShow:"/>
+                <relationship kind="outlet" name="leftBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mainScrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="pageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="productDescriptionTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="productFeelingLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="productImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="productNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="productTitleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="rightBtn" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="ProductDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="clickBack:"/>
+                <relationship kind="action" name="swipeLeft:"/>
+                <relationship kind="action" name="swipeRight:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

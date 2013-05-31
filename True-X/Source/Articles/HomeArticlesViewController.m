@@ -53,6 +53,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)clickReload:(id)sender {
+    
+    [[ArticlesModel shareArticlesModel] getArticlesList];
+}
+
 #pragma mark - CustomSegmentDelegate
 
 - (void)customSegment:(CustomSegmentViewController *)customSegmentVC didSelectIndex:(int)index {
