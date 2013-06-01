@@ -37,6 +37,11 @@
     
 }
 
+- (void)viewDidUnload {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     
     if ([ProductsModel shareProductsModel].currentProductsList.count == 0) {

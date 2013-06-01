@@ -10,6 +10,8 @@
 #import "ArticleCell.h"
 #import "UIImageView+AFNetworking.h"
 
+//dispatch_queue_t taskQ;
+
 @interface ListArticlesViewController () {
 
     BOOL canLoadMore;
@@ -42,6 +44,13 @@
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadListArticles:) name:NOTIFICATION_ARTICLE_DID_FINISH_LOAD object:nil];
+    
+//    taskQ = dispatch_queue_create("net.true-x.love&sex", DISPATCH_QUEUE_SERIAL);
+}
+
+- (void)viewDidUnload {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)reloadListArticles:(NSNotification *)notification {
@@ -56,6 +65,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc {
+    
+//    dispatch_release(taskQ);
 }
 
 #pragma mark - Table view data source
@@ -81,6 +95,22 @@
     Articles *article = (Articles *)[[[ArticlesModel shareArticlesModel] currentArticlesList] objectAtIndex:indexPath.row];
 
     cell.titleTextView.text = article.att2_title;
+    
+//    dispatch_async(taskQ, ^{
+//        
+//        // Here, we do the scanning for @import statements.
+//        // When we find a valid one, we put the whole path to the
+//        // imported file into an array called 'verifiedImports'.
+//        [cell.thumbnailImageView setThumbnailImageWithURL:[NSURL URLWithString:article.att3_thumbnailURL] placeholderImage:[UIImage imageNamed:@"placehold_s.png"]];        
+//        
+//        // go back to the main thread and update the model (Core Data is not thread-safe.)
+//        dispatch_sync(dispatch_get_main_queue(), ^{
+//            
+//            NSLog(@"Got to main thread.");
+//            
+//        });//end block
+//    });//end block
+
     [cell.thumbnailImageView setThumbnailImageWithURL:[NSURL URLWithString:article.att3_thumbnailURL] placeholderImage:[UIImage imageNamed:@"placehold_s.png"]];
     
     cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ico_accessory_view.png"]];

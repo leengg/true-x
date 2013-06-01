@@ -44,6 +44,7 @@ static ArticlesModel *_shareArticlesModel = nil;
     }
     else {
         [[TrueXLoading shareLoading] show:YES];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     }
     
     [[TrueXAPIClient sharedAPIClient] getPath:kArticleAPIName parameters:paras
@@ -80,6 +81,9 @@ static ArticlesModel *_shareArticlesModel = nil;
                                           //@hide loading
                                           [[TrueXLoading shareLoading] hide:YES];
                                           [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                                          [TrueXAlert shareAlert].message = [error.userInfo objectForKey:NSLocalizedDescriptionKey];
+                                          [[TrueXAlert shareAlert] show];
+                                          [self sendNotificationDidFinishLoadArticles:YES];
                                           NSLog(@"AFNetworking Error: %@", error);
                                       }];
     

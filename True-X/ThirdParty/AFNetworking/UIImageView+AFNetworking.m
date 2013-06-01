@@ -63,8 +63,8 @@ static NSString  *isThumnailTag = @"isThumnailTag";
 - (void)setIsThumbnail:(NSString *)newIsThumbnail {
     objc_setAssociatedObject(self, isThumnailTag, newIsThumbnail, OBJC_ASSOCIATION_ASSIGN);
 }
-
 //@end Dao
+
 - (AFHTTPRequestOperation *)af_imageRequestOperation {
     return (AFHTTPRequestOperation *)objc_getAssociatedObject(self, &kAFImageRequestOperationObjectKey);
 }
@@ -115,7 +115,7 @@ static NSString  *isThumnailTag = @"isThumnailTag";
     //@Dao add AFNetworking cache thumbnail
     self.isThumbnail = nil;
     //@end Dao
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:30.0];
     [request setHTTPShouldHandleCookies:NO];
     [request setHTTPShouldUsePipelining:YES];
     

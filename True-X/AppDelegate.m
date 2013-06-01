@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "TrueXFB.h"
 
 @implementation AppDelegate
 
@@ -57,12 +58,19 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [TrueXFB trueXFBDidBecomeActive];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Saves changes in the application's managed object context before the application terminates.
     [MagicalRecord cleanUp];
+    [TrueXFB trueXFBWillTerminate];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    
+    return [TrueXFB trueXFB:application openURL:url sourceApplication:sourceApplication annotation:annotation];
 }
 
 @end

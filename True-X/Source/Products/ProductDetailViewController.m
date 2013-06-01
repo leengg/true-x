@@ -79,6 +79,19 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)clickShare:(id)sender {
+    
+    NSDictionary *params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                            @"http://true-x.net", @"link",
+                            self.product.att5_thumbnailURL, @"picture",
+                            self.product.att3_categoryName, @"name",
+                            IOS_APP_NAME, @"caption",
+                            self.product.att4_description, @"description",
+                            nil];
+    
+    [[TrueXFB shareTrueXFB] shareFB:params onViewController:self];
+}
+
 #pragma mark - ProductDetailPageDelegate
 
 - (void)didChangePage:(ProductDetailPageViewController *)productDetailPageVC withDirection:(PagingDirection)direction {

@@ -42,6 +42,7 @@ static ProductsModel *_shareProductsModel = nil;
     }
     else {
         [[TrueXLoading shareLoading] show:YES];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     }
     
     [[TrueXAPIClient sharedAPIClient] getPath:kProductAPIName parameters:paras
@@ -61,10 +62,6 @@ static ProductsModel *_shareProductsModel = nil;
               }
           } completion:^(BOOL success, NSError *error)
           {
-              //@hide loading
-              [[TrueXLoading shareLoading] hide:YES];
-              [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-
               if (success) {
                   self.currentProductsList = [[NSMutableArray alloc] initWithArray:[Products findAll]];
               }
@@ -72,12 +69,18 @@ static ProductsModel *_shareProductsModel = nil;
                   NSLog(@"MagicalRecord Error: %@", error);
               }
               [self sendNotificationDidFinishLoadProducts:YES];
+              //@hide loading
+              [[TrueXLoading shareLoading] hide:YES];
+              [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
           }];
      } failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
          //@hide loading
          [[TrueXLoading shareLoading] hide:YES];
          [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+         [TrueXAlert shareAlert].message = [error.userInfo objectForKey:NSLocalizedDescriptionKey];
+         [[TrueXAlert shareAlert] show];
+         [self sendNotificationDidFinishLoadProducts:YES];
          NSLog(@"AFNetworking Error: %@", error);
      }];
 

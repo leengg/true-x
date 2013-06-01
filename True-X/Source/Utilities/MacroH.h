@@ -9,10 +9,13 @@
 #import "Constant.h"
 #import "TrueXLoading.h"
 #import "TrueXFont.h"
+#import "TrueXAlert.h"
+#import "TrueXFB.h"
 
 #ifndef True_X_MacroH_h
 #define True_X_MacroH_h
 
-#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+#define IS_IPHONE_5 (fabs((double)[[UIScreen mainScreen] bounds].size.height - (double)568) < DBL_EPSILON)
+#define IOS_APP_NAME (NSString *)[[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString*)kCFBundleNameKey]
 
 #endif

@@ -72,6 +72,20 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)clickShare:(id)sender {
+    
+    NSDictionary *params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                            @"http://true-x.net", @"link",
+                            self.article.att3_thumbnailURL, @"picture",
+                            self.article.att2_title, @"name",
+                            IOS_APP_NAME, @"caption",
+                            self.article.att4_descriptionText, @"description",
+                            nil];
+
+    [[TrueXFB shareTrueXFB] shareFB:params onViewController:self];
+}
+
+
 #pragma mark - UIWebviewDelegate
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {

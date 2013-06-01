@@ -126,9 +126,17 @@
 		DE49394217564E0600840080 /* EGOImageLoadConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = DE49393E17564E0600840080 /* EGOImageLoadConnection.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE49394317564E0600840080 /* EGOImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = DE49394017564E0600840080 /* EGOImageLoader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE4939471756505500840080 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4939461756505500840080 /* MessageUI.framework */; };
+		DE65258B1759D2150047F4C0 /* TrueXFB.m in Sources */ = {isa = PBXBuildFile; fileRef = DE65258A1759D2150047F4C0 /* TrueXFB.m */; };
+		DE65258E1759D90F0047F4C0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE65258D1759D90F0047F4C0 /* FacebookSDK.framework */; };
+		DE6525981759F3720047F4C0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE6525971759F3710047F4C0 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		DE65259A1759F3790047F4C0 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE6525991759F3790047F4C0 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		DE65259C1759F3800047F4C0 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE65259B1759F37F0047F4C0 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		DE6525A01759F3E30047F4C0 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE65259F1759F3E30047F4C0 /* libsqlite3.0.dylib */; };
+		DE6525A11759F4020047F4C0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE65259D1759F3A70047F4C0 /* Security.framework */; };
 		DE7AC1E91758E1F300E57F67 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7AC1E41758E1F300E57F67 /* UIImage+Alpha.m */; };
 		DE7AC1EA1758E1F300E57F67 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7AC1E61758E1F300E57F67 /* UIImage+Resize.m */; };
 		DE7AC1EB1758E1F300E57F67 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7AC1E81758E1F300E57F67 /* UIImage+RoundedCorner.m */; };
+		DEA1FEDB1759A45100CE344D /* TrueXAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA1FEDA1759A45100CE344D /* TrueXAlert.m */; };
 		DEDCF77B173D6FD60066355D /* MagicalImportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF743173D6FD60066355D /* MagicalImportFunctions.m */; };
 		DEDCF77C173D6FD60066355D /* NSAttributeDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF745173D6FD60066355D /* NSAttributeDescription+MagicalDataImport.m */; };
 		DEDCF77D173D6FD60066355D /* NSEntityDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF747173D6FD60066355D /* NSEntityDescription+MagicalDataImport.m */; };
@@ -324,12 +332,22 @@
 		DE49393F17564E0600840080 /* EGOImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageLoader.h; sourceTree = "<group>"; };
 		DE49394017564E0600840080 /* EGOImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageLoader.m; sourceTree = "<group>"; };
 		DE4939461756505500840080 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		DE6525891759D2150047F4C0 /* TrueXFB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrueXFB.h; sourceTree = "<group>"; };
+		DE65258A1759D2150047F4C0 /* TrueXFB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrueXFB.m; sourceTree = "<group>"; };
+		DE65258D1759D90F0047F4C0 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		DE6525971759F3710047F4C0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		DE6525991759F3790047F4C0 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		DE65259B1759F37F0047F4C0 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		DE65259D1759F3A70047F4C0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		DE65259F1759F3E30047F4C0 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		DE7AC1E31758E1F300E57F67 /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
 		DE7AC1E41758E1F300E57F67 /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
 		DE7AC1E51758E1F300E57F67 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
 		DE7AC1E61758E1F300E57F67 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		DE7AC1E71758E1F300E57F67 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
 		DE7AC1E81758E1F300E57F67 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		DEA1FED91759A45100CE344D /* TrueXAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrueXAlert.h; sourceTree = "<group>"; };
+		DEA1FEDA1759A45100CE344D /* TrueXAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrueXAlert.m; sourceTree = "<group>"; };
 		DEDCF742173D6FD60066355D /* MagicalImportFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalImportFunctions.h; sourceTree = "<group>"; };
 		DEDCF743173D6FD60066355D /* MagicalImportFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalImportFunctions.m; sourceTree = "<group>"; };
 		DEDCF744173D6FD60066355D /* NSAttributeDescription+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributeDescription+MagicalDataImport.h"; sourceTree = "<group>"; };
@@ -405,12 +423,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE6525A11759F4020047F4C0 /* Security.framework in Frameworks */,
+				DE6525A01759F3E30047F4C0 /* libsqlite3.0.dylib in Frameworks */,
+				DE65259C1759F3800047F4C0 /* Accounts.framework in Frameworks */,
+				DE65259A1759F3790047F4C0 /* AdSupport.framework in Frameworks */,
+				DE6525981759F3720047F4C0 /* Social.framework in Frameworks */,
 				DE4939471756505500840080 /* MessageUI.framework in Frameworks */,
 				DE040090174BD31C00660B3E /* QuartzCore.framework in Frameworks */,
 				DE07CE5A173D25F30022440A /* UIKit.framework in Frameworks */,
 				DE07CE5C173D25F30022440A /* Foundation.framework in Frameworks */,
 				DE07CE5E173D25F30022440A /* CoreGraphics.framework in Frameworks */,
 				DE07CE60173D25F30022440A /* CoreData.framework in Frameworks */,
+				DE65258E1759D90F0047F4C0 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +450,10 @@
 				DEDF299F1750CE63001605BB /* TrueXLoading.m */,
 				69833E1D17589A6300CFA778 /* TrueXFont.h */,
 				69833E1E17589A6300CFA778 /* TrueXFont.m */,
+				DEA1FED91759A45100CE344D /* TrueXAlert.h */,
+				DEA1FEDA1759A45100CE344D /* TrueXAlert.m */,
+				DE6525891759D2150047F4C0 /* TrueXFB.h */,
+				DE65258A1759D2150047F4C0 /* TrueXFB.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -553,6 +581,11 @@
 		DE07CE4A173D25F30022440A = {
 			isa = PBXGroup;
 			children = (
+				DE65259F1759F3E30047F4C0 /* libsqlite3.0.dylib */,
+				DE65259D1759F3A70047F4C0 /* Security.framework */,
+				DE65259B1759F37F0047F4C0 /* Accounts.framework */,
+				DE6525991759F3790047F4C0 /* AdSupport.framework */,
+				DE6525971759F3710047F4C0 /* Social.framework */,
 				DE07CE61173D25F30022440A /* True-X */,
 				DE07CE58173D25F30022440A /* Frameworks */,
 				DE07CE56173D25F30022440A /* Products */,
@@ -812,6 +845,7 @@
 		DEDCF73E173D6FD60066355D /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				DE65258D1759D90F0047F4C0 /* FacebookSDK.framework */,
 				DE04012E174E6C1A00660B3E /* AFNetworking */,
 				DEDF29991750CC50001605BB /* MBProgressHUD */,
 				DEDCF73F173D6FD60066355D /* MagicalRecord */,
@@ -1170,6 +1204,8 @@
 				DE7AC1E91758E1F300E57F67 /* UIImage+Alpha.m in Sources */,
 				DE7AC1EA1758E1F300E57F67 /* UIImage+Resize.m in Sources */,
 				DE7AC1EB1758E1F300E57F67 /* UIImage+RoundedCorner.m in Sources */,
+				DEA1FEDB1759A45100CE344D /* TrueXAlert.m in Sources */,
+				DE65258B1759D2150047F4C0 /* TrueXFB.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1250,10 +1286,17 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Phong Do (KNRGN8675N)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Phong Do (KNRGN8675N)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/True-X/ThirdParty\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "True-X/True-X-Prefix.pch";
 				INFOPLIST_FILE = "True-X/True-X-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+				);
 				PRODUCT_NAME = "Love & Sex";
 				PROVISIONING_PROFILE = "8B151D2A-06EE-479E-94FB-B71E23F38306";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8B151D2A-06EE-479E-94FB-B71E23F38306";
@@ -1268,10 +1311,17 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Phong Do (KNRGN8675N)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Phong Do (KNRGN8675N)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/True-X/ThirdParty\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "True-X/True-X-Prefix.pch";
 				INFOPLIST_FILE = "True-X/True-X-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+				);
 				PRODUCT_NAME = "Love & Sex";
 				PROVISIONING_PROFILE = "8B151D2A-06EE-479E-94FB-B71E23F38306";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8B151D2A-06EE-479E-94FB-B71E23F38306";
