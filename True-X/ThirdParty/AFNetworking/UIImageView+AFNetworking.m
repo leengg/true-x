@@ -134,19 +134,26 @@ static NSString  *isThumnailTag = @"2";
     [self cancelImageRequestOperation];
     
     UIImage *cachedImage = [[[self class] af_sharedImageCache] cachedImageForRequest:urlRequest];
+    
     //@Dao add AFNetworking cache thumbnail
-    NSLog(@"image url: %@", [urlRequest description]);
-    NSLog(@"cachedImage width: %f, height: %f", cachedImage.size.width, cachedImage.size.height);
-    NSLog(@"imageView widht: %f, height: %f", self.frame.size.width, self.frame.size.height);
-    if (cachedImage && !CGSizeEqualToSize(cachedImage.size, CGSizeMake(self.frame.size.width*2, self.frame.size.height*2))) {
-        cachedImage = nil;
+    if (cachedImage) {
+        
+        if (cachedImage.size.width < 2*self.frame.size.width && cachedImage.size.height < 2*self.frame.size.height) {
+            cachedImage = nil;
+        }
+        else if (cachedImage.size.width > 2*self.frame.size.width || cachedImage.size.height > 2*self.frame.size.height) {
+            cachedImage = [cachedImage imageByScalingAndCroppingForSize:self.frame.size withRate:[self.isThumbnail intValue]];
+            [[[self class] af_sharedImageCache] cacheImage:cachedImage forRequest:urlRequest];
+        }
+        else {
+            
+        }
     }
     //@end Dao
     
     if (cachedImage) {
+                
         self.image = cachedImage;
-        NSTimeInterval endTime = [[NSDate date] timeIntervalSinceReferenceDate];
-        NSLog(@"URL end cache: %@, %f", [urlRequest description], endTime);
 
         self.af_imageRequestOperation = nil;
         
@@ -155,9 +162,6 @@ static NSString  *isThumnailTag = @"2";
         }
     } else {
         self.image = placeholderImage;
-        NSTimeInterval endTime = [[NSDate date] timeIntervalSinceReferenceDate];
-        NSLog(@"URL end placehold: %@, %f", [urlRequest description], endTime);
-
         
         AFImageRequestOperation *requestOperation = [[[AFImageRequestOperation alloc] initWithRequest:urlRequest] autorelease];
         [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {

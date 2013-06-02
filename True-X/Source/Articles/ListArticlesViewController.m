@@ -147,8 +147,6 @@
 //       self.currentBottomPosition--;
 //    }
     
-    NSLog(@"%d, %d, %d",indexPath.row, [ArticlesModel shareArticlesModel].currentPage, [ArticlesModel shareArticlesModel].currentArticlesList.count);
-    
     if (indexPath.row == [ArticlesModel shareArticlesModel].currentArticlesList.count - 1
         && indexPath.row == kPageSize * [ArticlesModel shareArticlesModel].currentPage - 1) {
         
