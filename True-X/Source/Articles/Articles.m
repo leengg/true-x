@@ -2,7 +2,7 @@
 //  Articles.m
 //  True-X
 //
-//  Created by Dao Nguyen on 5/26/13.
+//  Created by Dao Nguyen on 6/2/13.
 //  Copyright (c) 2013 Dao Nguyen. All rights reserved.
 //
 
@@ -25,7 +25,7 @@
     
     if (self) {
         
-        self.att1_id = [attributes valueForKeyPath:@"id"];
+        self.att1_id = [[attributes valueForKeyPath:@"id"] integerValue];
         self.att2_title = [attributes valueForKeyPath:@"title"];
         self.att3_thumbnailURL = [attributes valueForKeyPath:@"thumbnailURL"];
         self.att4_descriptionText = [attributes valueForKeyPath:@"description"];

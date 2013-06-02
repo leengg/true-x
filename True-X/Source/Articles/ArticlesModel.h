@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSMutableArray *currentArticlesList;
 
 + (ArticlesModel *)shareArticlesModel;
-- (void)getArticlesList;
-
+- (void)getArticlesList:(BOOL)isRefesh;
+//- (void)loadMoreArticlesList;
+//- (void)reloadArticlesList;
 @end

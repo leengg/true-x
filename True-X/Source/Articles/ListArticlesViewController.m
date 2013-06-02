@@ -34,6 +34,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.currentContentOffset = CGPointZero;
+
     if( !IS_IPHONE_5 )
     {
         self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 38, self.view.frame.size.width, 480-20 - 38);
@@ -43,8 +45,8 @@
         self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 38, self.view.frame.size.width, 568-20 - 38);
     }
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadListArticles:) name:NOTIFICATION_ARTICLE_DID_FINISH_LOAD object:nil];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateListArticlesTableView:) name:NOTIFICATION_ARTICLE_DID_FINISH_LOAD object:nil];
+        
 //    taskQ = dispatch_queue_create("net.true-x.love&sex", DISPATCH_QUEUE_SERIAL);
 }
 
@@ -53,12 +55,25 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)reloadListArticles:(NSNotification *)notification {
+- (void)updateListArticlesTableView:(NSNotification *)notification {
     
+    NSLog(@"updateListArticlesTableView with count: %d", [ArticlesModel shareArticlesModel].currentArticlesList.count);
     self.listArticlesTableView.hidden = ([ArticlesModel shareArticlesModel].currentArticlesList.count == 0) ? YES : NO;
 
     [self.listArticlesTableView reloadData];
     canLoadMore = [notification.object boolValue];
+    if (!self.listArticlesTableView.hidden) {
+        [self.listArticlesTableView setContentOffset:self.currentContentOffset animated:NO];
+    }
+}
+
+- (void)performLoadMoreArticles {
+    
+    if (canLoadMore) {
+        canLoadMore = NO;
+        self.currentContentOffset = self.listArticlesTableView.contentOffset;
+        [self.delegate didScrollToBottom:self atIndexPage:[ArticlesModel shareArticlesModel].currentPage+1];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,6 +87,11 @@
 //    dispatch_release(taskQ);
 }
 
+- (void)scrollToTop {
+    
+    [self.listArticlesTableView setContentOffset:CGPointZero animated:NO];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -83,7 +103,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [[[ArticlesModel shareArticlesModel] currentArticlesList] count];
+    return [ArticlesModel shareArticlesModel].currentArticlesList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -113,22 +133,24 @@
 
     [cell.thumbnailImageView setThumbnailImageWithURL:[NSURL URLWithString:article.att3_thumbnailURL] placeholderImage:[UIImage imageNamed:@"placehold_s.png"]];
     
-    cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ico_accessory_view.png"]];
-    cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_cell_selected.png"]];
-
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row == [ArticlesModel shareArticlesModel].currentArticlesList.count  - 1
+//    if (indexPath.row > self.currentBottomPosition) {
+//        self.currentBottomPosition = indexPath.row;
+//    }
+//    else {
+//       self.currentBottomPosition--;
+//    }
+    
+    NSLog(@"%d, %d, %d",indexPath.row, [ArticlesModel shareArticlesModel].currentPage, [ArticlesModel shareArticlesModel].currentArticlesList.count);
+    
+    if (indexPath.row == [ArticlesModel shareArticlesModel].currentArticlesList.count - 1
         && indexPath.row == kPageSize * [ArticlesModel shareArticlesModel].currentPage - 1) {
         
-        if (canLoadMore) {
-            canLoadMore = NO;
-            int currentPage = [ArticlesModel shareArticlesModel].currentArticlesList.count / kPageSize;
-            [self.delegate didScrollToBottom:self atIndexPage:currentPage];
-        }
+        [self performSelector:@selector(performLoadMoreArticles) withObject:nil afterDelay:0.1];
     }
 }
 

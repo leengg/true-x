@@ -23,5 +23,8 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *listArticlesTableView;
 @property (nonatomic, weak) id<ListArticlesSelectedDelegate> delegate;
+@property CGPoint currentContentOffset;
+
+- (void)scrollToTop;
 
 @end

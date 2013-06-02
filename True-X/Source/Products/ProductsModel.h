@@ -16,6 +16,6 @@
 @property (nonatomic, strong) NSMutableArray *currentProductsList;
 
 + (ProductsModel *)shareProductsModel;
-- (void)getProductsList;
+- (void)getProductsList:(BOOL)isRefesh;
 
 @end

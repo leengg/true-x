@@ -2,7 +2,7 @@
 //  Products.h
 //  True-X
 //
-//  Created by Dao Nguyen on 5/26/13.
+//  Created by Dao Nguyen on 6/2/13.
 //  Copyright (c) 2013 Dao Nguyen. All rights reserved.
 //
 
@@ -13,7 +13,7 @@
 
 @interface Products : NSManagedObject
 
-@property (nonatomic, retain) NSString * att1_id;
+@property (nonatomic) int16_t att1_id;
 @property (nonatomic, retain) NSString * att2_name;
 @property (nonatomic, retain) NSString * att3_categoryName;
 @property (nonatomic, retain) NSString * att4_description;

@@ -25,25 +25,25 @@ static ProductsModel *_shareProductsModel = nil;
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_PRODUCT_DID_FINISH_LOAD object:[[NSNumber alloc] initWithBool:loadMoreFlag]];
 }
 
-- (void)getProductsList {
+- (void)getProductsList:(BOOL)isRefesh {
     
-    self.currentProductsList = [[NSMutableArray alloc] initWithArray:[Products findAll]];
-    self.currentPage = (self.currentProductsList.count / kPageSize) < self.currentPage ? self.currentPage : self.currentProductsList.count / kPageSize;
-    
-    [self sendNotificationDidFinishLoadProducts:NO];
+    if (!isRefesh) {
+        self.currentProductsList = [[NSMutableArray alloc] initWithArray:[Products findAllSortedBy:@"att1_id" ascending:NO]];
+        self.currentPage = (self.currentProductsList.count / kPageSize) < self.currentPage ? self.currentPage : self.currentProductsList.count / kPageSize;
+        
+        [self sendNotificationDidFinishLoadProducts:YES];
+        if (self.currentProductsList.count) {
+            return;
+        }
+    }
     
     NSString *numberOfProducts = [NSString stringWithFormat:@"%d", self.currentPage * kPageSize];
 
     NSDictionary *paras = [[NSDictionary alloc] initWithObjects:[NSArray arrayWithObjects:numberOfProducts, nil] forKeys:[NSArray arrayWithObjects:kNumberOfArticles, nil]];
     
     //@show loading
-    if (self.currentProductsList.count) {
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    }
-    else {
-        [[TrueXLoading shareLoading] show:YES];
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    }
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [[TrueXLoading shareLoading] show:YES];
     
     [[TrueXAPIClient sharedAPIClient] getPath:kProductAPIName parameters:paras
                                       success:^(AFHTTPRequestOperation *operation, id JSON)
@@ -52,8 +52,8 @@ static ProductsModel *_shareProductsModel = nil;
           {
               for (NSDictionary *attributes in JSON) {
                   
-                  NSString *productID = [attributes valueForKeyPath:@"id"];
-                  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"att1_id == %@", productID];
+                  NSInteger productID = [[attributes valueForKeyPath:@"id"] integerValue];
+                  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"att1_id == %d", productID];
                   Products *product = [Products findFirstWithPredicate:predicate];
                   if (!product) {
                       product = [Products createInContext:localContext];
@@ -63,7 +63,7 @@ static ProductsModel *_shareProductsModel = nil;
           } completion:^(BOOL success, NSError *error)
           {
               if (success) {
-                  self.currentProductsList = [[NSMutableArray alloc] initWithArray:[Products findAll]];
+                  self.currentProductsList = [[NSMutableArray alloc] initWithArray:[Products findAllSortedBy:@"att1_id" ascending:NO]];
               }
               else {
                   NSLog(@"MagicalRecord Error: %@", error);

@@ -49,7 +49,7 @@
         }
     }
 
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"att1_id == %d AND att5_productID == %@", self.currentPage, self.product.att1_id];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"att1_id == %d AND att5_productID == %d", self.currentPage, self.product.att1_id];
     ProductSlides *productSlide = [ProductSlides findFirstWithPredicate:predicate];
     
     //Set up page number

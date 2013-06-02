@@ -9,6 +9,7 @@
 #import "ArticlesModel.h"
 
 static ArticlesModel *_shareArticlesModel = nil;
+
 @implementation ArticlesModel {
     
 }
@@ -25,13 +26,21 @@ static ArticlesModel *_shareArticlesModel = nil;
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_ARTICLE_DID_FINISH_LOAD object:[[NSNumber alloc] initWithBool:loadMoreFlag]];
 }
 
-- (void)getArticlesList {
+- (void)getArticlesList:(BOOL)isRefesh {
+    
+    NSLog(@"getArticlesList at page: %d for categoryID: %d", self.currentPage, self.currentCatoryID);
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"att7_categoryID == %d", self.currentCatoryID];
-    self.currentArticlesList = [[NSMutableArray alloc] initWithArray:[Articles findAllWithPredicate:predicate]];
-    self.currentPage = (self.currentArticlesList.count / kPageSize) < self.currentPage ? self.currentPage : self.currentArticlesList.count / kPageSize;
-        
-    [self sendNotificationDidFinishLoadArticles:NO];
+    NSFetchRequest *request = [Articles requestAllSortedBy:@"att1_id" ascending:NO withPredicate:predicate];
+    
+    if (!isRefesh) {
+        [request setFetchLimit:self.currentPage*kPageSize];
+        self.currentArticlesList = [[NSMutableArray alloc] initWithArray:[Articles executeFetchRequest:request]];        
+        [self sendNotificationDidFinishLoadArticles:YES];
+        if (self.currentArticlesList.count > (self.currentPage-1)*kPageSize) {
+            return;
+        }
+    }
 
     NSString *categoryIDString = [NSString stringWithFormat:@"%d", self.currentCatoryID];
     NSString *numberOfArticles = [NSString stringWithFormat:@"%d", self.currentPage * kPageSize];
@@ -39,13 +48,8 @@ static ArticlesModel *_shareArticlesModel = nil;
     NSDictionary *paras = [[NSDictionary alloc] initWithObjects:[NSArray arrayWithObjects:categoryIDString, numberOfArticles, nil] forKeys:[NSArray arrayWithObjects:kCategoryID, kNumberOfArticles, nil]];
     
     //@show loading
-    if (self.currentArticlesList.count) {
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    }
-    else {
-        [[TrueXLoading shareLoading] show:YES];
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    }
+    [[TrueXLoading shareLoading] show:YES];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     [[TrueXAPIClient sharedAPIClient] getPath:kArticleAPIName parameters:paras
                                       success:^(AFHTTPRequestOperation *operation, id JSON)
@@ -54,8 +58,8 @@ static ArticlesModel *_shareArticlesModel = nil;
                                           {
                                               for (NSDictionary *attributes in JSON) {
 
-                                                  NSString *articleID = [attributes valueForKeyPath:@"id"];
-                                                  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"att1_id == %@", articleID];
+                                                  NSInteger articleID = [[attributes valueForKeyPath:@"id"] integerValue];
+                                                  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"att1_id == %d", articleID];
                                                   Articles *article = [Articles findFirstWithPredicate:predicate];
                                                   if (!article) {
                                                       article = [Articles createInContext:localContext];
@@ -68,12 +72,8 @@ static ArticlesModel *_shareArticlesModel = nil;
                                               [[TrueXLoading shareLoading] hide:YES];
                                               [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 
-                                              if (success) {
-                                                  self.currentArticlesList = [[NSMutableArray alloc] initWithArray:[Articles findAllWithPredicate:predicate]];
-                                              }
-                                              else {
-                                                  NSLog(@"MagicalRecord Error: %@", error);
-                                              }
+                                              [request setFetchLimit:self.currentPage*kPageSize ];
+                                              self.currentArticlesList = [[NSMutableArray alloc] initWithArray:[Articles executeFetchRequest:request]];
                                               [self sendNotificationDidFinishLoadArticles:YES];
                                           }];
                                       } failure:^(AFHTTPRequestOperation *operation, NSError *error)

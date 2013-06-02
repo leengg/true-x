@@ -34,7 +34,8 @@
 	// Do any additional setup after loading the view.
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadListProducts:) name:NOTIFICATION_PRODUCT_DID_FINISH_LOAD object:nil];
-    
+    [[ProductsModel shareProductsModel] setCurrentPage:1];
+    [[ProductsModel shareProductsModel] getProductsList:NO];
 }
 
 - (void)viewDidUnload {
@@ -42,17 +43,9 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    
-    if ([ProductsModel shareProductsModel].currentProductsList.count == 0) {
-        [[ProductsModel shareProductsModel] setCurrentPage:1];
-        [[ProductsModel shareProductsModel] getProductsList];
-    }
-}
-
 - (IBAction)clickReload:(id)sender {
     
-    [[ProductsModel shareProductsModel] getProductsList];
+    [[ProductsModel shareProductsModel] getProductsList:YES];
 }
 
 - (void)reloadListProducts:(NSNotification *)notification {
@@ -61,6 +54,14 @@
 
     [self.productsTableView reloadData];
     canLoadMore = [notification.object boolValue];
+}
+
+- (void)performLoadMoreProducts {
+    
+    canLoadMore = NO;
+    int currentPage = [ProductsModel shareProductsModel].currentProductsList.count / kPageSize;
+    [[ProductsModel shareProductsModel] setCurrentPage:currentPage+1];
+    [[ProductsModel shareProductsModel] getProductsList:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,9 +94,6 @@
     [cell.thumbnailImageView setThumbnailImageWithURL:[NSURL URLWithString:product.att5_thumbnailURL] placeholderImage:[UIImage imageNamed:@"placehold_s.png"]];
     cell.titleLabel.text = product.att3_categoryName;   //@"Ultrathin";
     cell.descriptionLabel.text = product.att4_description;  //@"Cảm giác thật";
-    cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ico_accessory_view.png"]];
-    cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_cell_selected.png"]];
-
     
     return cell;
 }
@@ -106,10 +104,7 @@
         && indexPath.row == kPageSize * [ProductsModel shareProductsModel].currentPage - 1) {
         
         if (canLoadMore) {
-            canLoadMore = NO;
-            int currentPage = [ProductsModel shareProductsModel].currentProductsList.count / kPageSize;
-            [[ProductsModel shareProductsModel] setCurrentPage:currentPage+1];
-            [[ProductsModel shareProductsModel] getProductsList];
+            [self performSelector:@selector(performLoadMoreProducts) withObject:nil afterDelay:0.1];
         }
     }
 }

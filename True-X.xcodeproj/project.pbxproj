@@ -102,8 +102,6 @@
 		DE0D4EB2173FC761007F2E97 /* HomeProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0D4EB1173FC761007F2E97 /* HomeProductsViewController.m */; };
 		DE0D4EB8173FC7F0007F2E97 /* ProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0D4EB7173FC7F0007F2E97 /* ProductCell.m */; };
 		DE1DFF35173FA62D008CEF0E /* ArticleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1DFF34173FA62D008CEF0E /* ArticleDetailViewController.m */; };
-		DE325D621752409D00BA99BD /* Products.m in Sources */ = {isa = PBXBuildFile; fileRef = DE325D611752409D00BA99BD /* Products.m */; };
-		DE325D651752410400BA99BD /* Articles.m in Sources */ = {isa = PBXBuildFile; fileRef = DE325D641752410400BA99BD /* Articles.m */; };
 		DE325D681752415E00BA99BD /* ProductsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE325D671752415E00BA99BD /* ProductsModel.m */; };
 		DE49392817564D8F00840080 /* EGOPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE49390817564D8F00840080 /* EGOPhotoViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE49392917564D8F00840080 /* EGOQuickPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = DE49390F17564D8F00840080 /* EGOQuickPhoto.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -137,6 +135,8 @@
 		DE7AC1EA1758E1F300E57F67 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7AC1E61758E1F300E57F67 /* UIImage+Resize.m */; };
 		DE7AC1EB1758E1F300E57F67 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7AC1E81758E1F300E57F67 /* UIImage+RoundedCorner.m */; };
 		DEA1FEDB1759A45100CE344D /* TrueXAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA1FEDA1759A45100CE344D /* TrueXAlert.m */; };
+		DEBF33B0175B167500B68021 /* Articles.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBF33AF175B167500B68021 /* Articles.m */; };
+		DEBF33B4175B381E00B68021 /* Products.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBF33B3175B381E00B68021 /* Products.m */; };
 		DEDCF77B173D6FD60066355D /* MagicalImportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF743173D6FD60066355D /* MagicalImportFunctions.m */; };
 		DEDCF77C173D6FD60066355D /* NSAttributeDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF745173D6FD60066355D /* NSAttributeDescription+MagicalDataImport.m */; };
 		DEDCF77D173D6FD60066355D /* NSEntityDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF747173D6FD60066355D /* NSEntityDescription+MagicalDataImport.m */; };
@@ -294,10 +294,6 @@
 		DE0D4EB7173FC7F0007F2E97 /* ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCell.m; sourceTree = "<group>"; };
 		DE1DFF33173FA62D008CEF0E /* ArticleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleDetailViewController.h; sourceTree = "<group>"; };
 		DE1DFF34173FA62D008CEF0E /* ArticleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleDetailViewController.m; sourceTree = "<group>"; };
-		DE325D601752409D00BA99BD /* Products.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Products.h; sourceTree = "<group>"; };
-		DE325D611752409D00BA99BD /* Products.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Products.m; sourceTree = "<group>"; };
-		DE325D631752410400BA99BD /* Articles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Articles.h; sourceTree = "<group>"; };
-		DE325D641752410400BA99BD /* Articles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Articles.m; sourceTree = "<group>"; };
 		DE325D661752415E00BA99BD /* ProductsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsModel.h; sourceTree = "<group>"; };
 		DE325D671752415E00BA99BD /* ProductsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsModel.m; sourceTree = "<group>"; };
 		DE49390717564D8F00840080 /* EGOPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOPhotoViewController.h; sourceTree = "<group>"; };
@@ -348,6 +344,10 @@
 		DE7AC1E81758E1F300E57F67 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
 		DEA1FED91759A45100CE344D /* TrueXAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrueXAlert.h; sourceTree = "<group>"; };
 		DEA1FEDA1759A45100CE344D /* TrueXAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrueXAlert.m; sourceTree = "<group>"; };
+		DEBF33AE175B167500B68021 /* Articles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Articles.h; sourceTree = "<group>"; };
+		DEBF33AF175B167500B68021 /* Articles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Articles.m; sourceTree = "<group>"; };
+		DEBF33B2175B381E00B68021 /* Products.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Products.h; sourceTree = "<group>"; };
+		DEBF33B3175B381E00B68021 /* Products.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Products.m; sourceTree = "<group>"; };
 		DEDCF742173D6FD60066355D /* MagicalImportFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalImportFunctions.h; sourceTree = "<group>"; };
 		DEDCF743173D6FD60066355D /* MagicalImportFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalImportFunctions.m; sourceTree = "<group>"; };
 		DEDCF744173D6FD60066355D /* NSAttributeDescription+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributeDescription+MagicalDataImport.h"; sourceTree = "<group>"; };
@@ -581,11 +581,6 @@
 		DE07CE4A173D25F30022440A = {
 			isa = PBXGroup;
 			children = (
-				DE65259F1759F3E30047F4C0 /* libsqlite3.0.dylib */,
-				DE65259D1759F3A70047F4C0 /* Security.framework */,
-				DE65259B1759F37F0047F4C0 /* Accounts.framework */,
-				DE6525991759F3790047F4C0 /* AdSupport.framework */,
-				DE6525971759F3710047F4C0 /* Social.framework */,
 				DE07CE61173D25F30022440A /* True-X */,
 				DE07CE58173D25F30022440A /* Frameworks */,
 				DE07CE56173D25F30022440A /* Products */,
@@ -603,6 +598,11 @@
 		DE07CE58173D25F30022440A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE65259F1759F3E30047F4C0 /* libsqlite3.0.dylib */,
+				DE65259D1759F3A70047F4C0 /* Security.framework */,
+				DE65259B1759F37F0047F4C0 /* Accounts.framework */,
+				DE6525991759F3790047F4C0 /* AdSupport.framework */,
+				DE6525971759F3710047F4C0 /* Social.framework */,
 				DE4939461756505500840080 /* MessageUI.framework */,
 				DE04008E174BD30400660B3E /* QuartzCore.framework */,
 				DE07CE59173D25F30022440A /* UIKit.framework */,
@@ -685,12 +685,12 @@
 		DE325D5C17523FFE00BA99BD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DE325D601752409D00BA99BD /* Products.h */,
-				DE325D611752409D00BA99BD /* Products.m */,
 				DE325D661752415E00BA99BD /* ProductsModel.h */,
 				DE325D671752415E00BA99BD /* ProductsModel.m */,
 				DEF2126F1754E53800A0357A /* ProductSlides.h */,
 				DEF212701754E53800A0357A /* ProductSlides.m */,
+				DEBF33B2175B381E00B68021 /* Products.h */,
+				DEBF33B3175B381E00B68021 /* Products.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -977,10 +977,10 @@
 		DEDCF7B5173E1BFB0066355D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DE325D631752410400BA99BD /* Articles.h */,
-				DE325D641752410400BA99BD /* Articles.m */,
 				DE0401A6174E75B200660B3E /* ArticlesModel.h */,
 				DE0401A7174E75B200660B3E /* ArticlesModel.m */,
+				DEBF33AE175B167500B68021 /* Articles.h */,
+				DEBF33AF175B167500B68021 /* Articles.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1186,8 +1186,6 @@
 				DE0401A8174E75B200660B3E /* ArticlesModel.m in Sources */,
 				DEDF299C1750CC50001605BB /* MBProgressHUD.m in Sources */,
 				DEDF29A01750CE63001605BB /* TrueXLoading.m in Sources */,
-				DE325D621752409D00BA99BD /* Products.m in Sources */,
-				DE325D651752410400BA99BD /* Articles.m in Sources */,
 				DE325D681752415E00BA99BD /* ProductsModel.m in Sources */,
 				DEF212711754E53800A0357A /* ProductSlides.m in Sources */,
 				696806E31755E3F200C60118 /* ContactViewController.m in Sources */,
@@ -1206,6 +1204,8 @@
 				DE7AC1EB1758E1F300E57F67 /* UIImage+RoundedCorner.m in Sources */,
 				DEA1FEDB1759A45100CE344D /* TrueXAlert.m in Sources */,
 				DE65258B1759D2150047F4C0 /* TrueXFB.m in Sources */,
+				DEBF33B0175B167500B68021 /* Articles.m in Sources */,
+				DEBF33B4175B381E00B68021 /* Products.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1294,9 +1294,7 @@
 				GCC_PREFIX_HEADER = "True-X/True-X-Prefix.pch";
 				INFOPLIST_FILE = "True-X/True-X-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "Love & Sex";
 				PROVISIONING_PROFILE = "8B151D2A-06EE-479E-94FB-B71E23F38306";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8B151D2A-06EE-479E-94FB-B71E23F38306";
@@ -1319,9 +1317,7 @@
 				GCC_PREFIX_HEADER = "True-X/True-X-Prefix.pch";
 				INFOPLIST_FILE = "True-X/True-X-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "Love & Sex";
 				PROVISIONING_PROFILE = "8B151D2A-06EE-479E-94FB-B71E23F38306";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8B151D2A-06EE-479E-94FB-B71E23F38306";

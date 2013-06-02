@@ -26,4 +26,11 @@
     // Configure the view for the selected state
 }
 
+- (void)drawRect:(CGRect)rect {
+    
+    [super drawRect:rect];
+    self.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ico_accessory_view.png"]];
+    self.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_cell_selected.png"]];
+}
+
 @end
