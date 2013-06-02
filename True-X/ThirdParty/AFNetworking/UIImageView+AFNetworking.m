@@ -26,7 +26,7 @@
 #if __IPHONE_OS_VERSION_MIN_REQUIRED
 #import "UIImageView+AFNetworking.h"
 //@Dao add AFNetworking cache thumbnail
-#import "UIImage+Resize.h"
+#import "UIImage+Scale.h"
 //@end Dao
 
 @interface AFImageCache : NSCache
@@ -38,7 +38,7 @@
 #pragma mark -
 
 static char kAFImageRequestOperationObjectKey;
-static NSString  *isThumnailTag = @"isThumnailTag";
+static NSString  *isThumnailTag = @"2";
 
 @interface UIImageView (_AFNetworking)
 @property (readwrite, nonatomic, retain, setter = af_setImageRequestOperation:) AFImageRequestOperation *af_imageRequestOperation;
@@ -105,7 +105,11 @@ static NSString  *isThumnailTag = @"isThumnailTag";
        placeholderImage:(UIImage *)placeholderImage {
 
     self.isThumbnail = isThumnailTag;
-    [self setImageWithURL:url placeholderImage:placeholderImage];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:30.0];
+    [request setHTTPShouldHandleCookies:NO];
+    [request setHTTPShouldUsePipelining:YES];
+    
+    [self setImageWithURLRequest:request placeholderImage:placeholderImage success:nil failure:nil];
 }
 //@end Dao
 
@@ -131,13 +135,19 @@ static NSString  *isThumnailTag = @"isThumnailTag";
     
     UIImage *cachedImage = [[[self class] af_sharedImageCache] cachedImageForRequest:urlRequest];
     //@Dao add AFNetworking cache thumbnail
-    if (cachedImage && !CGSizeEqualToSize(cachedImage.size, self.frame.size)) {
+    NSLog(@"image url: %@", [urlRequest description]);
+    NSLog(@"cachedImage width: %f, height: %f", cachedImage.size.width, cachedImage.size.height);
+    NSLog(@"imageView widht: %f, height: %f", self.frame.size.width, self.frame.size.height);
+    if (cachedImage && !CGSizeEqualToSize(cachedImage.size, CGSizeMake(self.frame.size.width*2, self.frame.size.height*2))) {
         cachedImage = nil;
     }
     //@end Dao
     
     if (cachedImage) {
         self.image = cachedImage;
+        NSTimeInterval endTime = [[NSDate date] timeIntervalSinceReferenceDate];
+        NSLog(@"URL end cache: %@, %f", [urlRequest description], endTime);
+
         self.af_imageRequestOperation = nil;
         
         if (success) {
@@ -145,13 +155,16 @@ static NSString  *isThumnailTag = @"isThumnailTag";
         }
     } else {
         self.image = placeholderImage;
+        NSTimeInterval endTime = [[NSDate date] timeIntervalSinceReferenceDate];
+        NSLog(@"URL end placehold: %@, %f", [urlRequest description], endTime);
+
         
         AFImageRequestOperation *requestOperation = [[[AFImageRequestOperation alloc] initWithRequest:urlRequest] autorelease];
         [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
             //@Dao add AFNetworking cache thumbnail
             UIImage *thumbImage = (UIImage *)responseObject;
             if ([self.isThumbnail isEqualToString:isThumnailTag]) {
-               thumbImage = [thumbImage rectangleThumbnailImage:self.frame.size transparentBorder:1.0 cornerRadius:2.0 interpolationQuality:kCGInterpolationDefault];
+               thumbImage = [thumbImage imageByScalingAndCroppingForSize:self.frame.size withRate:[self.isThumbnail intValue]];
             }
             //@end Dao
             if ([[urlRequest URL] isEqual:[[self.af_imageRequestOperation request] URL]]) {

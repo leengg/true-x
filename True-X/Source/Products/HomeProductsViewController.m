@@ -92,7 +92,7 @@
     Products *product = [[ProductsModel shareProductsModel].currentProductsList objectAtIndex:indexPath.row];
     // Configure the cell...
     [cell.thumbnailImageView setThumbnailImageWithURL:[NSURL URLWithString:product.att5_thumbnailURL] placeholderImage:[UIImage imageNamed:@"placehold_s.png"]];
-    cell.titleLabel.text = product.att3_categoryName;   //@"Ultrathin";
+    cell.titleLabel.text = product.att2_name;   //@"Ultrathin";
     cell.descriptionLabel.text = product.att4_description;  //@"Cảm giác thật";
     
     return cell;

@@ -30,6 +30,6 @@
 - (void)addSlide:(NSSet *)values;
 - (void)removeSlide:(NSSet *)values;
 
-- (Products *)setAttributes:(NSDictionary *)attributes inContext:(NSManagedObjectContext *)currentContext;
+- (Products *)setAttributes:(NSDictionary *)attributes;
 
 @end

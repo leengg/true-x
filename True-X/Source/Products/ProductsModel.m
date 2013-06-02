@@ -28,11 +28,11 @@ static ProductsModel *_shareProductsModel = nil;
 - (void)getProductsList:(BOOL)isRefesh {
     
     if (!isRefesh) {
-        self.currentProductsList = [[NSMutableArray alloc] initWithArray:[Products findAllSortedBy:@"att1_id" ascending:NO]];
+        self.currentProductsList = [[NSMutableArray alloc] initWithArray:[Products findAllSortedBy:@"att1_id" ascending:YES]];
         self.currentPage = (self.currentProductsList.count / kPageSize) < self.currentPage ? self.currentPage : self.currentProductsList.count / kPageSize;
         
         [self sendNotificationDidFinishLoadProducts:YES];
-        if (self.currentProductsList.count) {
+        if (self.currentProductsList.count > (self.currentPage-1)*kPageSize) {
             return;
         }
     }
@@ -58,12 +58,12 @@ static ProductsModel *_shareProductsModel = nil;
                   if (!product) {
                       product = [Products createInContext:localContext];
                   }
-                  [product setAttributes:attributes inContext:localContext];
+                  [product setAttributes:attributes];
               }
           } completion:^(BOOL success, NSError *error)
           {
               if (success) {
-                  self.currentProductsList = [[NSMutableArray alloc] initWithArray:[Products findAllSortedBy:@"att1_id" ascending:NO]];
+                  self.currentProductsList = [[NSMutableArray alloc] initWithArray:[Products findAllSortedBy:@"att1_id" ascending:YES]];
               }
               else {
                   NSLog(@"MagicalRecord Error: %@", error);
