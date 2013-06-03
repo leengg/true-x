@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "TrueXFB.h"
 
 @implementation AppDelegate
 
@@ -65,6 +64,7 @@
 {
     // Saves changes in the application's managed object context before the application terminates.
     [MagicalRecord cleanUp];
+    [ImageCacheManager cleanUp];
     [TrueXFB trueXFBWillTerminate];
 }
 

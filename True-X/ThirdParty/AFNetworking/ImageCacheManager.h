@@ -8,50 +8,41 @@
 
 #import <Foundation/Foundation.h>
 
-// cache folder in documents app folder:
+// Cache folder in documents app folder:
 #define IMAGE_CACHE_FOLDER_NAME @"ImageCache"
 
-// 1 hours in seconds = 60 * 60 = 3600  // in seconds
-#define IMAGE_FILE_LIFETIME 3600.0
+// 7 days in seconds = 7 * 24 * 60 * 60 = 604800  // in seconds
+#define IMAGE_FILE_LIFETIME 604800.0
+#define IMAGE_FILE_LIMIT_COUNT 1000
 
 @interface ImageCacheManager : NSObject {
     
 @private
-    NSMutableArray *keyArray;
     NSFileManager *fileManager;
     int imageLifeTime;
 }
 
-@property(nonatomic)int imageLifeTime;
+@property(nonatomic) int imageLifeTime;
 
+// main public methods
 
-+(NSString*)stringHash:(NSString*)aStringToHash;
++ (NSString*)stringHash:(NSString*)aStringToHash;
 
-+ (id)getSharedImageCacheManager;
++ (id)sharedImageCacheManager;
+
++ (void)cleanUp;
 
 - (UIImage *)imageForKey:(NSString *)key;
 
-- (BOOL)hasImageWithKey:(NSString *)key;
-
-- (void)storeData:(NSData *)myData withKey:(NSString *)key;
-
 - (void)storeImage:(UIImage *)image withKey:(NSString *)key;
 
-//- (BOOL)imageExistsInMemory:(NSString *)key;
-
-- (BOOL)imageExistsInDisk:(NSString *)key;
-
-//- (NSUInteger)countImagesInMemory;
+// other public methods
 
 - (NSUInteger)countImagesInDisk;
 
 - (void)removeImageWithKey:(NSString *)key;
 
-- (void)receiveMemoryWarning;
-
 - (void)removeAllImages;
-
-//- (void)removeAllImagesInMemory;
 
 - (void)removeOldImages;
 

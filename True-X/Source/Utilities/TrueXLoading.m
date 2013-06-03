@@ -24,6 +24,19 @@ static TrueXLoading *_shareLoading = nil;
     return _shareLoading;
 }
 
+- (void)show:(BOOL)animated {
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [super show:animated];
+}
+
+- (void)hide:(BOOL)animated {
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [super hide:animated];
+}
+
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

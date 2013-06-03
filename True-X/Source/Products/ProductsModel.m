@@ -71,13 +71,11 @@ static ProductsModel *_shareProductsModel = nil;
               [self sendNotificationDidFinishLoadProducts:YES];
               //@hide loading
               [[TrueXLoading shareLoading] hide:YES];
-              [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
           }];
      } failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
          //@hide loading
          [[TrueXLoading shareLoading] hide:YES];
-         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
          [TrueXAlert shareAlert].message = [error.userInfo objectForKey:NSLocalizedDescriptionKey];
          [[TrueXAlert shareAlert] show];
          [self sendNotificationDidFinishLoadProducts:YES];

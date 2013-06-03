@@ -68,7 +68,8 @@
 }
 
 - (IBAction)clickBack:(id)sender {
-    
+
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [self.navigationController popViewControllerAnimated:YES];
 }
 

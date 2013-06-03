@@ -49,7 +49,6 @@ static ArticlesModel *_shareArticlesModel = nil;
     
     //@show loading
     [[TrueXLoading shareLoading] show:YES];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     [[TrueXAPIClient sharedAPIClient] getPath:kArticleAPIName parameters:paras
                                       success:^(AFHTTPRequestOperation *operation, id JSON)
@@ -70,7 +69,6 @@ static ArticlesModel *_shareArticlesModel = nil;
                                           {
                                               //@hide loading
                                               [[TrueXLoading shareLoading] hide:YES];
-                                              [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 
                                               [request setFetchLimit:self.currentPage*kPageSize ];
                                               self.currentArticlesList = [[NSMutableArray alloc] initWithArray:[Articles executeFetchRequest:request]];
@@ -80,7 +78,6 @@ static ArticlesModel *_shareArticlesModel = nil;
                                       {
                                           //@hide loading
                                           [[TrueXLoading shareLoading] hide:YES];
-                                          [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                                           [TrueXAlert shareAlert].message = [error.userInfo objectForKey:NSLocalizedDescriptionKey];
                                           [[TrueXAlert shareAlert] show];
                                           [self sendNotificationDidFinishLoadArticles:YES];

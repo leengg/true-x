@@ -128,16 +128,10 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    if (indexPath.row > self.currentBottomPosition) {
-//        self.currentBottomPosition = indexPath.row;
-//    }
-//    else {
-//       self.currentBottomPosition--;
-//    }
-    
     if (indexPath.row == [ArticlesModel shareArticlesModel].currentArticlesList.count - 1
         && indexPath.row == kPageSize * [ArticlesModel shareArticlesModel].currentPage - 1) {
         
+        [[TrueXLoading shareLoading] show:YES];
         [self performSelector:@selector(performLoadMoreArticles) withObject:nil afterDelay:0.1];
     }
 }

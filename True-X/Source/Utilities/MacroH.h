@@ -11,6 +11,7 @@
 #import "TrueXFont.h"
 #import "TrueXAlert.h"
 #import "TrueXFB.h"
+#import "ImageCacheManager.h"
 
 #ifndef True_X_MacroH_h
 #define True_X_MacroH_h
