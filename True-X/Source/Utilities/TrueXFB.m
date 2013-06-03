@@ -86,10 +86,13 @@ static TrueXFB *_shareTrueXFB = nil;
     
     if (!appCall) {
         // Next try to post using Facebook's iOS6 integration
-        NSString *textStr = [NSString stringWithFormat:@"%@ %@ %@", [params objectForKey:@"name"], [params objectForKey:@"caption"], [params objectForKey:@"description"]];
+        NSString *textStr = [NSString stringWithFormat:@"%@ - %@\n%@", [params objectForKey:@"name"], [params objectForKey:@"caption"], [params objectForKey:@"description"]];
+        NSString *imageKey = [ImageCacheManager stringHash:[params objectForKey:@"picture"]];
+        UIImage *photo = [[ImageCacheManager sharedImageCacheManager] imageForKey:imageKey];
+
         BOOL displayedNativeDialog = [FBDialogs presentOSIntegratedShareDialogModallyFrom:viewController
                                                                               initialText:textStr
-                                                                                    image:[params objectForKey:@"photo"]
+                                                                                    image:photo
                                                                                       url:shareURL
                                                                                   handler:nil];
         
