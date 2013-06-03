@@ -73,6 +73,7 @@
 		69833E431758BC5300CFA778 /* bt_refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 69833E3F1758BC5200CFA778 /* bt_refresh.png */; };
 		69833E441758BC5300CFA778 /* bt_share_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 69833E401758BC5200CFA778 /* bt_share_selected.png */; };
 		69833E451758BC5300CFA778 /* bt_share.png in Resources */ = {isa = PBXBuildFile; fileRef = 69833E411758BC5200CFA778 /* bt_share.png */; };
+		699F5AC8175C597E002EC581 /* Articles.m in Sources */ = {isa = PBXBuildFile; fileRef = 699F5AC7175C597E002EC581 /* Articles.m */; };
 		DE040090174BD31C00660B3E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE04008E174BD30400660B3E /* QuartzCore.framework */; };
 		DE040144174E6C1A00660B3E /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DE040130174E6C1A00660B3E /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE040145174E6C1A00660B3E /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DE040132174E6C1A00660B3E /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -136,7 +137,6 @@
 		DEA91060175B55B70023BD6E /* UIImage+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA9105F175B55B70023BD6E /* UIImage+Scale.m */; };
 		DEA91064175B64AC0023BD6E /* placehold_a.png in Resources */ = {isa = PBXBuildFile; fileRef = DEA91062175B64AB0023BD6E /* placehold_a.png */; };
 		DEA91065175B64AC0023BD6E /* placehold_a@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DEA91063175B64AB0023BD6E /* placehold_a@2x.png */; };
-		DEBF33B0175B167500B68021 /* Articles.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBF33AF175B167500B68021 /* Articles.m */; };
 		DEDCF77B173D6FD60066355D /* MagicalImportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF743173D6FD60066355D /* MagicalImportFunctions.m */; };
 		DEDCF77C173D6FD60066355D /* NSAttributeDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF745173D6FD60066355D /* NSAttributeDescription+MagicalDataImport.m */; };
 		DEDCF77D173D6FD60066355D /* NSEntityDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF747173D6FD60066355D /* NSEntityDescription+MagicalDataImport.m */; };
@@ -244,6 +244,8 @@
 		69833E3F1758BC5200CFA778 /* bt_refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt_refresh.png; sourceTree = "<group>"; };
 		69833E401758BC5200CFA778 /* bt_share_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt_share_selected.png; sourceTree = "<group>"; };
 		69833E411758BC5200CFA778 /* bt_share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt_share.png; sourceTree = "<group>"; };
+		699F5AC6175C597E002EC581 /* Articles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Articles.h; sourceTree = "<group>"; };
+		699F5AC7175C597E002EC581 /* Articles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Articles.m; sourceTree = "<group>"; };
 		DE040087174BC37F00660B3E /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		DE04008E174BD30400660B3E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DE04012F174E6C1A00660B3E /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
@@ -344,8 +346,6 @@
 		DEA9105F175B55B70023BD6E /* UIImage+Scale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Scale.m"; sourceTree = "<group>"; };
 		DEA91062175B64AB0023BD6E /* placehold_a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placehold_a.png; sourceTree = "<group>"; };
 		DEA91063175B64AB0023BD6E /* placehold_a@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placehold_a@2x.png"; sourceTree = "<group>"; };
-		DEBF33AE175B167500B68021 /* Articles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Articles.h; sourceTree = "<group>"; };
-		DEBF33AF175B167500B68021 /* Articles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Articles.m; sourceTree = "<group>"; };
 		DEDCF742173D6FD60066355D /* MagicalImportFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalImportFunctions.h; sourceTree = "<group>"; };
 		DEDCF743173D6FD60066355D /* MagicalImportFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalImportFunctions.m; sourceTree = "<group>"; };
 		DEDCF744173D6FD60066355D /* NSAttributeDescription+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributeDescription+MagicalDataImport.h"; sourceTree = "<group>"; };
@@ -975,8 +975,8 @@
 			children = (
 				DE0401A6174E75B200660B3E /* ArticlesModel.h */,
 				DE0401A7174E75B200660B3E /* ArticlesModel.m */,
-				DEBF33AE175B167500B68021 /* Articles.h */,
-				DEBF33AF175B167500B68021 /* Articles.m */,
+				699F5AC6175C597E002EC581 /* Articles.h */,
+				699F5AC7175C597E002EC581 /* Articles.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1199,9 +1199,9 @@
 				69833E1F17589A6300CFA778 /* TrueXFont.m in Sources */,
 				DEA1FEDB1759A45100CE344D /* TrueXAlert.m in Sources */,
 				DE65258B1759D2150047F4C0 /* TrueXFB.m in Sources */,
-				DEBF33B0175B167500B68021 /* Articles.m in Sources */,
 				DEA91060175B55B70023BD6E /* UIImage+Scale.m in Sources */,
 				DE0EE92C175B69C500283EB5 /* Products.m in Sources */,
+				699F5AC8175C597E002EC581 /* Articles.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

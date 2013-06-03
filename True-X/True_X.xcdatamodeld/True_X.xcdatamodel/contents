@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Articles" representedClassName="Articles" syncable="YES">
-        <attribute name="att1_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="att1_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="att2_title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="att3_thumbnailURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="att4_descriptionText" optional="YES" attributeType="String" syncable="YES"/>
@@ -30,7 +30,7 @@
         <relationship name="product" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Products" inverseName="slide" inverseEntity="Products" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Articles" positionX="160" positionY="192" width="128" height="194"/>
+        <element name="Articles" positionX="160" positionY="192" width="128" height="180"/>
         <element name="Products" positionX="349" positionY="195" width="128" height="178"/>
         <element name="ProductSlides" positionX="567" positionY="198" width="128" height="146"/>
     </elements>

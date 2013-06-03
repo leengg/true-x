@@ -131,8 +131,6 @@
 //        });//end block
 //    });//end block
 
-    NSTimeInterval startTime = [[NSDate date] timeIntervalSinceReferenceDate];
-    NSLog(@"URL start: %@, %f", article.att3_thumbnailURL, startTime);
     [cell.thumbnailImageView setThumbnailImageWithURL:[NSURL URLWithString:article.att3_thumbnailURL] placeholderImage:[UIImage imageNamed:@"placehold_a.png"]];
     
     return cell;

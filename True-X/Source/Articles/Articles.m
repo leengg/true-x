@@ -2,7 +2,7 @@
 //  Articles.m
 //  True-X
 //
-//  Created by Dao Nguyen on 6/2/13.
+//  Created by InfoNam on 6/3/13.
 //  Copyright (c) 2013 Dao Nguyen. All rights reserved.
 //
 
