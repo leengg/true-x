@@ -9,6 +9,7 @@
 #import "ListArticlesViewController.h"
 #import "ArticleCell.h"
 #import "UIImageView+AFNetworking.h"
+//#import "UIImageView+WebCache.h"
 
 //dispatch_queue_t taskQ;
 
@@ -116,22 +117,11 @@
 
     cell.titleTextView.text = article.att2_title;
     
-//    dispatch_async(taskQ, ^{
-//        
-//        // Here, we do the scanning for @import statements.
-//        // When we find a valid one, we put the whole path to the
-//        // imported file into an array called 'verifiedImports'.
-//        [cell.thumbnailImageView setThumbnailImageWithURL:[NSURL URLWithString:article.att3_thumbnailURL] placeholderImage:[UIImage imageNamed:@"placehold_s.png"]];        
-//        
-//        // go back to the main thread and update the model (Core Data is not thread-safe.)
-//        dispatch_sync(dispatch_get_main_queue(), ^{
-//            
-//            NSLog(@"Got to main thread.");
-//            
-//        });//end block
-//    });//end block
-
+    //Using UIImageView of AFNetworking
     [cell.thumbnailImageView setThumbnailImageWithURL:[NSURL URLWithString:article.att3_thumbnailURL] placeholderImage:[UIImage imageNamed:@"placehold_a.png"]];
+    
+    //Using UIImageView of SDWebImage => block UI
+    //[cell.thumbnailImageView setImageWithURL:[NSURL URLWithString:article.att3_thumbnailURL] placeholderImage:[UIImage imageNamed:@"placehold_a.png"] options:0];
     
     return cell;
 }

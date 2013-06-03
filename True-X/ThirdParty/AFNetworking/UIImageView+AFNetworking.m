@@ -27,6 +27,7 @@
 #import "UIImageView+AFNetworking.h"
 //@Dao add AFNetworking cache thumbnail
 #import "UIImage+Scale.h"
+#import "ImageCacheManager.h"
 //@end Dao
 
 @interface AFImageCache : NSCache
@@ -149,11 +150,20 @@ static NSString  *isThumnailTag = @"2";
             
         }
     }
+    else {
+        //Dao add cached image by save file
+        ImageCacheManager *myImageCacheManager = [ImageCacheManager getSharedImageCacheManager];
+        NSString *imageKey = [ImageCacheManager stringHash:[[urlRequest URL] absoluteString]];
+        cachedImage = [myImageCacheManager imageForKey:imageKey];
+        //@end Dao
+    }
     //@end Dao
     
     if (cachedImage) {
-                
+        
+        NSLog(@"is Cached before");
         self.image = cachedImage;
+        NSLog(@"is Cached after");
 
         self.af_imageRequestOperation = nil;
         
@@ -231,6 +241,12 @@ static inline NSString * AFImageCacheKeyFromURLRequest(NSURLRequest *request) {
 {
     if (image && request) {
         [self setObject:image forKey:AFImageCacheKeyFromURLRequest(request)];
+
+        //Dao add cached image by save file
+        ImageCacheManager *myImageCacheManager = [ImageCacheManager getSharedImageCacheManager];
+        NSString *imageKey = [ImageCacheManager stringHash:[[request URL] absoluteString]];
+        [myImageCacheManager storeImage:image withKey:imageKey];
+        //@end Dao
     }
 }
 

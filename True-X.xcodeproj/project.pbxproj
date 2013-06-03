@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69161563175C9A9600305119 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69161562175C9A9600305119 /* ImageIO.framework */; };
+		69161567175C9B1900305119 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69161566175C9B1900305119 /* MapKit.framework */; };
+		6916156C175CAB7800305119 /* ImageCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6916156B175CAB7800305119 /* ImageCacheManager.m */; };
 		692F9B2B17420D5A00E41FDF /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692F9B2A17420D5A00E41FDF /* ProductDetailViewController.m */; };
 		692F9B3017432D5500E41FDF /* ProductDetailPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692F9B2F17432D5500E41FDF /* ProductDetailPageViewController.m */; };
 		696806AD1754B61A00C60118 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 696806AB1754B61A00C60118 /* Icon@2x.png */; };
@@ -173,6 +176,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		69161562175C9A9600305119 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		69161566175C9B1900305119 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6916156A175CAB7800305119 /* ImageCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCacheManager.h; sourceTree = "<group>"; };
+		6916156B175CAB7800305119 /* ImageCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCacheManager.m; sourceTree = "<group>"; };
 		692F9B2917420D5A00E41FDF /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewController.h; sourceTree = "<group>"; };
 		692F9B2A17420D5A00E41FDF /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
 		692F9B2E17432D5500E41FDF /* ProductDetailPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailPageViewController.h; sourceTree = "<group>"; };
@@ -421,6 +428,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69161567175C9B1900305119 /* MapKit.framework in Frameworks */,
+				69161563175C9A9600305119 /* ImageIO.framework in Frameworks */,
 				DE6525A11759F4020047F4C0 /* Security.framework in Frameworks */,
 				DE6525A01759F3E30047F4C0 /* libsqlite3.0.dylib in Frameworks */,
 				DE65259C1759F3800047F4C0 /* Accounts.framework in Frameworks */,
@@ -565,6 +574,8 @@
 				DE040141174E6C1A00660B3E /* AFXMLRequestOperation.m */,
 				DE040142174E6C1A00660B3E /* UIImageView+AFNetworking.h */,
 				DE040143174E6C1A00660B3E /* UIImageView+AFNetworking.m */,
+				6916156A175CAB7800305119 /* ImageCacheManager.h */,
+				6916156B175CAB7800305119 /* ImageCacheManager.m */,
 			);
 			path = AFNetworking;
 			sourceTree = "<group>";
@@ -598,6 +609,8 @@
 		DE07CE58173D25F30022440A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				69161566175C9B1900305119 /* MapKit.framework */,
+				69161562175C9A9600305119 /* ImageIO.framework */,
 				DE65259F1759F3E30047F4C0 /* libsqlite3.0.dylib */,
 				DE65259D1759F3A70047F4C0 /* Security.framework */,
 				DE65259B1759F37F0047F4C0 /* Accounts.framework */,
@@ -1202,6 +1215,7 @@
 				DEA91060175B55B70023BD6E /* UIImage+Scale.m in Sources */,
 				DE0EE92C175B69C500283EB5 /* Products.m in Sources */,
 				699F5AC8175C597E002EC581 /* Articles.m in Sources */,
+				6916156C175CAB7800305119 /* ImageCacheManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
