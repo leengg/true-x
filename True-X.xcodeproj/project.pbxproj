@@ -854,12 +854,12 @@
 		DEDCF73E173D6FD60066355D /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
-				DE65258D1759D90F0047F4C0 /* FacebookSDK.framework */,
 				DE04012E174E6C1A00660B3E /* AFNetworking */,
 				DEDF29991750CC50001605BB /* MBProgressHUD */,
 				DEDCF73F173D6FD60066355D /* MagicalRecord */,
 				DE49390417564D8F00840080 /* EGOPhotoViewer */,
 				DEA469771758D9D400870DA2 /* UIImage+Extention */,
+				DE65258D1759D90F0047F4C0 /* FacebookSDK.framework */,
 			);
 			path = ThirdParty;
 			sourceTree = "<group>";

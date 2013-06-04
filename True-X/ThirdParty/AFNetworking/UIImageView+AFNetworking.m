@@ -25,15 +25,14 @@
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED
 #import "UIImageView+AFNetworking.h"
-//@Dao add AFNetworking cache thumbnail
+//@Dao add AFNetworking memmory cache thumbnail only; add file cache
 #import "UIImage+Scale.h"
 #import "ImageCacheManager.h"
 //@end Dao
 
 @interface AFImageCache : NSCache
 - (UIImage *)cachedImageForRequest:(NSURLRequest *)request;
-- (void)cacheImage:(UIImage *)image
-        forRequest:(NSURLRequest *)request;
+- (void)cacheImage:(UIImage *)image forRequest:(NSURLRequest *)request isThumbnailSize:(CGSize)size;
 @end
 
 #pragma mark -
@@ -43,7 +42,7 @@ static NSString  *isThumnailTag = @"2";
 
 @interface UIImageView (_AFNetworking)
 @property (readwrite, nonatomic, retain, setter = af_setImageRequestOperation:) AFImageRequestOperation *af_imageRequestOperation;
-//@Dao add AFNetworking cache thumbnail
+//@Dao add AFNetworking memmory cache thumbnail only; add file cache
 @property (nonatomic, readwrite, retain) NSString *isThumbnail;
 //@end Dao
 @end
@@ -101,7 +100,7 @@ static NSString  *isThumnailTag = @"2";
     [self setImageWithURL:url placeholderImage:nil];
 }
 
-//@Dao add AFNetworking cache thumbnail
+//@Dao add AFNetworking memmory cache thumbnail only; add file cache
 - (void)setThumbnailImageWithURL:(NSURL *)url
        placeholderImage:(UIImage *)placeholderImage {
 
@@ -117,7 +116,7 @@ static NSString  *isThumnailTag = @"2";
 - (void)setImageWithURL:(NSURL *)url 
        placeholderImage:(UIImage *)placeholderImage
 {
-    //@Dao add AFNetworking cache thumbnail
+    //@Dao add AFNetworking memmory cache thumbnail only; add file cache
     self.isThumbnail = nil;
     //@end Dao
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:30.0];
@@ -134,20 +133,16 @@ static NSString  *isThumnailTag = @"2";
 {
     [self cancelImageRequestOperation];
     
-    UIImage *cachedImage = [[[self class] af_sharedImageCache] cachedImageForRequest:urlRequest];
-    
-    //@Dao add AFNetworking cache thumbnail
-    if (cachedImage) {
-        
-        if (cachedImage.size.width < 2*self.frame.size.width && cachedImage.size.height < 2*self.frame.size.height) {
-            cachedImage = nil;
-        }
-        else if (cachedImage.size.width > 2*self.frame.size.width || cachedImage.size.height > 2*self.frame.size.height) {
-            cachedImage = [cachedImage imageByScalingAndCroppingForSize:self.frame.size withRate:[self.isThumbnail intValue]];
-            [[[self class] af_sharedImageCache] cacheImage:cachedImage forRequest:urlRequest];
-        }
-        else {
-            
+    UIImage *cachedImage = nil;
+  
+    //@Dao add AFNetworking memmory cache thumbnail only; add file cache
+    if (self.isThumbnail) {
+        cachedImage = [[[self class] af_sharedImageCache] cachedImageForRequest:urlRequest];
+        //query cached image file if no cached memory
+        if (!cachedImage) {
+            ImageCacheManager *myImageCacheManager = [ImageCacheManager sharedImageCacheManager];
+            NSString *thumbImageKey = [NSString stringWithFormat:@"%@%@", [ImageCacheManager stringHash:[[urlRequest URL] absoluteString]], isThumnailTag];
+            cachedImage = [myImageCacheManager imageForKey:thumbImageKey];
         }
     }
     else {
@@ -157,8 +152,7 @@ static NSString  *isThumnailTag = @"2";
         cachedImage = [myImageCacheManager imageForKey:imageKey];
         //@end Dao
     }
-    //@end Dao
-    
+        
     if (cachedImage) {
         
         self.image = cachedImage;
@@ -173,22 +167,23 @@ static NSString  *isThumnailTag = @"2";
         
         AFImageRequestOperation *requestOperation = [[[AFImageRequestOperation alloc] initWithRequest:urlRequest] autorelease];
         [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-            //@Dao add AFNetworking cache thumbnail
-            UIImage *thumbImage = (UIImage *)responseObject;
-            if ([self.isThumbnail isEqualToString:isThumnailTag]) {
-               thumbImage = [thumbImage imageByScalingAndCroppingForSize:self.frame.size withRate:[self.isThumbnail intValue]];
-            }
-            //@end Dao
             if ([[urlRequest URL] isEqual:[[self.af_imageRequestOperation request] URL]]) {
-                self.image = thumbImage;
+                
+                if (self.isThumbnail) {
+                    self.image = [(UIImage *)responseObject imageByScalingAndCroppingForSize:self.frame.size withRate:2];
+                }
+                else {
+                    self.image = responseObject;
+                }
                 self.af_imageRequestOperation = nil;
             }
 
             if (success) {
                 success(operation.request, operation.response, responseObject);
             }
-
-            [[[self class] af_sharedImageCache] cacheImage:thumbImage forRequest:urlRequest];
+            //@Dao add AFNetworking memmory cache thumbnail only; add file cache
+            [[[self class] af_sharedImageCache] cacheImage:responseObject forRequest:urlRequest isThumbnailSize:(self.isThumbnail ? self.frame.size : CGSizeZero)];
+            //@end Dao
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             if ([[urlRequest URL] isEqual:[[self.af_imageRequestOperation request] URL]]) {
@@ -234,14 +229,22 @@ static inline NSString * AFImageCacheKeyFromURLRequest(NSURLRequest *request) {
 	return [self objectForKey:AFImageCacheKeyFromURLRequest(request)];
 }
 
-- (void)cacheImage:(UIImage *)image
-        forRequest:(NSURLRequest *)request
+- (void)cacheImage:(UIImage *)image forRequest:(NSURLRequest *)request isThumbnailSize:(CGSize)size
 {
     if (image && request) {
-        [self setObject:image forKey:AFImageCacheKeyFromURLRequest(request)];
+        
+        ImageCacheManager *myImageCacheManager = [ImageCacheManager sharedImageCacheManager];
+
+        //Dao cache for thumbnail image only
+        if (!CGSizeEqualToSize(size, CGSizeZero)) {
+            UIImage *thumbnailImage = [image imageByScalingAndCroppingForSize:size withRate:2];
+            [self setObject:thumbnailImage forKey:AFImageCacheKeyFromURLRequest(request)];
+            
+            NSString *thumbImageKey = [NSString stringWithFormat:@"%@%@", [ImageCacheManager stringHash:[[request URL] absoluteString]], isThumnailTag];
+            [myImageCacheManager storeImage:thumbnailImage withKey:thumbImageKey];
+        }
 
         //Dao add cached image by save file
-        ImageCacheManager *myImageCacheManager = [ImageCacheManager sharedImageCacheManager];
         NSString *imageKey = [ImageCacheManager stringHash:[[request URL] absoluteString]];
         [myImageCacheManager storeImage:image withKey:imageKey];
         //@end Dao
