@@ -31,6 +31,16 @@ static dispatch_queue_t image_request_operation_processing_queue() {
     return af_image_request_operation_processing_queue;
 }
 
+//@Dao add new queue
+static dispatch_queue_t af_image_request_operation_processing_queue_2;
+static dispatch_queue_t image_request_operation_processing_queue_2() {
+    if (af_image_request_operation_processing_queue_2 == NULL) {
+        af_image_request_operation_processing_queue_2 = dispatch_queue_create("com.alamofire.networking.image-request.processing.2", 0);
+    }
+    
+    return af_image_request_operation_processing_queue_2;
+}
+//@end Dao
 @interface AFImageRequestOperation ()
 #if __IPHONE_OS_VERSION_MIN_REQUIRED
 @property (readwrite, nonatomic, retain) UIImage *responseImage;
@@ -82,17 +92,21 @@ static dispatch_queue_t image_request_operation_processing_queue() {
     [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) {
             UIImage *image = responseObject;
+            //@Dao change for load image in thread
             if (imageProcessingBlock) {
                 dispatch_async(image_request_operation_processing_queue(), ^(void) {
                     UIImage *processedImage = imageProcessingBlock(image);
 
-                    dispatch_async(dispatch_get_main_queue(), ^(void) {
+                    dispatch_async(image_request_operation_processing_queue_2(), ^(void) {
                         success(operation.request, operation.response, processedImage);
                     });
                 });
             } else {
-                success(operation.request, operation.response, image);
+                dispatch_async(image_request_operation_processing_queue_2(), ^(void) {
+                    success(operation.request, operation.response, image);
+                });
             }
+            //@end Dao
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (failure) {

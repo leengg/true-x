@@ -170,8 +170,8 @@ static NSString  *isThumnailTag = @"2";
             if ([[urlRequest URL] isEqual:[[self.af_imageRequestOperation request] URL]]) {
                 
                 if (self.isThumbnail) {
-                    //[self performSelectorInBackground:@selector(setImageInBackground:) withObject:responseObject];
-                    [NSThread detachNewThreadSelector:@selector(setImageInBackground:) toTarget:self withObject:responseObject];
+                    //[NSThread detachNewThreadSelector:@selector(setImageInBackground:) toTarget:self withObject:responseObject];
+                    self.image = [(UIImage *)responseObject imageByScalingAndCroppingForSize:self.frame.size withRate:2];
                 }
                 else {
                     self.image = responseObject;
@@ -183,9 +183,9 @@ static NSString  *isThumnailTag = @"2";
                 success(operation.request, operation.response, responseObject);
             }
             //@Dao add AFNetworking memmory cache thumbnail only; add file cache
-            NSDictionary *imageDict = [NSDictionary dictionaryWithObjectsAndKeys:responseObject, @"image", urlRequest, @"request", nil];
-            [NSThread detachNewThreadSelector:@selector(cacheImageInBackground:) toTarget:self withObject:imageDict];
-            //[[[self class] af_sharedImageCache] cacheImage:responseObject forRequest:urlRequest isThumbnailSize:(self.isThumbnail ? self.frame.size : CGSizeZero)];
+            //NSDictionary *imageDict = [[NSDictionary dictionaryWithObjectsAndKeys:responseObject, @"image", urlRequest, @"request", nil] autorelease];
+            //[NSThread detachNewThreadSelector:@selector(cacheImageInBackground:) toTarget:self withObject:imageDict];
+            [[[self class] af_sharedImageCache] cacheImage:responseObject forRequest:urlRequest isThumbnailSize:(self.isThumbnail ? self.frame.size : CGSizeZero)];
             //@end Dao
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
