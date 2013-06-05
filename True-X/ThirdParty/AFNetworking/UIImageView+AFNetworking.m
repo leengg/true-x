@@ -170,7 +170,8 @@ static NSString  *isThumnailTag = @"2";
             if ([[urlRequest URL] isEqual:[[self.af_imageRequestOperation request] URL]]) {
                 
                 if (self.isThumbnail) {
-                    self.image = [(UIImage *)responseObject imageByScalingAndCroppingForSize:self.frame.size withRate:2];
+                    //[self performSelectorInBackground:@selector(setImageInBackground:) withObject:responseObject];
+                    [NSThread detachNewThreadSelector:@selector(setImageInBackground:) toTarget:self withObject:responseObject];
                 }
                 else {
                     self.image = responseObject;
@@ -182,7 +183,9 @@ static NSString  *isThumnailTag = @"2";
                 success(operation.request, operation.response, responseObject);
             }
             //@Dao add AFNetworking memmory cache thumbnail only; add file cache
-            [[[self class] af_sharedImageCache] cacheImage:responseObject forRequest:urlRequest isThumbnailSize:(self.isThumbnail ? self.frame.size : CGSizeZero)];
+            NSDictionary *imageDict = [NSDictionary dictionaryWithObjectsAndKeys:responseObject, @"image", urlRequest, @"request", nil];
+            [NSThread detachNewThreadSelector:@selector(cacheImageInBackground:) toTarget:self withObject:imageDict];
+            //[[[self class] af_sharedImageCache] cacheImage:responseObject forRequest:urlRequest isThumbnailSize:(self.isThumbnail ? self.frame.size : CGSizeZero)];
             //@end Dao
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -206,6 +209,17 @@ static NSString  *isThumnailTag = @"2";
     [self.af_imageRequestOperation cancel];
     self.af_imageRequestOperation = nil;
 }
+
+//@Dao add do cached image in background thread
+- (void)cacheImageInBackground:(NSDictionary *)params {
+    
+    [[[self class] af_sharedImageCache] cacheImage:[params objectForKey:@"image"] forRequest:[params objectForKey:@"request"] isThumbnailSize:(self.isThumbnail ? self.frame.size : CGSizeZero)];
+}
+
+- (void)setImageInBackground:(UIImage *)image {
+    self.image = [image imageByScalingAndCroppingForSize:self.frame.size withRate:2];
+}
+//@end Dao
 
 @end
 
