@@ -2,7 +2,7 @@
 //  Products.m
 //  True-X
 //
-//  Created by Dao Nguyen on 6/2/13.
+//  Created by InfoNam on 6/5/13.
 //  Copyright (c) 2013 Dao Nguyen. All rights reserved.
 //
 
@@ -19,6 +19,7 @@
 @dynamic att5_thumbnailURL;
 @dynamic att6_createdDate;
 @dynamic att7_updatedDate;
+@dynamic att8_shareURL;
 @dynamic slide;
 
 - (Products *)setAttributes:(NSDictionary *)attributes {
@@ -32,6 +33,7 @@
         self.att5_thumbnailURL = [attributes valueForKeyPath:@"thumbnailURL"];
         //        self.att6_createdDate = [attributes valueForKeyPath:@"createdDate"];
         //        self.att7_updatedDate = [attributes valueForKeyPath:@"updatedDate"];
+        self.att8_shareURL = [attributes valueForKeyPath:@"shareURL"];
         
         id childJSON = [attributes valueForKeyPath:@"productSlides"];
         for (NSDictionary *child in childJSON) {

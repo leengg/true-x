@@ -10,6 +10,7 @@
         <attribute name="att7_categoryID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="att8_createdDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="att9_updatedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="att10_shareURL" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Products" representedClassName="Products" syncable="YES">
         <attribute name="att1_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -19,6 +20,7 @@
         <attribute name="att5_thumbnailURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="att6_createdDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="att7_updatedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="att8_shareURL" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="slide" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ProductSlides" inverseName="product" inverseEntity="ProductSlides" syncable="YES"/>
     </entity>
     <entity name="ProductSlides" representedClassName="ProductSlides" syncable="YES">
@@ -30,8 +32,8 @@
         <relationship name="product" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Products" inverseName="slide" inverseEntity="Products" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Articles" positionX="160" positionY="192" width="128" height="180"/>
-        <element name="Products" positionX="349" positionY="195" width="128" height="178"/>
+        <element name="Articles" positionX="160" positionY="192" width="128" height="195"/>
+        <element name="Products" positionX="349" positionY="195" width="128" height="180"/>
         <element name="ProductSlides" positionX="567" positionY="198" width="128" height="146"/>
     </elements>
 </model>

@@ -2,7 +2,7 @@
 //  Articles.h
 //  True-X
 //
-//  Created by Dao Nguyen on 6/3/13.
+//  Created by InfoNam on 6/5/13.
 //  Copyright (c) 2013 Dao Nguyen. All rights reserved.
 //
 
@@ -21,6 +21,7 @@
 @property (nonatomic, retain) NSString * att7_categoryID;
 @property (nonatomic, retain) NSDate * att8_createdDate;
 @property (nonatomic, retain) NSDate * att9_updatedDate;
+@property (nonatomic, retain) NSString * att10_shareURL;
 
 - (Articles *)setAttributes:(NSDictionary *)attributes;
 

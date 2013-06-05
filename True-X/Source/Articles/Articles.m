@@ -2,7 +2,7 @@
 //  Articles.m
 //  True-X
 //
-//  Created by Dao Nguyen on 6/3/13.
+//  Created by InfoNam on 6/5/13.
 //  Copyright (c) 2013 Dao Nguyen. All rights reserved.
 //
 
@@ -20,6 +20,7 @@
 @dynamic att7_categoryID;
 @dynamic att8_createdDate;
 @dynamic att9_updatedDate;
+@dynamic att10_shareURL;
 
 - (Articles *)setAttributes:(NSDictionary *)attributes {
     
@@ -34,6 +35,7 @@
         self.att7_categoryID = [attributes valueForKeyPath:@"categoryID"];
         //self.att8_createdDate = [attributes valueForKeyPath:@"createdDate"];
         //self.att9_updatedDate = [attributes valueForKeyPath:@"ngay_cap_nhat"];
+        self.att10_shareURL = [attributes valueForKeyPath:@"shareURL"];
     }
     return self;
 }

@@ -2,7 +2,7 @@
 //  Products.h
 //  True-X
 //
-//  Created by Dao Nguyen on 6/2/13.
+//  Created by InfoNam on 6/5/13.
 //  Copyright (c) 2013 Dao Nguyen. All rights reserved.
 //
 
@@ -20,6 +20,7 @@
 @property (nonatomic, retain) NSString * att5_thumbnailURL;
 @property (nonatomic) NSTimeInterval att6_createdDate;
 @property (nonatomic) NSTimeInterval att7_updatedDate;
+@property (nonatomic, retain) NSString * att8_shareURL;
 @property (nonatomic, retain) NSSet *slide;
 @end
 

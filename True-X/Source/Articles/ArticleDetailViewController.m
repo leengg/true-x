@@ -76,7 +76,7 @@
 - (IBAction)clickShare:(id)sender {
     
     NSDictionary *params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                            @"http://true-x.net", @"link",
+                            self.article.att10_shareURL, @"link",
                             self.article.att3_thumbnailURL, @"picture",
                             self.article.att2_title, @"name",
                             IOS_APP_NAME, @"caption",
