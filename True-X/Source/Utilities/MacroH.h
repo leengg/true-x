@@ -17,6 +17,7 @@
 #define True_X_MacroH_h
 
 #define IS_IPHONE_5 (fabs((double)[[UIScreen mainScreen] bounds].size.height - (double)568) < DBL_EPSILON)
+#define IS_IPAD ([UIDevice currentDevice].userInterfaceIdiom==UIUserInterfaceIdiomPad)
 #define IOS_APP_NAME (NSString *)[[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString*)kCFBundleNameKey]
 
 #endif

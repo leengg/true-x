@@ -37,7 +37,10 @@
 	// Do any additional setup after loading the view.
     self.currentContentOffset = CGPointZero;
 
-    if( !IS_IPHONE_5 )
+    if (IS_IPAD) {
+        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 72, self.view.frame.size.width, 1024-20 - 72);
+    }
+    else if( !IS_IPHONE_5 )
     {
         self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 38, self.view.frame.size.width, 480-20 - 38);
     }
