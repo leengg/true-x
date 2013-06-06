@@ -36,8 +36,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
-    [menuBGImageView setImage:[UIImage imageNamed:@"menu_1.png"]];
+    if (IS_IPAD) {
+        [menuBGImageView setImage:[UIImage imageNamed:@"menu1_ipad.png"]];
+    }
+    else {
+        [menuBGImageView setImage:[UIImage imageNamed:@"menu_1.png"]];
+    }
     currentButton = btn_PhongDo;
     [self.delegate customSegment:self didSelectIndex:0];
 }
@@ -84,22 +88,42 @@
     [btn_TuVan setImage:nil forState:UIControlStateNormal];
 
     if (sender == btn_PhongDo) {
-        [menuBGImageView setImage:[UIImage imageNamed:@"menu_1.png"]];
+        if (IS_IPAD) {
+            [menuBGImageView setImage:[UIImage imageNamed:@"menu1_ipad.png"]];
+        }
+        else {
+            [menuBGImageView setImage:[UIImage imageNamed:@"menu_1.png"]];
+        }
         currentButton = btn_PhongDo;
         [self.delegate customSegment:self didSelectIndex:0];
     }
     else if (sender == btn_DangCap) {
-        [menuBGImageView setImage:[UIImage imageNamed:@"menu_2.png"]];
+        if (IS_IPAD) {
+            [menuBGImageView setImage:[UIImage imageNamed:@"menu2_ipad.png"]];
+        }
+        else {
+            [menuBGImageView setImage:[UIImage imageNamed:@"menu_2.png"]];
+        }
         currentButton = btn_DangCap;
         [self.delegate customSegment:self didSelectIndex:1];
     }
     else if (sender == btn_ChuyenBenLe) {
-        [menuBGImageView setImage:[UIImage imageNamed:@"menu_3.png"]];
+        if (IS_IPAD) {
+            [menuBGImageView setImage:[UIImage imageNamed:@"menu3_ipad.png"]];
+        }
+        else {
+            [menuBGImageView setImage:[UIImage imageNamed:@"menu_3.png"]];
+        }
         currentButton = btn_ChuyenBenLe;
         [self.delegate customSegment:self didSelectIndex:2];
     }
     else if (sender == btn_TuVan) {
-        [menuBGImageView setImage:[UIImage imageNamed:@"menu_4.png"]];
+        if (IS_IPAD) {
+            [menuBGImageView setImage:[UIImage imageNamed:@"menu4_ipad.png"]];
+        }
+        else {
+            [menuBGImageView setImage:[UIImage imageNamed:@"menu_4.png"]];
+        }
         currentButton = btn_TuVan;
         [self.delegate customSegment:self didSelectIndex:3];
     }
