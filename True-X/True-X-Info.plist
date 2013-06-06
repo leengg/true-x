@@ -57,8 +57,6 @@
 	<string>Storyboard-iPhone</string>
 	<key>UIMainStoryboardFile~ipad</key>
 	<string>Storyboard-iPad</string>
-	<key>UIPrerenderedIcon</key>
-	<true/>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

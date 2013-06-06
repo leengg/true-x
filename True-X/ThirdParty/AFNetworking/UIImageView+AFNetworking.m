@@ -78,7 +78,7 @@ static NSString  *isThumnailTag = @"2";
     
     if (!_af_imageRequestOperationQueue) {
         _af_imageRequestOperationQueue = [[NSOperationQueue alloc] init];
-        [_af_imageRequestOperationQueue setMaxConcurrentOperationCount:8];
+        [_af_imageRequestOperationQueue setMaxConcurrentOperationCount:4];
     }
     
     return _af_imageRequestOperationQueue;
@@ -171,7 +171,8 @@ static NSString  *isThumnailTag = @"2";
                 
                 if (self.isThumbnail) {
                     //[NSThread detachNewThreadSelector:@selector(setImageInBackground:) toTarget:self withObject:responseObject];
-                    self.image = [(UIImage *)responseObject imageByScalingAndCroppingForSize:self.frame.size withRate:2];
+                    [self performSelectorOnMainThread:@selector(setImageInBackground:) withObject:responseObject waitUntilDone:NO];
+//                    self.image = [(UIImage *)responseObject imageByScalingAndCroppingForSize:self.frame.size withRate:2];
                 }
                 else {
                     self.image = responseObject;

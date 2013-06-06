@@ -89,30 +89,27 @@ static dispatch_queue_t image_request_operation_processing_queue_2() {
                                                       failure:(void (^)(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error))failure
 {
     AFImageRequestOperation *requestOperation = [[[AFImageRequestOperation alloc] initWithRequest:urlRequest] autorelease];
+    //@Dao change for load image in thread
     [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) {
             UIImage *image = responseObject;
-            //@Dao change for load image in thread
+
             if (imageProcessingBlock) {
                 dispatch_async(image_request_operation_processing_queue(), ^(void) {
                     UIImage *processedImage = imageProcessingBlock(image);
 
-                    dispatch_async(image_request_operation_processing_queue_2(), ^(void) {
-                        success(operation.request, operation.response, processedImage);
-                    });
+                    success(operation.request, operation.response, processedImage);
                 });
             } else {
-                dispatch_async(image_request_operation_processing_queue_2(), ^(void) {
-                    success(operation.request, operation.response, image);
-                });
+                success(operation.request, operation.response, image);
             }
-            //@end Dao
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (failure) {
             failure(operation.request, operation.response, error);
         }
     }];
+    //@end Dao
     
     
     return requestOperation;
@@ -250,10 +247,10 @@ static dispatch_queue_t image_request_operation_processing_queue_2() {
             return;
         }
         
-        dispatch_group_async(self.dispatchGroup, image_request_operation_processing_queue(), ^(void) {
+        dispatch_group_async(self.dispatchGroup, image_request_operation_processing_queue_2(), ^(void) {
             if (self.error) {
                 if (failure) {
-                    dispatch_group_async(self.dispatchGroup, self.failureCallbackQueue ? self.failureCallbackQueue : dispatch_get_main_queue(), ^{
+                    dispatch_group_async(self.dispatchGroup, self.failureCallbackQueue ? self.failureCallbackQueue : image_request_operation_processing_queue_2(), ^{
                         failure(self, self.error);
                     });
                 }
@@ -267,7 +264,7 @@ static dispatch_queue_t image_request_operation_processing_queue_2() {
 
                     image = self.responseImage;
 
-                    dispatch_group_async(self.dispatchGroup, self.successCallbackQueue ? self.successCallbackQueue : dispatch_get_main_queue(), ^{
+                    dispatch_group_async(self.dispatchGroup, self.successCallbackQueue ? self.successCallbackQueue : image_request_operation_processing_queue_2(), ^{
                         success(self, image);
                     });
                 }

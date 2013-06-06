@@ -51,17 +51,19 @@
 - (void)reloadListProducts:(NSNotification *)notification {
     
     self.productsTableView.hidden = ([ProductsModel shareProductsModel].currentProductsList.count == 0) ? YES : NO;
-
     [self.productsTableView reloadData];
     canLoadMore = [notification.object boolValue];
 }
 
 - (void)performLoadMoreProducts {
     
-    canLoadMore = NO;
-    int currentPage = [ProductsModel shareProductsModel].currentProductsList.count / kPageSize;
-    [[ProductsModel shareProductsModel] setCurrentPage:currentPage+1];
-    [[ProductsModel shareProductsModel] getProductsList:YES];
+    if (canLoadMore) {
+        canLoadMore = NO;
+        int currentPage = [ProductsModel shareProductsModel].currentProductsList.count / kPageSize;
+        [[ProductsModel shareProductsModel] setCurrentPage:currentPage+1];
+        [[ProductsModel shareProductsModel] getProductsList:YES];
+    }
+    [[UIApplication sharedApplication] endIgnoringInteractionEvents];
 }
 
 - (void)didReceiveMemoryWarning
@@ -103,9 +105,8 @@
     if (indexPath.row == [ProductsModel shareProductsModel].currentProductsList.count  - 1
         && indexPath.row == kPageSize * [ProductsModel shareProductsModel].currentPage - 1) {
         
-        if (canLoadMore) {
-            [self performSelector:@selector(performLoadMoreProducts) withObject:nil afterDelay:0.1];
-        }
+        [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+        [self performSelector:@selector(performLoadMoreProducts) withObject:nil afterDelay:0.1];
     }
 }
 

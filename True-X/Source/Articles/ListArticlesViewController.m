@@ -57,7 +57,7 @@
 }
 
 - (void)updateListArticlesTableView:(NSNotification *)notification {
-    
+
     NSLog(@"updateListArticlesTableView with count: %d", [ArticlesModel shareArticlesModel].currentArticlesList.count);
     self.listArticlesTableView.hidden = ([ArticlesModel shareArticlesModel].currentArticlesList.count == 0) ? YES : NO;
 
@@ -75,6 +75,7 @@
         self.currentContentOffset = self.listArticlesTableView.contentOffset;
         [self.delegate didScrollToBottom:self atIndexPage:[ArticlesModel shareArticlesModel].currentPage+1];
     }
+    [[UIApplication sharedApplication] endIgnoringInteractionEvents];
 }
 
 - (void)didReceiveMemoryWarning
@@ -130,8 +131,7 @@
     
     if (indexPath.row == [ArticlesModel shareArticlesModel].currentArticlesList.count - 1
         && indexPath.row == kPageSize * [ArticlesModel shareArticlesModel].currentPage - 1) {
-        
-        [[TrueXLoading shareLoading] show:YES];
+        [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
         [self performSelector:@selector(performLoadMoreArticles) withObject:nil afterDelay:0.1];
     }
 }
