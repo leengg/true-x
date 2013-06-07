@@ -154,7 +154,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard-iPhone" bundle:nil];
+    UIStoryboard *storyboard = nil;
+    if (IS_IPAD) {
+        storyboard = [UIStoryboard storyboardWithName:@"Storyboard-iPad" bundle:nil];
+    }
+    else {
+        storyboard = [UIStoryboard storyboardWithName:@"Storyboard-iPhone" bundle:nil];
+    }
     ProductDetailViewController *detailViewController = [storyboard instantiateViewControllerWithIdentifier:@"ProductDetailViewControllerID"];
     detailViewController.product = [[ProductsModel shareProductsModel].currentProductsList objectAtIndex:indexPath.row];
     // ...

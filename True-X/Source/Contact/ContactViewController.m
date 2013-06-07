@@ -40,13 +40,28 @@ static NSString *kSchemeEmailToTrueX = @"mailto:info@true-x.net";
     }
 
     NSString *logoPath = [[NSBundle mainBundle] pathForResource:@"true_x_logo" ofType:@"png"];
-    NSString *emailButtonPath = [[NSBundle mainBundle] pathForResource:@"bg_email_button" ofType:@"png"];
+    
+    NSString *emailButtonPath = nil;
+    if (IS_IPAD) {
+        emailButtonPath = [[NSBundle mainBundle] pathForResource:@"bg_email_button_ipad" ofType:@"png"];
+    }
+    else {
+        emailButtonPath = [[NSBundle mainBundle] pathForResource:@"bg_email_button" ofType:@"png"];
+    }
     
     NSString *imageHtmlString = [NSString stringWithFormat:@"<img class=\"center\" alt=\"%@\" src=\"file://%@\" style=\"width: 240px;\" />", @"True-X", logoPath];
-    NSString *contentHMLT = [NSString stringWithFormat:@"<p><h3>Văn Phòng Giao Dịch True-X </h3>Địa chỉ: 45/25/5 Nguyễn Văn Đậu, P. 6, Q. Bình Thạnh, TP.HCM.</br>Điện thoại: 083-841-0945 - 0120-7667-888</br>Fax: 083-841-0946</br>Email: info@true-x.net</br>Website: <a href=\"http://true-x.net\">http://true-x.net</a></br></br>Nhãn hiệu True-X thuộc sở hữu của Công Ty Maple Limited - Japan.</br>6-chome 14-8 Tsukiji, Chuo-ku Tokyo, Japan 104-0045</br>Sản phẩm được sản xuất tại Malaysia dưới sự giám sát của True-X</br>VPĐD tại Châu Âu: Advena Ltd. Hereford, HR4 9DQ. United Kingdom.</br>VPĐD tại Việt Nam: Hanh An Trading Service Co., Ltd.</br></p><p><a href=\"%@\" target=\"_blank\"><img src=\"file://%@\" style=\"border: 0;\" /></a></p></br>", kSchemeEmailToTrueX, emailButtonPath];
+    NSString *contentHMLT = [NSString stringWithFormat:@"<p><h3>Văn Phòng Giao Dịch True-X </h3>Địa chỉ: 45/25/5 Nguyễn Văn Đậu, P. 6, Q. Bình Thạnh, TP.HCM.</br>Điện thoại: 083-841-0945 - 0120-7667-888</br>Fax: 083-841-0946</br>Email: info@true-x.net</br>Website: <a href=\"http://true-x.net\">http://true-x.net</a></br></br>Nhãn hiệu True-X thuộc sở hữu của Công Ty Maple Limited - Japan.</br>6-chome 14-8 Tsukiji, Chuo-ku Tokyo, Japan 104-0045</br>Sản phẩm được sản xuất tại Malaysia dưới sự giám sát của True-X</br>VPĐD tại Châu Âu: Advena Ltd. Hereford, HR4 9DQ. United Kingdom.</br>VPĐD tại Việt Nam: Hanh An Trading Service Co., Ltd.</br></p><p> <br/> <a href=\"%@\" target=\"_blank\"><img class=\"center\" src=\"file://%@\" style=\"border: 0;\" /></a></p>", kSchemeEmailToTrueX, emailButtonPath];
     
-    NSString *headStyle = [NSString stringWithFormat:@"<head><style type=\"text/css\">body {font-family:\"Helvetica\"; font-size:14px;color:#FFF;} img {max-width: 300px !important;} img.center { display: block; margin-left: auto; margin-right: auto; } a { color:#1288f0;}</style></head>"];
-    NSString *htmlString = [NSString stringWithFormat:@"<html>%@<body> <br/> %@ %@</body></html>", headStyle, imageHtmlString, contentHMLT];
+    NSString *headStyle = nil;
+    
+    if (IS_IPAD) {
+        headStyle = [NSString stringWithFormat:@"<head><style type=\"text/css\"> body {font-family:\"Helvetica\"; font-size:24px;color:#FFF; max-width: 650px !important;} body.center { display: block; margin-left: auto; margin-right: auto; } img {max-width: 650px !important;} img.center { display: block; margin-left: auto; margin-right: auto; } a { color:#1288f0;}</style></head>"];
+    }
+    else {
+        headStyle = [NSString stringWithFormat:@"<head><style type=\"text/css\"> body {font-family:\"Helvetica\"; font-size:14px;color:#FFF; max-width: 300px !important;} body.center { display: block; margin-left: auto; margin-right: auto; } img {max-width: 300px !important;} img.center { display: block; margin-left: auto; margin-right: auto; } a { color:#1288f0;}</style></head>"];
+    }
+
+    NSString *htmlString = [NSString stringWithFormat:@"<html>%@<body class=\"center\"> <br/><br/> %@ <br/> %@<br/></body></html>", headStyle, imageHtmlString, contentHMLT];
     
     [self.contactTextView loadHTMLString:htmlString baseURL:nil];
 }

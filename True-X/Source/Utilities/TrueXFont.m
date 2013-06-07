@@ -19,8 +19,12 @@ static UIFont *_descriptionFont = nil;
 + (UIFont *)pageNumberFont {
     
     if (!_pageNumberFont) {
-        _pageNumberFont = [UIFont fontWithName:@"MyriadPro-Cond" size:18.0];
-        
+        if (IS_IPAD) {
+            _pageNumberFont = [UIFont fontWithName:@"MyriadPro-Cond" size:28.0];
+        }
+        else {
+            _pageNumberFont = [UIFont fontWithName:@"MyriadPro-Cond" size:18.0];
+        }
     }
     return _pageNumberFont;
 }
@@ -28,8 +32,12 @@ static UIFont *_descriptionFont = nil;
 + (UIFont *)productNameFont {
     
     if (!_productNameFont) {
+        if (IS_IPAD) {
+        _productNameFont = [UIFont fontWithName:@"MyriadPro-Cond" size:36.0];
+        }
+        else {
         _productNameFont = [UIFont fontWithName:@"MyriadPro-Cond" size:24.0];
-        
+        }
     }
     return _productNameFont;
 }
@@ -37,7 +45,12 @@ static UIFont *_descriptionFont = nil;
 + (UIFont *)feelingNameFont {
     
     if (!_feelingNameFont) {
-        _feelingNameFont = [UIFont fontWithName:@"MyriadPro-It" size:16.0];
+        if (IS_IPAD) {
+            _feelingNameFont = [UIFont fontWithName:@"MyriadPro-It" size:22.0];
+        }
+        else {
+        _feelingNameFont = [UIFont fontWithName:@"MyriadPro-It" size:16.0];            
+        }
     }
     return _feelingNameFont;
 
@@ -46,7 +59,12 @@ static UIFont *_descriptionFont = nil;
 + (UIFont *)titleFont {
 
     if (!_titleFont) {
-        _titleFont = [UIFont fontWithName:@"MyriadPro-Bold" size:19.0];
+        if (IS_IPAD) {
+            _titleFont = [UIFont fontWithName:@"MyriadPro-Bold" size:26.0];
+        }
+        else {
+            _titleFont = [UIFont fontWithName:@"MyriadPro-Bold" size:17.0];
+        }
     }
     return _titleFont;
 
@@ -55,7 +73,12 @@ static UIFont *_descriptionFont = nil;
 + (UIFont *)descriptionFont {
 
     if (!_descriptionFont) {
-        _descriptionFont = [UIFont fontWithName:@"MyriadPro-Cond" size:17.0];
+        if (IS_IPAD) {
+            _descriptionFont = [UIFont fontWithName:@"MyriadPro-Cond" size:22.0];
+        }
+        else {
+            _descriptionFont = [UIFont fontWithName:@"MyriadPro-Cond" size:18.0];            
+        }
     }
     return _descriptionFont;
 

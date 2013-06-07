@@ -59,10 +59,20 @@
 
 - (void)loadArticleContent {
     
+    NSString *headStyle = nil;
+    
+    if (IS_IPAD) {
+        headStyle = [NSString stringWithFormat:@"<head><style type=\"text/css\"> body {max-width: 650px !important;} body.center { display: block; margin-left: auto; margin-right: auto; } img {max-width: 650px !important;} img.center { display: block; margin-left: auto; margin-right: auto; }</style></head>"];
+    }
+    else {
+        headStyle = [NSString stringWithFormat:@"<head><style type=\"text/css\"> body {max-width: 300px !important;} body.center { display: block; margin-left: auto; margin-right: auto; } img {max-width: 300px !important;} img.center { display: block; margin-left: auto; margin-right: auto; }</style></head>"];
+    }
+    
     NSString *titleHtmlString = [NSString stringWithFormat:@"<h2> %@ </h2>", self.article.att2_title];
-    NSString *imageHtmlString = [NSString stringWithFormat:@"<img alt=\"%@\" src=\"%@\" style=\"width: 304px;\" />", self.article.att2_title, self.article.att3_thumbnailURL];
-    NSString *headStyle = [NSString stringWithFormat:@"<head><style type=\"text/css\">img {width: 304px !important;}</style></head>"];
-    NSString *htmlString = [NSString stringWithFormat:@"<html>%@<body style='font-family:\"Tahoma\";'> %@ %@ %@</body></html>", headStyle, titleHtmlString, imageHtmlString, self.article.att5_contentHTML];
+    
+    NSString *imageHtmlString = [NSString stringWithFormat:@"<img class=\"center\" alt=\"%@\" src=\"%@\"/>", self.article.att2_title, self.article.att3_thumbnailURL];
+
+    NSString *htmlString = [NSString stringWithFormat:@"<html>%@<body class=\"center\"> %@ %@ %@</body></html>", headStyle, titleHtmlString, imageHtmlString, self.article.att5_contentHTML];
 
     [self.articleWebView loadHTMLString:htmlString baseURL:nil];
 }

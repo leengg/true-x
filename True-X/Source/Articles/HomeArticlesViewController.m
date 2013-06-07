@@ -153,7 +153,13 @@
 
 - (void)didSelectListArticles:(ListArticlesViewController *)listArticlesVC atIndexPath:(NSIndexPath *)index {
 
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard-iPhone" bundle:nil];
+    UIStoryboard *storyboard = nil;
+    if (IS_IPAD) {
+        storyboard = [UIStoryboard storyboardWithName:@"Storyboard-iPad" bundle:nil];
+    }
+    else {
+        storyboard = [UIStoryboard storyboardWithName:@"Storyboard-iPhone" bundle:nil];
+    }
     ArticleDetailViewController *detailViewController = [storyboard instantiateViewControllerWithIdentifier:@"ArticleDetailViewControllerID"];
     detailViewController.article = [[ArticlesModel shareArticlesModel].currentArticlesList objectAtIndex:index.row];
     // ...

@@ -30,7 +30,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    if( !IS_IPHONE_5 )
+    if (IS_IPAD) {
+        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height-44-49);
+    }
+    else if( !IS_IPHONE_5 )
     {
         if (self.isHackScrollView) {
             self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, 480-20-44-49);
