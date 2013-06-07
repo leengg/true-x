@@ -122,7 +122,7 @@
     EGOQuickPhotoSource *source = [[EGOQuickPhotoSource alloc] initWithPhotos:images];
     
     EGOPhotoViewController *photoController = [[EGOPhotoViewController alloc] initWithPhotoSource:source];
-    [productDetailPageVC setCurrentPage:self.currentPage];
+    [photoController setCurrentPhotoIndex:self.currentPage-1];
     [self.navigationController pushViewController:photoController animated:YES];
 }
 
