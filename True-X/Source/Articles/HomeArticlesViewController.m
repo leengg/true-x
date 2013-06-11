@@ -174,4 +174,80 @@
     [[ArticlesModel shareArticlesModel] getArticlesList:YES];
 }
 
+#pragma mark - iOS5 Rotation
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return YES;
+    if (interfaceOrientation!=UIInterfaceOrientationPortraitUpsideDown) {
+        return YES;
+    }
+    else return NO;
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration {
+    
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    
+}
+
+#pragma mark - iOS6 Rotation
+
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationIsPortrait(UIInterfaceOrientationMaskPortrait|| UIInterfaceOrientationMaskPortraitUpsideDown);
+    
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    return UIInterfaceOrientationIsPortrait(UIInterfaceOrientationPortrait|| UIInterfaceOrientationPortraitUpsideDown);
+    
+}
+
+-(void)viewWillLayoutSubviews
+{
+    NSLog(@"Home Article's frame: %f, %f, %f, %f", self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
+    if([self interfaceOrientation] == UIInterfaceOrientationPortrait||[self interfaceOrientation] ==UIInterfaceOrientationPortraitUpsideDown)
+    {
+        if (IS_IPAD) {
+            //set the frames for 9.5"(IPAD) screen here
+        }
+        else if (IS_IPHONE_5)
+        {
+            //set the frames for 4"(IOS6) screen here
+        }
+        else
+        {
+            ////set the frames for 3.5"(IOS5/IOS6) screen here
+        }
+    }
+    else if ([self interfaceOrientation] == UIInterfaceOrientationLandscapeLeft||[self interfaceOrientation] == UIInterfaceOrientationLandscapeRight)
+    {
+        if (IS_IPAD) {
+            //set the frames for 9.5"(IPAD) screen here
+        }
+        else if (IS_IPHONE_5)
+        {
+            //set the frames for 4"(IOS6) screen here
+        }
+        else            
+        {
+            ////set the frames for 3.5"(IOS5/IOS6) screen here
+        }
+
+    }
+}
+
 @end
