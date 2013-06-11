@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Rotation Tab Bar Controller-->
         <scene sceneID="dIA-sW-5sN">
             <objects>
-                <tabBarController definesPresentationContext="YES" id="PO1-wa-BCq" sceneMemberID="viewController">
+                <tabBarController definesPresentationContext="YES" id="PO1-wa-BCq" customClass="UIRotationTabBarController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Rya-Cn-wY7"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="-1994" y="1876"/>
         </scene>
-        <!--Navigation Controller - Bài viết-->
+        <!--Rotation Navigation Controller - Bài viết-->
         <scene sceneID="Krt-k6-Lfd">
             <objects>
-                <navigationController definesPresentationContext="YES" id="LOU-vJ-TEn" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="LOU-vJ-TEn" customClass="UIRotationNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Bài viết" id="hDY-Av-YEe"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
@@ -309,10 +309,10 @@
             </objects>
             <point key="canvasLocation" x="4393" y="-1533"/>
         </scene>
-        <!--Navigation Controller - Liên hệ-->
+        <!--Rotation Navigation Controller - Liên hệ-->
         <scene sceneID="XbU-Jq-GDY">
             <objects>
-                <navigationController definesPresentationContext="YES" id="UvA-9y-CHm" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="UvA-9y-CHm" customClass="UIRotationNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Liên hệ" id="QMZ-to-Ubc"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -363,10 +363,10 @@
             </objects>
             <point key="canvasLocation" x="2385" y="5720"/>
         </scene>
-        <!--Navigation Controller - Bộ sưu tập-->
+        <!--Rotation Navigation Controller - Bộ sưu tập-->
         <scene sceneID="cA1-Pv-77V">
             <objects>
-                <navigationController definesPresentationContext="YES" id="yq3-HE-fh4" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="yq3-HE-fh4" customClass="UIRotationNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Bộ sưu tập" id="u8B-j9-dNk"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -693,6 +693,8 @@
         <class className="ArticleDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ArticleDetailViewController.h"/>
             <relationships>
+                <relationship kind="action" name="clickBack:"/>
+                <relationship kind="action" name="clickShare:"/>
                 <relationship kind="outlet" name="articleWebView" candidateClass="UIWebView"/>
             </relationships>
         </class>
@@ -705,6 +707,7 @@
         <class className="CustomSegmentViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomSegmentViewController.h"/>
             <relationships>
+                <relationship kind="action" name="clickChangeTab:"/>
                 <relationship kind="outlet" name="btn_ChuyenBenLe" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btn_DangCap" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btn_PhongDo" candidateClass="UIButton"/>
@@ -714,10 +717,14 @@
         </class>
         <class className="HomeArticlesViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeArticlesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="clickReload:"/>
+            </relationships>
         </class>
         <class className="HomeProductsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeProductsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="clickReload:"/>
                 <relationship kind="outlet" name="productsTableView" candidateClass="UITableView"/>
             </relationships>
         </class>
@@ -738,6 +745,9 @@
         <class className="ProductDetailPageViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductDetailPageViewController.h"/>
             <relationships>
+                <relationship kind="action" name="clickNext:"/>
+                <relationship kind="action" name="clickPreview:"/>
+                <relationship kind="action" name="clickSlideShow:"/>
                 <relationship kind="outlet" name="leftBtn" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="mainScrollView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="pageLabel" candidateClass="UILabel"/>
@@ -752,9 +762,17 @@
         <class className="ProductDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductDetailViewController.h"/>
             <relationships>
+                <relationship kind="action" name="clickBack:"/>
+                <relationship kind="action" name="clickShare:"/>
                 <relationship kind="action" name="swipeLeft:"/>
                 <relationship kind="action" name="swipeRight:"/>
             </relationships>
+        </class>
+        <class className="UIRotationNavigationController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIRotationNavigationController.h"/>
+        </class>
+        <class className="UIRotationTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIRotationTabBarController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -81,6 +81,9 @@
 		69C2FBE01760859E008C5156 /* menu2_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 69C2FBDC1760859E008C5156 /* menu2_ipad.png */; };
 		69C2FBE11760859E008C5156 /* menu3_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 69C2FBDD1760859E008C5156 /* menu3_ipad.png */; };
 		69C2FBE21760859E008C5156 /* menu4_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 69C2FBDE1760859E008C5156 /* menu4_ipad.png */; };
+		69EBE4301766C6B0006D60B7 /* UIRotationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EBE42F1766C6B0006D60B7 /* UIRotationManager.m */; };
+		69EBE4371766C892006D60B7 /* UIRotationTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EBE4361766C892006D60B7 /* UIRotationTabBarController.m */; };
+		69EBE43A1766C8FE006D60B7 /* UIRotationNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EBE4391766C8FE006D60B7 /* UIRotationNavigationController.m */; };
 		DE040090174BD31C00660B3E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE04008E174BD30400660B3E /* QuartzCore.framework */; };
 		DE040144174E6C1A00660B3E /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DE040130174E6C1A00660B3E /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE040145174E6C1A00660B3E /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DE040132174E6C1A00660B3E /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -261,6 +264,12 @@
 		69C2FBDC1760859E008C5156 /* menu2_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu2_ipad.png; sourceTree = "<group>"; };
 		69C2FBDD1760859E008C5156 /* menu3_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu3_ipad.png; sourceTree = "<group>"; };
 		69C2FBDE1760859E008C5156 /* menu4_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu4_ipad.png; sourceTree = "<group>"; };
+		69EBE42E1766C6B0006D60B7 /* UIRotationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIRotationManager.h; sourceTree = "<group>"; };
+		69EBE42F1766C6B0006D60B7 /* UIRotationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIRotationManager.m; sourceTree = "<group>"; };
+		69EBE4351766C892006D60B7 /* UIRotationTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIRotationTabBarController.h; sourceTree = "<group>"; };
+		69EBE4361766C892006D60B7 /* UIRotationTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIRotationTabBarController.m; sourceTree = "<group>"; };
+		69EBE4381766C8FE006D60B7 /* UIRotationNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIRotationNavigationController.h; sourceTree = "<group>"; };
+		69EBE4391766C8FE006D60B7 /* UIRotationNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIRotationNavigationController.m; sourceTree = "<group>"; };
 		DE040087174BC37F00660B3E /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		DE04008E174BD30400660B3E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DE04012F174E6C1A00660B3E /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
@@ -467,6 +476,12 @@
 				DEA1FEDA1759A45100CE344D /* TrueXAlert.m */,
 				DE6525891759D2150047F4C0 /* TrueXFB.h */,
 				DE65258A1759D2150047F4C0 /* TrueXFB.m */,
+				69EBE42E1766C6B0006D60B7 /* UIRotationManager.h */,
+				69EBE42F1766C6B0006D60B7 /* UIRotationManager.m */,
+				69EBE4351766C892006D60B7 /* UIRotationTabBarController.h */,
+				69EBE4361766C892006D60B7 /* UIRotationTabBarController.m */,
+				69EBE4381766C8FE006D60B7 /* UIRotationNavigationController.h */,
+				69EBE4391766C8FE006D60B7 /* UIRotationNavigationController.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1236,6 +1251,9 @@
 				6916156C175CAB7800305119 /* ImageCacheManager.m in Sources */,
 				695A59C7175F3BA000D4FEBB /* Articles.m in Sources */,
 				695A59CA175F3EBC00D4FEBB /* Products.m in Sources */,
+				69EBE4301766C6B0006D60B7 /* UIRotationManager.m in Sources */,
+				69EBE4371766C892006D60B7 /* UIRotationTabBarController.m in Sources */,
+				69EBE43A1766C8FE006D60B7 /* UIRotationNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

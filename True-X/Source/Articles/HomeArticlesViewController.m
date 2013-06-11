@@ -174,45 +174,9 @@
     [[ArticlesModel shareArticlesModel] getArticlesList:YES];
 }
 
-#pragma mark - iOS5 Rotation
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return YES;
-    if (interfaceOrientation!=UIInterfaceOrientationPortraitUpsideDown) {
-        return YES;
-    }
-    else return NO;
-}
+#pragma mark - iOS5 & 6 Rotation
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    
-}
-
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration {
-    
-}
-
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-    
-}
-
-#pragma mark - iOS6 Rotation
-
-- (BOOL)shouldAutorotate
-{
-    return YES;
-}
-
-- (NSUInteger)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationIsPortrait(UIInterfaceOrientationMaskPortrait|| UIInterfaceOrientationMaskPortraitUpsideDown);
-    
-}
-
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
-{
-    return UIInterfaceOrientationIsPortrait(UIInterfaceOrientationPortrait|| UIInterfaceOrientationPortraitUpsideDown);
     
 }
 
@@ -248,6 +212,14 @@
         }
 
     }
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration {
+    
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    
 }
 
 @end
