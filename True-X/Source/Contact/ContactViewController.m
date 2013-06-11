@@ -38,7 +38,12 @@ static NSString *kSchemeEmailToTrueX = @"mailto:info@true-x.net";
     {
         self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, 568-20);
     }
+    
+//    [self loadContentHMTL];
+}
 
+- (void)loadContentHMTL {
+    
     NSString *logoPath = [[NSBundle mainBundle] pathForResource:@"true_x_logo" ofType:@"png"];
     
     NSString *emailButtonPath = nil;
@@ -55,12 +60,12 @@ static NSString *kSchemeEmailToTrueX = @"mailto:info@true-x.net";
     NSString *headStyle = nil;
     
     if (IS_IPAD) {
-        headStyle = [NSString stringWithFormat:@"<head><style type=\"text/css\"> body {font-family:\"Helvetica\"; font-size:24px;color:#FFF; max-width: 650px !important;} body.center { display: block; margin-left: auto; margin-right: auto; } img {max-width: 650px !important;} img.center { display: block; margin-left: auto; margin-right: auto; } a { color:#1288f0;}</style></head>"];
+        headStyle = [NSString stringWithFormat:@"<head><style type=\"text/css\"> body {font-family:\"Helvetica\"; font-size:24px;color:#FFF;} body.center { display: block; margin-left: 50px; margin-right: 50px; } img {max-width: 650px !important;} img.center { display: block; margin-left: auto; margin-right: auto; } a { color:#1288f0;}</style></head>"];
     }
     else {
-        headStyle = [NSString stringWithFormat:@"<head><style type=\"text/css\"> body {font-family:\"Helvetica\"; font-size:14px;color:#FFF; max-width: 300px !important;} body.center { display: block; margin-left: auto; margin-right: auto; } img {max-width: 300px !important;} img.center { display: block; margin-left: auto; margin-right: auto; } a { color:#1288f0;}</style></head>"];
+        headStyle = [NSString stringWithFormat:@"<head><style type=\"text/css\"> body {font-family:\"Helvetica\"; font-size:14px;color:#FFF;} body.center { display: block; margin-left: 10px; margin-right: 10px; } img {max-width: 300px !important;} img.center { display: block; margin-left: auto; margin-right: auto; } a { color:#1288f0;}</style></head>"];
     }
-
+    
     NSString *htmlString = [NSString stringWithFormat:@"<html>%@<body class=\"center\"> <br/><br/> %@ <br/> %@<br/></body></html>", headStyle, imageHtmlString, contentHMLT];
     
     [self.contactTextView loadHTMLString:htmlString baseURL:nil];
@@ -93,19 +98,61 @@ static NSString *kSchemeEmailToTrueX = @"mailto:info@true-x.net";
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     
     NSLog(@"page is loading");
-    [[TrueXLoading shareLoading] show:YES];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView {
     
     NSLog(@"finished loading");
-    [[TrueXLoading shareLoading] hide:YES];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     
     NSLog(@"error loading");
-    [[TrueXLoading shareLoading] hide:YES];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
+
+#pragma mark - iOS5 & 6 Rotation
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    
+    //    customSegmentVC.view.hidden = YES;
+    //    listArticlesVC.view.hidden = YES;
+}
+
+-(void)viewWillLayoutSubviews
+{
+    if([self interfaceOrientation] == UIInterfaceOrientationPortrait||[self interfaceOrientation] ==UIInterfaceOrientationPortraitUpsideDown)
+    {
+        if (IS_IPAD) {
+            //set the frames for 9.5"(IPAD) screen here
+            [self loadContentHMTL];
+            self.contactTextView.frame = self.view.frame;
+        }
+    }
+    else if ([self interfaceOrientation] == UIInterfaceOrientationLandscapeLeft||[self interfaceOrientation] == UIInterfaceOrientationLandscapeRight)
+    {
+        if (IS_IPAD) {
+            //set the frames for 9.5"(IPAD) screen here
+            [self loadContentHMTL];
+            self.contactTextView.frame = self.view.frame;
+        }
+    }
+    else {
+        [self loadContentHMTL];
+    }
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration {
+    
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    
+    //    customSegmentVC.view.hidden = NO;
+    //    listArticlesVC.view.hidden = NO;
 }
 
 @end

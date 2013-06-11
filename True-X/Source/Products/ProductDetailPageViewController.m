@@ -122,6 +122,12 @@
     [self.delegate didTapPhotoViewer:self];
 }
 
+#pragma mark - Rotation 
 
+- (void)doRotationToFrame:(CGRect)frame {
+    
+    self.view.frame = frame;
+    self.mainScrollView.frame = frame;
+}
 
 @end

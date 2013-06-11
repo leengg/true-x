@@ -68,9 +68,11 @@
     listArticlesVC.delegate = self;
     [self.view addSubview:listArticlesVC.view];    
 
-    customSegmentVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CustomSegmentViewControllerID"];
-    customSegmentVC.delegate = self;
-    [self.view addSubview:customSegmentVC.view];
+    if (!IS_IPAD) {
+        customSegmentVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CustomSegmentViewControllerID"];
+        customSegmentVC.delegate = self;
+        [self.view addSubview:customSegmentVC.view];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -178,39 +180,43 @@
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     
+//    customSegmentVC.view.hidden = YES;
+//    listArticlesVC.view.hidden = YES;
 }
 
 -(void)viewWillLayoutSubviews
 {
-    NSLog(@"Home Article's frame: %f, %f, %f, %f", self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
     if([self interfaceOrientation] == UIInterfaceOrientationPortrait||[self interfaceOrientation] ==UIInterfaceOrientationPortraitUpsideDown)
     {
         if (IS_IPAD) {
             //set the frames for 9.5"(IPAD) screen here
-        }
-        else if (IS_IPHONE_5)
-        {
-            //set the frames for 4"(IOS6) screen here
-        }
-        else
-        {
-            ////set the frames for 3.5"(IOS5/IOS6) screen here
+            listArticlesVC.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 73, self.view.frame.size.width, self.view.frame.size.height - 72);
+            
+            int currentIndex = [customSegmentVC getCurrentIndex];
+            customSegmentVC.delegate = nil;
+            [customSegmentVC.view removeFromSuperview];
+            
+            customSegmentVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CustomSegmentViewControllerPortraitID"];
+            customSegmentVC.delegate = self;
+            [self.view addSubview:customSegmentVC.view];
+            [customSegmentVC selectIndex:currentIndex];
         }
     }
     else if ([self interfaceOrientation] == UIInterfaceOrientationLandscapeLeft||[self interfaceOrientation] == UIInterfaceOrientationLandscapeRight)
     {
         if (IS_IPAD) {
             //set the frames for 9.5"(IPAD) screen here
+            listArticlesVC.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 73, self.view.frame.size.width, self.view.frame.size.height - 72);
+            
+            int currentIndex = [customSegmentVC getCurrentIndex];
+            customSegmentVC.delegate = nil;
+            [customSegmentVC.view removeFromSuperview];
+            
+            customSegmentVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CustomSegmentViewControllerLandscapeID"];
+            customSegmentVC.delegate = self;
+           [self.view addSubview:customSegmentVC.view];
+            [customSegmentVC selectIndex:currentIndex];
         }
-        else if (IS_IPHONE_5)
-        {
-            //set the frames for 4"(IOS6) screen here
-        }
-        else            
-        {
-            ////set the frames for 3.5"(IOS5/IOS6) screen here
-        }
-
     }
 }
 
@@ -219,7 +225,9 @@
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-    
+
+//    customSegmentVC.view.hidden = NO;
+//    listArticlesVC.view.hidden = NO;
 }
 
 @end

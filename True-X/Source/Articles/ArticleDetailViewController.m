@@ -48,7 +48,7 @@
     }
     
     // Load article content
-    [self performSelector:@selector(loadArticleContent)];
+    //[self performSelector:@selector(loadArticleContent)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,7 +62,7 @@
     NSString *headStyle = nil;
     
     if (IS_IPAD) {
-        headStyle = [NSString stringWithFormat:@"<head><style type=\"text/css\"> body {max-width: 650px !important;} body.center { display: block; margin-left: auto; margin-right: auto; } img {max-width: 650px !important;} img.center { display: block; margin-left: auto; margin-right: auto; }</style></head>"];
+        headStyle = [NSString stringWithFormat:@"<head><style type=\"text/css\"> body.center { display: block; margin-left: 50px; margin-right: 50px; } img {max-width: 650px !important;} img.center { display: block; margin-left: auto; margin-right: auto; }</style></head>"];
     }
     else {
         headStyle = [NSString stringWithFormat:@"<head><style type=\"text/css\"> body {max-width: 300px !important;} body.center { display: block; margin-left: auto; margin-right: auto; } img {max-width: 300px !important;} img.center { display: block; margin-left: auto; margin-right: auto; }</style></head>"];
@@ -101,7 +101,13 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     
-    return YES;
+    NSString *scheme = request.URL.scheme;
+    if ([scheme isEqualToString:@"mailto"] || [scheme isEqualToString:@"tel"] || [scheme isEqualToString:@"http"])
+    {
+        [[UIApplication sharedApplication] openURL:request.URL];
+        return NO;
+    }
+    else    return YES;
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
@@ -120,6 +126,46 @@
     
     NSLog(@"error loading");
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
+#pragma mark - iOS5 & 6 Rotation
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    
+    //    customSegmentVC.view.hidden = YES;
+    //    listArticlesVC.view.hidden = YES;
+}
+
+-(void)viewWillLayoutSubviews
+{
+    NSLog(@"Frame: %f, %f", self.view.frame.size.width, self.view.frame.size.height);
+    if([self interfaceOrientation] == UIInterfaceOrientationPortrait||[self interfaceOrientation] ==UIInterfaceOrientationPortraitUpsideDown)
+    {
+        if (IS_IPAD) {
+            //set the frames for 9.5"(IPAD) screen here
+            [self loadArticleContent];
+        }
+    }
+    else if ([self interfaceOrientation] == UIInterfaceOrientationLandscapeLeft||[self interfaceOrientation] == UIInterfaceOrientationLandscapeRight)
+    {
+        if (IS_IPAD) {
+            //set the frames for 9.5"(IPAD) screen here
+            [self loadArticleContent];
+        }
+    }
+    else {
+        [self loadArticleContent];
+    }
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration {
+    
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    
+    //    customSegmentVC.view.hidden = NO;
+    //    listArticlesVC.view.hidden = NO;
 }
 
 @end

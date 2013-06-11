@@ -84,6 +84,7 @@
 		69EBE4301766C6B0006D60B7 /* UIRotationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EBE42F1766C6B0006D60B7 /* UIRotationManager.m */; };
 		69EBE4371766C892006D60B7 /* UIRotationTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EBE4361766C892006D60B7 /* UIRotationTabBarController.m */; };
 		69EBE43A1766C8FE006D60B7 /* UIRotationNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EBE4391766C8FE006D60B7 /* UIRotationNavigationController.m */; };
+		69EBE444176706CD006D60B7 /* bg_menu_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 69EBE443176706CD006D60B7 /* bg_menu_ipad.png */; };
 		DE040090174BD31C00660B3E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE04008E174BD30400660B3E /* QuartzCore.framework */; };
 		DE040144174E6C1A00660B3E /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DE040130174E6C1A00660B3E /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE040145174E6C1A00660B3E /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DE040132174E6C1A00660B3E /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -270,6 +271,7 @@
 		69EBE4361766C892006D60B7 /* UIRotationTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIRotationTabBarController.m; sourceTree = "<group>"; };
 		69EBE4381766C8FE006D60B7 /* UIRotationNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIRotationNavigationController.h; sourceTree = "<group>"; };
 		69EBE4391766C8FE006D60B7 /* UIRotationNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIRotationNavigationController.m; sourceTree = "<group>"; };
+		69EBE443176706CD006D60B7 /* bg_menu_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_menu_ipad.png; sourceTree = "<group>"; };
 		DE040087174BC37F00660B3E /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		DE04008E174BD30400660B3E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DE04012F174E6C1A00660B3E /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
@@ -572,6 +574,7 @@
 		69C2FBDA1760859E008C5156 /* ipad_images */ = {
 			isa = PBXGroup;
 			children = (
+				69EBE443176706CD006D60B7 /* bg_menu_ipad.png */,
 				6923F2461761B3E100276636 /* bg_email_button_ipad.png */,
 				69C2FBDB1760859E008C5156 /* menu1_ipad.png */,
 				69C2FBDC1760859E008C5156 /* menu2_ipad.png */,
@@ -1170,6 +1173,7 @@
 				69C2FBE11760859E008C5156 /* menu3_ipad.png in Resources */,
 				69C2FBE21760859E008C5156 /* menu4_ipad.png in Resources */,
 				6923F2471761B3E100276636 /* bg_email_button_ipad.png in Resources */,
+				69EBE444176706CD006D60B7 /* bg_menu_ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

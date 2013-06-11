@@ -23,5 +23,6 @@
 @property (nonatomic, weak) id <CustomSegmentDelegate> delegate;
 
 - (void)selectIndex:(int)index;
+- (int)getCurrentIndex;
 
 @end

@@ -166,4 +166,41 @@
     [self.view addSubview:self.currentProductDetailPageVC.view];
 }
 
+#pragma mark - iOS5 & 6 Rotation
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    
+    //    customSegmentVC.view.hidden = YES;
+    //    listArticlesVC.view.hidden = YES;
+}
+
+-(void)viewWillLayoutSubviews
+{
+    NSLog(@"Frame: %f, %f", self.view.frame.size.width, self.view.frame.size.height);
+    if([self interfaceOrientation] == UIInterfaceOrientationPortrait||[self interfaceOrientation] ==UIInterfaceOrientationPortraitUpsideDown)
+    {
+        if (IS_IPAD) {
+            //set the frames for 9.5"(IPAD) screen here
+            [self.currentProductDetailPageVC doRotationToFrame:self.view.frame];
+        }
+    }
+    else if ([self interfaceOrientation] == UIInterfaceOrientationLandscapeLeft||[self interfaceOrientation] == UIInterfaceOrientationLandscapeRight)
+    {
+        if (IS_IPAD) {
+            //set the frames for 9.5"(IPAD) screen here
+            [self.currentProductDetailPageVC doRotationToFrame:self.view.frame];
+        }
+    }
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration {
+    
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    
+    //    customSegmentVC.view.hidden = NO;
+    //    listArticlesVC.view.hidden = NO;
+}
+
 @end

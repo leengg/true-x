@@ -37,4 +37,6 @@
 @property int currentPage;
 @property BOOL isHackScrollView;
 
+- (void)doRotationToFrame:(CGRect)frame;
+
 @end

@@ -17,6 +17,7 @@
     __weak IBOutlet UIButton *btn_TuVan;
     
     UIButton *currentButton;
+    int currentIndex;
 }
 
 @end
@@ -43,6 +44,7 @@
         [menuBGImageView setImage:[UIImage imageNamed:@"menu_1.png"]];
     }
     currentButton = btn_PhongDo;
+    currentIndex = 0;
     [self.delegate customSegment:self didSelectIndex:0];
 }
 
@@ -72,6 +74,11 @@
     }
 }
 
+- (int)getCurrentIndex {
+    
+    return currentIndex;
+}
+
 - (IBAction)clickChangeTab:(id)sender {
     
     if (currentButton != sender) {
@@ -95,6 +102,7 @@
             [menuBGImageView setImage:[UIImage imageNamed:@"menu_1.png"]];
         }
         currentButton = btn_PhongDo;
+        currentIndex = 0;
         [self.delegate customSegment:self didSelectIndex:0];
     }
     else if (sender == btn_DangCap) {
@@ -105,6 +113,7 @@
             [menuBGImageView setImage:[UIImage imageNamed:@"menu_2.png"]];
         }
         currentButton = btn_DangCap;
+        currentIndex = 1;
         [self.delegate customSegment:self didSelectIndex:1];
     }
     else if (sender == btn_ChuyenBenLe) {
@@ -115,6 +124,7 @@
             [menuBGImageView setImage:[UIImage imageNamed:@"menu_3.png"]];
         }
         currentButton = btn_ChuyenBenLe;
+        currentIndex = 2;
         [self.delegate customSegment:self didSelectIndex:2];
     }
     else if (sender == btn_TuVan) {
@@ -125,6 +135,7 @@
             [menuBGImageView setImage:[UIImage imageNamed:@"menu_4.png"]];
         }
         currentButton = btn_TuVan;
+        currentIndex = 3;
         [self.delegate customSegment:self didSelectIndex:3];
     }
     else {
