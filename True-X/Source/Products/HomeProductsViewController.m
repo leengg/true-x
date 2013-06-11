@@ -9,6 +9,7 @@
 #import "HomeProductsViewController.h"
 #import "ProductDetailViewController.h"
 #import "ProductCell.h"
+#import "UIRotationManager.h"
 
 @interface HomeProductsViewController () {
 
@@ -167,6 +168,23 @@
     // Pass the selected object to the new view controller.
     [self.navigationController pushViewController:detailViewController animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - iOS5 & 6 Rotation
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return [[UIRotationManager sharedInstance] shouldAutorotateToInterfaceOrientation:toInterfaceOrientation];
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return [[UIRotationManager sharedInstance] supportedInterfaceOrientations];
+}
+
+- (BOOL)shouldAutorotate
+{
+    return [[UIRotationManager sharedInstance] shouldAutorotate];
 }
 
 @end

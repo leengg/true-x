@@ -39,7 +39,9 @@ static NSString *kSchemeEmailToTrueX = @"mailto:info@true-x.net";
         self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, 568-20);
     }
     
-//    [self loadContentHMTL];
+    if (!IS_IPAD) {
+        [self loadContentHMTL];
+    }
 }
 
 - (void)loadContentHMTL {

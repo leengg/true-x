@@ -9,6 +9,7 @@
 #import "HomeArticlesViewController.h"
 #import "Articles.h"
 #import "ArticleDetailViewController.h"
+#import "UIRotationManager.h"
 
 @interface CategoryPosition : NSObject {
 
@@ -177,6 +178,21 @@
 }
 
 #pragma mark - iOS5 & 6 Rotation
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return [[UIRotationManager sharedInstance] shouldAutorotateToInterfaceOrientation:toInterfaceOrientation];
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return [[UIRotationManager sharedInstance] supportedInterfaceOrientations];
+}
+
+- (BOOL)shouldAutorotate
+{
+    return [[UIRotationManager sharedInstance] shouldAutorotate];
+}
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     

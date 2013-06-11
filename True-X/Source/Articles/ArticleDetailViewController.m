@@ -48,7 +48,9 @@
     }
     
     // Load article content
-    //[self performSelector:@selector(loadArticleContent)];
+    if (!IS_IPAD) {
+        [self loadArticleContent];
+    }
 }
 
 - (void)didReceiveMemoryWarning
