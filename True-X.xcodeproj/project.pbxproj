@@ -143,6 +143,7 @@
 		DE65259C1759F3800047F4C0 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE65259B1759F37F0047F4C0 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DE6525A01759F3E30047F4C0 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE65259F1759F3E30047F4C0 /* libsqlite3.0.dylib */; };
 		DE6525A11759F4020047F4C0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE65259D1759F3A70047F4C0 /* Security.framework */; };
+		DE84B64B1768C1D100218115 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = DE84B64A1768C1D100218115 /* Default-Portrait.png */; };
 		DEA1FEDB1759A45100CE344D /* TrueXAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA1FEDA1759A45100CE344D /* TrueXAlert.m */; };
 		DEA91060175B55B70023BD6E /* UIImage+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA9105F175B55B70023BD6E /* UIImage+Scale.m */; };
 		DEA91064175B64AC0023BD6E /* placehold_a.png in Resources */ = {isa = PBXBuildFile; fileRef = DEA91062175B64AB0023BD6E /* placehold_a.png */; };
@@ -364,6 +365,7 @@
 		DE65259B1759F37F0047F4C0 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		DE65259D1759F3A70047F4C0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DE65259F1759F3E30047F4C0 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		DE84B64A1768C1D100218115 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
 		DEA1FED91759A45100CE344D /* TrueXAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrueXAlert.h; sourceTree = "<group>"; };
 		DEA1FEDA1759A45100CE344D /* TrueXAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrueXAlert.m; sourceTree = "<group>"; };
 		DEA9105E175B55B70023BD6E /* UIImage+Scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Scale.h"; sourceTree = "<group>"; };
@@ -693,6 +695,7 @@
 				69C2FBDA1760859E008C5156 /* ipad_images */,
 				69833DC01758912300CFA778 /* images */,
 				69833DB2175890FC00CFA778 /* fonts */,
+				DE84B64A1768C1D100218115 /* Default-Portrait.png */,
 				DE07CE81173D26FB0022440A /* Default-568h@2x.png */,
 				DE07CE82173D26FB0022440A /* Default.png */,
 				DE07CE83173D26FB0022440A /* Default@2x.png */,
@@ -1174,6 +1177,7 @@
 				69C2FBE21760859E008C5156 /* menu4_ipad.png in Resources */,
 				6923F2471761B3E100276636 /* bg_email_button_ipad.png in Resources */,
 				69EBE444176706CD006D60B7 /* bg_menu_ipad.png in Resources */,
+				DE84B64B1768C1D100218115 /* Default-Portrait.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1336,8 +1340,8 @@
 		DE07CE79173D25F40022440A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: SmartEbook.com Co.,Ltd";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SmartEbook.com Co.,Ltd";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Dao Nguyen (UNBG74TAH9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Dao Nguyen (UNBG74TAH9)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/True-X/ThirdParty\"",
@@ -1348,8 +1352,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "Love & Sex";
-				PROVISIONING_PROFILE = "C5741783-D860-4BBC-A29C-18F2E4D48EB7";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C5741783-D860-4BBC-A29C-18F2E4D48EB7";
+				PROVISIONING_PROFILE = "1E5E06BE-F16E-4114-A80D-54F3689B4661";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1E5E06BE-F16E-4114-A80D-54F3689B4661";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSION_INFO_BUILDER = "Dao Nguyen";
 				WRAPPER_EXTENSION = app;
@@ -1359,8 +1363,8 @@
 		DE07CE7A173D25F40022440A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: SmartEbook.com Co.,Ltd";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SmartEbook.com Co.,Ltd";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Dao Nguyen (UNBG74TAH9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Dao Nguyen (UNBG74TAH9)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/True-X/ThirdParty\"",
@@ -1371,8 +1375,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "Love & Sex";
-				PROVISIONING_PROFILE = "C5741783-D860-4BBC-A29C-18F2E4D48EB7";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C5741783-D860-4BBC-A29C-18F2E4D48EB7";
+				PROVISIONING_PROFILE = "1E5E06BE-F16E-4114-A80D-54F3689B4661";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1E5E06BE-F16E-4114-A80D-54F3689B4661";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSION_INFO_BUILDER = "Dao Nguyen";
 				WRAPPER_EXTENSION = app;
