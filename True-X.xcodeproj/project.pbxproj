@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69063BEE176F16EC00D0630F /* bg_productdetail_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 69063BED176F16EC00D0630F /* bg_productdetail_ipad.png */; };
 		69161563175C9A9600305119 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69161562175C9A9600305119 /* ImageIO.framework */; };
 		69161567175C9B1900305119 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69161566175C9B1900305119 /* MapKit.framework */; };
 		6916156C175CAB7800305119 /* ImageCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6916156B175CAB7800305119 /* ImageCacheManager.m */; };
@@ -184,6 +185,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		69063BED176F16EC00D0630F /* bg_productdetail_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_productdetail_ipad.png; sourceTree = "<group>"; };
 		69161562175C9A9600305119 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		69161566175C9B1900305119 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6916156A175CAB7800305119 /* ImageCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCacheManager.h; sourceTree = "<group>"; };
@@ -578,6 +580,7 @@
 			children = (
 				69EBE443176706CD006D60B7 /* bg_menu_ipad.png */,
 				6923F2461761B3E100276636 /* bg_email_button_ipad.png */,
+				69063BED176F16EC00D0630F /* bg_productdetail_ipad.png */,
 				69C2FBDB1760859E008C5156 /* menu1_ipad.png */,
 				69C2FBDC1760859E008C5156 /* menu2_ipad.png */,
 				69C2FBDD1760859E008C5156 /* menu3_ipad.png */,
@@ -1178,6 +1181,7 @@
 				6923F2471761B3E100276636 /* bg_email_button_ipad.png in Resources */,
 				69EBE444176706CD006D60B7 /* bg_menu_ipad.png in Resources */,
 				DE84B64B1768C1D100218115 /* Default-Portrait.png in Resources */,
+				69063BEE176F16EC00D0630F /* bg_productdetail_ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
