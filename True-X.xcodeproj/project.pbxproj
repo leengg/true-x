@@ -23,6 +23,7 @@
 		696806AD1754B61A00C60118 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 696806AB1754B61A00C60118 /* Icon@2x.png */; };
 		696806CF1755D89800C60118 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 696806CE1755D89800C60118 /* Icon.png */; };
 		696806E31755E3F200C60118 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 696806E21755E3F200C60118 /* ContactViewController.m */; };
+		69809E7A17B9FD9F00183F5B /* true_x_logo_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 69809E7917B9FD9F00183F5B /* true_x_logo_small.png */; };
 		69833DB9175890FC00CFA778 /* MyriadPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 69833DB3175890FC00CFA778 /* MyriadPro-Bold.otf */; };
 		69833DBA175890FC00CFA778 /* MyriadPro-BoldCond.otf in Resources */ = {isa = PBXBuildFile; fileRef = 69833DB4175890FC00CFA778 /* MyriadPro-BoldCond.otf */; };
 		69833DBB175890FC00CFA778 /* MyriadPro-BoldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 69833DB5175890FC00CFA778 /* MyriadPro-BoldIt.otf */; };
@@ -210,6 +211,7 @@
 		696806CE1755D89800C60118 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		696806E11755E3F200C60118 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
 		696806E21755E3F200C60118 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		69809E7917B9FD9F00183F5B /* true_x_logo_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = true_x_logo_small.png; sourceTree = "<group>"; };
 		69833DB3175890FC00CFA778 /* MyriadPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Bold.otf"; sourceTree = "<group>"; };
 		69833DB4175890FC00CFA778 /* MyriadPro-BoldCond.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-BoldCond.otf"; sourceTree = "<group>"; };
 		69833DB5175890FC00CFA778 /* MyriadPro-BoldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-BoldIt.otf"; sourceTree = "<group>"; };
@@ -521,6 +523,8 @@
 		69833DC01758912300CFA778 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				69809E7917B9FD9F00183F5B /* true_x_logo_small.png */,
+				69833DEE1758912300CFA778 /* true_x_logo.png */,
 				DEA91062175B64AB0023BD6E /* placehold_a.png */,
 				DEA91063175B64AB0023BD6E /* placehold_a@2x.png */,
 				69833DE01758912300CFA778 /* placehold_s.png */,
@@ -574,7 +578,6 @@
 				69833DEB1758912300CFA778 /* tb_lienhe@2x.png */,
 				69833DEC1758912300CFA778 /* tb_lienhe_selected.png */,
 				69833DED1758912300CFA778 /* tb_lienhe_selected@2x.png */,
-				69833DEE1758912300CFA778 /* true_x_logo.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -1190,6 +1193,7 @@
 				69063BEE176F16EC00D0630F /* bg_productdetail_ipad.png in Resources */,
 				DEA64A8517B936F100532594 /* Icon-72@2x.png in Resources */,
 				DEA64A8617B936F100532594 /* Icon-72.png in Resources */,
+				69809E7A17B9FD9F00183F5B /* true_x_logo_small.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1300,8 +1304,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Phong Do (KNRGN8675N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Phong Do (KNRGN8675N)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Dao Nguyen (UNBG74TAH9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Dao Nguyen (UNBG74TAH9)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1316,8 +1320,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "8B151D2A-06EE-479E-94FB-B71E23F38306";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8B151D2A-06EE-479E-94FB-B71E23F38306";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1332,8 +1336,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Phong Do (KNRGN8675N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Phong Do (KNRGN8675N)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Dao Nguyen (UNBG74TAH9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Dao Nguyen (UNBG74TAH9)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1341,8 +1345,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "8B151D2A-06EE-479E-94FB-B71E23F38306";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8B151D2A-06EE-479E-94FB-B71E23F38306";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

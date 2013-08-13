@@ -47,6 +47,8 @@ static NSString *kSchemeEmailToTrueX = @"mailto:info@true-x.net";
 - (void)loadContentHMTL {
     
     NSString *logoPath = [[NSBundle mainBundle] pathForResource:@"true_x_logo" ofType:@"png"];
+    NSString *smallLogoPath = [[NSBundle mainBundle] pathForResource:@"true_x_logo_small" ofType:@"png"];
+    NSString *smallTrueXLogoHTML = [NSString stringWithFormat:@"<img align=\"top\" src=\"file://%@\" alt=\"True-X\">", smallLogoPath];
     
     NSString *emailButtonPath = nil;
     if (IS_IPAD) {
@@ -57,15 +59,15 @@ static NSString *kSchemeEmailToTrueX = @"mailto:info@true-x.net";
     }
     
     NSString *imageHtmlString = [NSString stringWithFormat:@"<img class=\"center\" alt=\"%@\" src=\"file://%@\" style=\"width: 240px;\" />", @"True-X", logoPath];
-    NSString *contentHMLT = [NSString stringWithFormat:@"<p><h3>Văn Phòng Giao Dịch True-X </h3>Địa chỉ: 45/25/5 Nguyễn Văn Đậu, P. 6, Q. Bình Thạnh, TP.HCM.</br>Điện thoại: 083-841-0945 - 0120-7667-888</br>Fax: 083-841-0946</br>Email: info@true-x.net</br>Website: <a href=\"http://true-x.net\">http://true-x.net</a></br></br>Nhãn hiệu True-X thuộc sở hữu của Công Ty Maple Limited - Japan.</br>6-chome 14-8 Tsukiji, Chuo-ku Tokyo, Japan 104-0045</br>Sản phẩm được sản xuất tại Malaysia dưới sự giám sát của True-X</br>VPĐD tại Châu Âu: Advena Ltd. Hereford, HR4 9DQ. United Kingdom.</br>VPĐD tại Việt Nam: Hanh An Trading Service Co., Ltd.</br></p><p> <br/> <a href=\"%@\" target=\"_blank\"><img class=\"center\" src=\"file://%@\" style=\"border: 0;\" /></a></p>", kSchemeEmailToTrueX, emailButtonPath];
+    NSString *contentHMLT = [NSString stringWithFormat:@"<p><h3>Văn Phòng Giao Dịch %@</h3>Địa chỉ: 45/25/5 Nguyễn Văn Đậu, P. 6, Q. Bình Thạnh, TP.HCM.</br>Điện thoại: 083-841-0945 - 0120-7667-888</br>Fax: 083-841-0946</br>Email: info@true-x.net</br>Website: <a style=\"color:#1288f0; text-decoration:underline;\" href=\"http://true-x.net\">http://true-x.net</a></br></br>Nhãn hiệu %@thuộc sở hữu của Công Ty Maple Limited - Japan.</br>6-chome 14-8 Tsukiji, Chuo-ku Tokyo, Japan 104-0045</br>Sản phẩm được sản xuất tại Malaysia dưới sự giám sát của %@</br>VPĐD tại Châu Âu: Advena Ltd. Hereford, HR4 9DQ. United Kingdom.</br>VPĐD tại Việt Nam: <b>Hanh An Trading Service Co., Ltd.</b></br></p><p> <br/> <a href=\"%@\" target=\"_blank\"><img class=\"center\" src=\"file://%@\" style=\"border: 0;\" /></a></p>", smallTrueXLogoHTML, smallTrueXLogoHTML, smallTrueXLogoHTML, kSchemeEmailToTrueX, emailButtonPath];
     
     NSString *headStyle = nil;
     
     if (IS_IPAD) {
-        headStyle = [NSString stringWithFormat:@"<head><style type=\"text/css\"> body {font-family:\"Helvetica\"; font-size:24px;color:#FFF;} body.center { display: block; margin-left: 50px; margin-right: 50px; } img {max-width: 650px !important;} img.center { display: block; margin-left: auto; margin-right: auto; } a { color:#1288f0;}</style></head>"];
+        headStyle = [NSString stringWithFormat:@"<head><style type=\"text/css\"> body {font-family:\"Helvetica\"; font-size:24px;color:#FFF;} body.center { display: block; margin-left: 50px; margin-right: 50px; } img {max-width: 650px !important;} img.center { display: block; margin-left: auto; margin-right: auto; } a { color:#FFF; text-decoration:none}</style></head>"];
     }
     else {
-        headStyle = [NSString stringWithFormat:@"<head><style type=\"text/css\"> body {font-family:\"Helvetica\"; font-size:14px;color:#FFF;} body.center { display: block; margin-left: 10px; margin-right: 10px; } img {max-width: 300px !important;} img.center { display: block; margin-left: auto; margin-right: auto; } a { color:#1288f0;}</style></head>"];
+        headStyle = [NSString stringWithFormat:@"<head><style type=\"text/css\"> body {font-family:\"Helvetica\"; font-size:14px;color:#b3b5b4;} body.center { display: block; margin-left: 10px; margin-right: 10px; } img {max-width: 300px !important;} img.center { display: block; margin-left: auto; margin-right: auto; } a { color:#FFF; text-decoration:none}</style></head>"];
     }
     
     NSString *htmlString = [NSString stringWithFormat:@"<html>%@<body class=\"center\"> <br/><br/> %@ <br/> %@<br/></body></html>", headStyle, imageHtmlString, contentHMLT];
