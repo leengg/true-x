@@ -12,19 +12,45 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    
-    //self.window.backgroundColor = [UIColor whiteColor];
-    //[self.window makeKeyAndVisible];
     
     //Custom tabbar
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     UITabBar *tabBar = tabBarController.tabBar;
+
     UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
     UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
     UITabBarItem *tabBarItem3 = [tabBar.items objectAtIndex:2];
 
+    //@For publish application
+    NSDate * now = [NSDate date];
+    NSString *str =@"2013-10-01 00:00:00";
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *date = [formatter dateFromString:str];
+    NSComparisonResult result = [now compare:date];
+   
+    switch (result)
+    {
+        case NSOrderedAscending:
+        {
+            NSMutableArray *currentViewControllers = [[NSMutableArray alloc] initWithArray:[tabBarController viewControllers]];
+            [currentViewControllers removeObjectAtIndex:0];
+            tabBarController.viewControllers = currentViewControllers;
+            break;
+        }
+            
+        case NSOrderedDescending:
+            break;
+            
+        case NSOrderedSame:
+            break;
+            
+        default:
+            break;
+    }
+    //@end
+        
     [tabBarItem1 setFinishedSelectedImage:[UIImage imageNamed:@"tb_baiviet_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"tb_baiviet.png"]];
     [tabBarItem2 setFinishedSelectedImage:[UIImage imageNamed:@"tb_bosuutap_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"tb_bosuutap.png"]];
     [tabBarItem3 setFinishedSelectedImage:[UIImage imageNamed:@"tb_lienhe_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"tb_lienhe.png"]];
